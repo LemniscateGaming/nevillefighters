@@ -1,0 +1,35 @@
+[Info]
+name="Person"
+displayname="Person"
+versiondate=6/25/2019
+mugenversion=1.1
+author="iNfin"
+pal.defaults=1,2,3,4,5,6
+[Files]
+sprite=Person.sff
+sound=Person.snd
+anim=Person.air
+cmd=Person.cmd
+cns=Person.cns
+st=Person.cns
+stcommon=common1.cns
+
+pal1=Person7.act
+pal2=Person2.act
+pal3=Person3.act
+pal4=Person4.act
+pal5=Person5.act
+pal6=Person6.act
+
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
+
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

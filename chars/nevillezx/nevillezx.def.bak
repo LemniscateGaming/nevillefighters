@@ -1,0 +1,19 @@
+[Info]
+name="nevillezx"
+displayname="Neville ZX"
+versiondate=3/6/2020
+mugenversion=14,04,2002
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=nevillezx.sff
+sound=nevillezx.snd
+anim=nevillezx.air
+cmd=nevillezx.cmd
+cns=nevillezx.cns
+st=nevillezx.cns
+stcommon=common1.cns
+pal1=nevillezx.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

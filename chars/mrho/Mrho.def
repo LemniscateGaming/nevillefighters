@@ -1,0 +1,32 @@
+[Info]
+name = "Mrho"        ;Name of character
+displayname = "Mrho Xuir" ;Name of character to display
+versiondate = 2,2,2020    ;Version date of character (MM-DD-YYYY or X.XX)
+mugenversion = 1.1         ;Version of M.U.G.E.N character works on (X.XX)
+author = "Jackachu"         ;Character author name
+
+localcoord = 320,240        ;Local coordinate space width and height
+
+; Files for the player
+[Files]
+cmd     = Mrho.cmd           ;Command set
+cns     = Mrho.cns           ;Constants
+st      = Mrho.cns           ;States
+stcommon = common1.cns      ;Common states (from data/ or motif)
+sprite  = Mrho.sff           ;Sprite
+anim    = Mrho.air           ;Animation
+sound   = Mrho.snd           ;Sound
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x = 1 ;Press button X to select palette 1, etc.
+y = 2
+z = 3
+a = 4
+b = 5
+c = 6
+
+; Arcade mode
+[Arcade]
+intro.storyboard = intro.def
+ending.storyboard = ending.def

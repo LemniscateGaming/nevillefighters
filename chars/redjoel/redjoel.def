@@ -1,0 +1,19 @@
+[Info]
+name="redjoel"
+displayname="Red Jacket Joel"
+versiondate=7/14/2019
+mugenversion=
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=redjoel.sff
+sound=redjoel.snd
+anim=redjoel.air
+cmd=redjoel.cmd
+cns=redjoel.cns
+st=redjoel.cns
+stcommon=common1.cns
+pal1=redjoel.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

@@ -1,0 +1,19 @@
+[Info]
+name="bluejoel"
+displayname="Blue Jacket Joel"
+versiondate=7/11/2019
+mugenversion=
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=bluejoel.sff
+sound=bluejoel.snd
+anim=bluejoel.air
+cmd=bluejoel.cmd
+cns=bluejoel.cns
+st=bluejoel.cns
+stcommon=common1.cns
+pal1=bluejoel.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

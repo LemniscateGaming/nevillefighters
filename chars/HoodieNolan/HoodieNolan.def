@@ -1,0 +1,36 @@
+
+; Player information
+[Info]
+name         = "HoodieNolan"   ; Name of character
+displayname  = "Hoodie Nolan"  ; Name of character to display
+versiondate  = 3/7/2020          ; Version date of character (MM,DD,YYYY or X.XX)
+mugenversion = 1.1          ; Version of M.U.G.E.N. character works on (X.XX)
+author       = "Jackachu"   ; Character author name
+pal.defaults = 1,2,3,4,5,6   ; Default palettes in order of preference (up to 4, starts from 1)
+localcoord   = 320,240       ; Local coordinate space (width, height)
+
+; Files for the player
+[Files]
+cmd      = HoodieNolan.cmd          ; Command set
+cns      = HoodieNolan.cns          ; Constants
+st       = HoodieNolan.cns          ; States
+stcommon = common1.cns       ; Common states (from data or motif)
+sprite   = HoodieNolan.sff          ; Sprite
+anim     = HoodieNolan.air          ; Animation
+sound    = HoodieNolan.snd          ; Sound
+ai       = HoodieNolan.ai           ; AI hints data (not used)
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
+
+
+; Arcade mode
+[Arcade]
+;intro.storyboard = intro.def
+;ending.storyboard = ending.def

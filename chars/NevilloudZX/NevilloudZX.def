@@ -1,0 +1,19 @@
+[Info]
+name="NevilloudZX"
+displayname="Nevilloud ZX"
+versiondate=8/9/2019
+mugenversion=
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=NevilloudZX.sff
+sound=NevilloudZX.snd
+anim=NevilloudZX.air
+cmd=NevilloudZX.cmd
+cns=NevilloudZX.cns
+st=NevilloudZX.cns
+stcommon=common1.cns
+pal1=NevilloudZX.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=

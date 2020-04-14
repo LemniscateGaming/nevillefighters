@@ -1,0 +1,19 @@
+[Info]
+name="NoloudStriffle"
+displayname="Noloud Striffle"
+versiondate=8/9/2019
+mugenversion=
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=NoloudStriffle.sff
+sound=NoloudStriffle.snd
+anim=NoloudStriffle.air
+cmd=NoloudStriffle.cmd
+cns=NoloudStriffle.cns
+st=NoloudStriffle.cns
+stcommon=common1.cns
+pal1=NoloudStriffle.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=
