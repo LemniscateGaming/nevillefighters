@@ -124,7 +124,6 @@ victory7 = "bla wli gyds ehi auy fidhaqwopm wlot? ehi auy wlew gydsopm cuhif? mi
 
 ;---------------------------------------------------------------------------
 ; Lose by Time Over
-; CNS difficulty: basic
 [Statedef 170]
 type = S
 ctrl = 0
@@ -139,7 +138,6 @@ time = 1
 
 ;---------------------------------------------------------------------------
 ; Win state decider
-; CNS difficulty: basic
 [Statedef 180]
 type = S
 
@@ -158,7 +156,6 @@ value = 181
 
 ;---------------------------------------------------------------------------
 ; Win pose 1
-; CNS difficulty: basic
 [Statedef 181]
 type = S
 ctrl = 0
@@ -173,7 +170,6 @@ time = 1
 
 ;---------------------------------------------------------------------------
 ; Introduction
-; CNS difficulty: basic
 [Statedef 191]
 type = S
 ctrl = 0
@@ -203,7 +199,6 @@ value = 0
 
 ;---------------------------------------------------------------------------
 ; Taunt
-; CNS difficulty: easy
 [Statedef 195]
 type = S
 ctrl = 0
@@ -224,10 +219,8 @@ trigger1 = AnimTime = 0
 value = 0
 ctrl = 1
 
-
 ;---------------------------------------------------------------------------
 ; Stand Light Punch
-; CNS difficulty: easy
 [Statedef 200]
 type    = S                      ;State-type: S-stand, C-crouch, A-air, L-liedown
 movetype= A                      ;Move-type: A-attack, I-idle, H-gethit
@@ -273,20 +266,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Standing strong punch
-; CNS difficulty: easy
-; Note the width controller. It makes KFM's push box larger, so he doesn't
-; stand so close to the opponent. Hit Ctrl-C and look at the red bar at his
-; feet.
-; The sprpriority for this state is at -1, instead of the usual 2 for
-; attacks. This makes KFM appear behind the opponent initially.
-; The SprPriority controller in [State 210, 4] brings KFM to the front when
-; his arm has swung over.
-; To stop KFM from pausing in his swing frame, there is a ChangeAnim in
-; [State 210, 3] that detects if the hit has come in contact with the
-; opponent during that frame, and switches to the next animation element
-; (notice the elem=6 parameter). If you don't see what I mean, try commenting
-; out that controller, then hit someone with this attack.
+; Stand Strong Punch
 [Statedef 210]
 type    = S
 movetype= A
@@ -368,8 +348,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Standing light kick
-; CNS difficulty: easy
+; Stand light kick
 [Statedef 230]
 type    = S
 movetype= A
@@ -406,8 +385,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Standing strong kick
-; CNS difficulty: easy
+; Stand strong kick
 [Statedef 240]
 type    = S
 movetype= A
@@ -445,13 +423,12 @@ ctrl = 1
 
 ;-------------------------------------
 ;Stun Charge
-
 [Statedef 260]
 type    = S
 movetype= A
 physics = S
 juggle  = 5
-poweradd= -100
+poweradd= -150
 ctrl = 0
 anim = 260
 
@@ -461,15 +438,14 @@ trigger1 = Command = "holdback"
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 x = 18
-y = 0
 
 [State 260, 1]
 type = HitDef
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 36, 0			;Damage that move inflicts, guard damage
+damage = 25, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -493,7 +469,7 @@ air.hittime = 0			;Time before opponent regains control in air
 
 [State 260, AfterImage]
 type = AfterImage
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 time = 30
 palcolor = 256
 palbright = 0,20,0
@@ -509,29 +485,66 @@ value = 0
 ctrl = 1
 
 ;-------------------------------------
-;Aerial Stun Charge (currently unused because its spammable kinda)
-
+;Aerial Stun Charge
 [Statedef 270]
-type    = S
+type    = A
 movetype= A
 physics = A
 juggle  = 5
-poweradd= 42
+poweradd= -100
 ctrl = 0
-velset = 9,0
 anim = 260
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = animelem = 2
+x = 9
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = 1
+v = 39
+value = 0
+persistent = 0
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = Pos Y + Vel Y >= 0
+trigger1 = animElemNo(0) >= 2
+v = 39    ;fv = 10
+value = 1
+;ignorehitpause = 
+;persistent = 
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = var(39) = 1
+y = 0
+persistent = 1
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = var(39) = 1
+x = Vel X * (1-((1-Const(movement.stand.friction))))
+persistent = 1
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = Vel X < Const(movement.stand.friction.threshold)
+x = 0
+persistent = 0
 
 [State 270, 1]
 type = HitDef
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 18, 0			;Damage that move inflicts, guard damage
+damage = 22, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 0, 25			;Time attacker pauses, time opponent shakes
+pausetime = 0, 30			;Time attacker pauses, time opponent shakes
 sparkno = 4				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
@@ -549,7 +562,7 @@ air.hittime = 0			;Time before opponent regains control in air
 
 [State 260, AfterImage]
 type = AfterImage
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 time = 30
 palcolor = 256
 palbright = 0,20,0
@@ -565,21 +578,152 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
+;Teleport
+
+[Statedef 280]
+type = S
+movetype = I
+physics = S
+poweradd = -500
+anim = 280
+
+[State 280, Helper]
+type = Helper
+trigger1 = time = 0
+helpertype = Normal ;Player
+name = "Teleport Shadow"
+ID = 280
+stateno = 283
+pos = 0,0
+postype = P1    ;P2, Front, Back, Left, Right
+facing = 1
+keyctrl = 0
+ownpal = 0
+
+[State 280, Trans]
+type = Trans
+trigger1 = 1
+trans = Add
+alpha = 64, 192
+
+[State 280, ChangeState]
+type = ChangeState
+trigger1 = time >= 10
+trigger1 = command != "holdc"
+value = 281
+ctrl = 0
+
+;-----------------------------------------------------
+;Teleport - Moving
+
+[Statedef 281]
+type = S
+movetype = I 
+physics = N
+anim = 281
+
+[State 281, PosAdd]
+type = PosAdd
+trigger1 = 1
+x = (helper(280),Pos X - Pos X)/10 + 10
+y = (helper(280),Pos Y - Pos Y)/10 + 10
+
+[State 281, PosSet]
+type = PosSet
+trigger1 = abs(helper(280),Pos X - Pos X) <= 20 && abs(helper(280),Pos Y - Pos Y) <= 20
+x = helper(280),Pos X
+y = helper(280),Pos X 
+
+[State 281, Trans]
+type = Trans
+trigger1 = 1
+trans = Add
+alpha = 96, 160
+
+[State 281, ChangeState]
+type = ChangeState
+trigger1 = helper(280),Pos X = Pos X && helper(280),Pos Y = Pos Y
+trigger2 = time > 45
+value = 282
+ctrl = 0
+
+;-----------------------------------------------------
+;Teleport - Arrived
+[Statedef 282]
+physics = A
+anim = 282
+
+[State 282, PosSet]
+type = PosSet
+trigger1 = 1
+x = helper(280),Pos X
+y = helper(280),Pos Y
+persistent = 0
+
+[State 282, VelSet]
+type = VelSet
+trigger1 = 1
+y = 2
+persistent = 0
+
+[State 282, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+ctrl = 1
+
+;-------------------------------------------------------
+;Teleport Shadow (Helper)
+[Statedef 283]
+type = S
+movetype = I 
+physics = N
+anim = 283
+
+[State 283, Trans]
+type = Trans
+trigger1 = parent,stateno = 820
+trans = Add
+alpha = 192, 64
+[State 283, Trans]
+type = Trans
+trigger1 = parent,stateno = 821
+trans = Add
+alpha = 160, 96
+
+[State 283, PosAdd]
+type = PosAdd
+trigger1 = parent,stateno = 280
+trigger1 = command = "holdfwd"
+x = 4.5
+[State 283, PosAdd]
+type = PosAdd
+trigger1 = parent,stateno = 280
+trigger1 = command = "holdfwd"
+x = -4.5
+[State 283, PosAdd]
+type = PosAdd
+trigger1 = parent,stateno = 280
+trigger1 = command = "holdfwd"
+y = -4.5
+[State 283, PosAdd]
+type = PosAdd
+trigger1 = parent,stateno = 280
+trigger1 = command = "holdfwd"
+trigger1 = Pos Y < 0
+y = 4.5
+[State 283, PosSet]
+type = PosSet
+trigger1 = Pos Y > 0
+y = 0
+
+;[State 283, DestroySelf]
+;type = DestroySelf
+;trigger1 = parent,stateno != 280
+;trigger1 = parent,stateno != 281
+
+;---------------------------------------------------------------------------
 ;Crouching light punch (Dominance)
-; CNS difficulty: easy
-; Description: Simple crouching attack. The HitDef's guardflag parameter
-;     is set to "L", meaning that the move can only be guarded low
-;     (crouching), and not by standing or jumping opponents.
-;     Like for all light attacks, it's a good idea to keep the slidetime
-;     and hittime parameters at a smaller number, so the opponent isn't
-;     stunned for too long. For all crouching attacks you have to
-;     remember to set the attr parameter to indicate that it is crouching
-;     attack. In this case, "C, NA" stands for "crouching, normal attack".
-;     The HitDef's priority is set at 3, instead of the default of 4,
-;     so this attack has a lower priority than most others, meaning
-;     KFM will get hit instead of trading hits with his opponent if
-;     their attack collision boxes (Clsn1) intersect each other's Clsn2
-;     boxes at the same time.
 [Statedef 400]
 type    = C
 movetype= A
@@ -618,7 +762,6 @@ ctrl = 1
 
 ;---------------------------------------------------------------------------
 ;Crouching strong punch (U Gae)
-; CNS difficulty: easy
 ; Description: This is a 2-hit move. It is done by having two HitDefs
 ;     triggered, one for each frame of animation that hits.
 ;     Notice how the first hit cannot be guarded by an opponent in the
@@ -800,8 +943,7 @@ type = destroyself
 trigger1 = AnimTime = 0
 
 ;---------------------------------------------------------------------------
-;Crouching light kick (Heal)
-; CNS difficulty: easy
+;Crouching light kick (Oat Heal)
 [Statedef 430]
 type    = C
 movetype= A
@@ -822,9 +964,7 @@ absolute = 1
 [State 0, PowerAdd]
 type = PowerAdd
 trigger1 = animelem = 2
-value = 600
-;ignorehitpause = 
-;persistent = 
+value = 450
 
 
 [State 430, 3]
@@ -972,7 +1112,6 @@ down.bounce = 0
 
 ;---------------------------------------------------------------------------
 ;Jump Light Kick
-; CNS difficulty: easy
 [Statedef 630]
 type    = A
 movetype= A
@@ -1004,7 +1143,6 @@ air.hittime = 14
 
 ;---------------------------------------------------------------------------
 ;Jump Strong Kick
-; CNS difficulty: easy
 [Statedef 640]
 type    = A
 movetype= A
@@ -1113,6 +1251,7 @@ attr = S, SP
 damage   = 24
 animtype = light
 hitflag = MAFDP
+guardflag = L ;must be crouch guarded.
 pausetime = 3,3
 hitsound   = 5,2
 sparkno = 0
@@ -1467,6 +1606,14 @@ anim = 1110          ;refers to the .Air file
 ctrl = 0
 poweradd = -3000
 
+[State 1050, VarSet]
+type = VarSet
+trigger1 = 1
+v = 8  
+value = 1
+persistent = 0
+
+
 [State 0, SuperPause]
 type = SuperPause
 trigger1 = time = 15
@@ -1708,6 +1855,11 @@ trigger1 = time >= var(5)
 x = 0
 y = 0.2
 
+[State 1051, ParentVarSet]
+type = ParentVarSet
+trigger1 = time > var(5) + 60
+v = 8  
+value = 0
 
 [State 1051, DestroySelf]
 type = destroyself

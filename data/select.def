@@ -70,7 +70,7 @@
  ;
  ;Insert your characters below.
 
-Person, stages/nevillebox.def
+Person, stages/stage0-720.def
 orangejoel, random
 bluejoel, random
 redjoel, random
@@ -82,8 +82,8 @@ truejoel, random
 nloud, random
 mrho, stages/mrhodesert.def
 jahlil, random
-HoodieNolan, stages/nevilleroom.def
-ShadowedNeville, random
+HoodieNolan, stages/nevillebox.def
+ShadowedNeville, stages/nevilleroom.def
 NevilleZX, random
 dmbreezy, random
 

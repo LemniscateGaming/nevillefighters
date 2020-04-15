@@ -236,12 +236,12 @@ Clsn1: 1
 [Begin Action 220]
 Clsn2Default: 1
   Clsn2[0] = -9, -61, 12, 0
-201,0, 0,0, 18
+201,0, 0,0, 14
 Clsn1: 1
   Clsn1[0] = 12, -63, 26, -40
 Clsn2: 1
   Clsn2[0] = -12, -64, 14, 0
-201,1, 0,0, 12
+201,1, 0,0, 14
 201,1, 0,0, 3
 
 ; Standing Light Kick
@@ -281,12 +281,41 @@ Clsn1: 1
 
 ; Stun Rush
 [Begin Action 260]
+Clsn2: 1
+  Clsn2[0] = -8, -61, 11, 0
+0,1, 0,0, 4
 Clsn1: 1
   Clsn1[0] = 6, -53, 22, -7
-200,0, 0,0, 25
-Clsn2Default: 1
+200,0, 0,0, 28
+Clsn2: 1
   Clsn2[0] = -8, -61, 11, 0
-0,1, 0,0, 10
+0,1, 0,0, 4
+
+
+; Teleport (Control)
+[Begin Action 280]
+Clsn2Default: 1
+  Clsn2[0] = -6, -61, 9, -1
+11,0, 0,0, 7
+11,1, 0,0, 14
+
+; Teleport (Moving)
+[Begin Action 281]
+200,0, 0,0, 10
+
+; Teleport (Arrival)
+[Begin Action 282]
+Clsn2Default: 1
+  Clsn2[0] = -8, -63, 10, 0
+201,0, 0,0, 5
+Clsn1: 1
+  Clsn1[0] = 13, -51, 21, -37
+201,1, 0,0, 11
+
+; Teleport (Shadow)
+[Begin Action 285]
+0,0, 0,0, 7
+0,1, 0,0, 14
 
 ; Crouching light punch (Dominance)
 [Begin Action 400]

@@ -436,6 +436,11 @@ name = "holddown";Required (do not remove)
 command = /$D
 time = 1
 
+[Command]
+name = "holdc"
+command = /c
+time = 1
+
 ;---------------------------------------------------------------------------
 ; 2. State entry
 ; --------------
@@ -508,6 +513,7 @@ triggerall = power > 99
 triggerall = ctrl
 trigger1 = statetype = S
 trigger1 = command = "QCF_x"
+trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
 ;Emerald Spin
@@ -625,7 +631,18 @@ value = 240
 triggerall = command = "b"
 triggerall = command != "holddown"
 trigger1 = statetype = S
+trigger1 = ctrl
 
+;---------------------------------------------------------------------------
+;Stun Charge
+[State -1, Stun Charge]
+type = ChangeState
+value = 260
+triggerall = command = "c"
+triggerall = command != "holddown"
+triggerall = power >= 150
+trigger1 = statetype = S
+trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
 ;Crouching Light Punch (Dominance)
@@ -634,7 +651,7 @@ type = ChangeState
 value = 400
 triggerall = command = "x"
 triggerall = command = "holddown"
-triggerall = power > 49
+triggerall = power >= 50
 trigger1 = statetype = C
 trigger1 = ctrl
 
@@ -645,7 +662,7 @@ type = ChangeState
 value = 410
 triggerall = command = "y"
 triggerall = command = "holddown"
-triggerall = power > 49
+triggerall = power >= 50
 trigger1 = statetype = C
 trigger1 = ctrl
 
@@ -656,22 +673,33 @@ type = ChangeState
 value = 420
 triggerall = command = "z"
 triggerall = command = "holddown"
-triggerall = power > 149
+triggerall = power >= 150
 trigger1 = statetype = C
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
-;Crouching Light Kick (Heal)
+;Crouching Light Kick (Oat Heal)
 [State -1, Crouching Light Kick]
 type = ChangeState
 value = 430
 triggerall = command = "a"
 triggerall = command = "holddown"
 triggerall = (stateno != 430)
+triggerall = var(8) = 0
 trigger1 = statetype = C
 trigger1 = ctrl
 
-
+;---------------------------------------------------------------------------
+;Crouching Strong Kick (Teleport)
+[State -1, Crouching Strong Kick]
+type = ChangeState
+value = 280
+triggerall = command = "c"
+triggerall = command = "holddown"
+triggerall = 0
+triggerall = power >= 500
+trigger1 = statetype = C
+trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
 ;Jump Light Punch (Forward Shot)
@@ -717,3 +745,14 @@ value = 640
 triggerall = command = "b"
 trigger1 = statetype = A
 trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Aerial Stun Charge
+[State -1, Aerial Stun Charge]
+type = ChangeState
+value = 270
+triggerall = command = "c"
+triggerall = power >= 100
+trigger1 = statetype = A
+trigger1 = ctrl
+

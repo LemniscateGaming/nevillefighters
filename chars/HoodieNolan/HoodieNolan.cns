@@ -1,6 +1,8 @@
 
 ; Constants and state file.
 
+;this is a github test.
+
 [Data]
 life              = 1100	;Amount of life to start with
 attack            = 100	;attack power (more is stronger)
