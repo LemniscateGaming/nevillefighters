@@ -1235,7 +1235,7 @@ ctrl = 0
 anim = 616
 poweradd = -100
 
-[State 1010, 1] ;unguardable, you must jump over. good thing its hella slow
+[State 1010, 1]
 type = Projectile
 trigger1 = AnimElem = 2
 projanim = 605
@@ -1344,7 +1344,7 @@ physics = S
 juggle  = 1
 ctrl = 0
 anim = 615
-poweradd = 50
+poweradd = 100
 
 [State 1030, 1]
 type = Projectile
@@ -1359,7 +1359,7 @@ projshadow = -1
 offset = 5,-32
 velocity = 2.5
 attr = S, SP
-damage   = 7
+damage   = 21
 animtype = light
 guardflag = MA
 hitflag = MAFDP
@@ -1393,7 +1393,7 @@ projshadow = -1
 offset = 5,-32
 velocity = 3.5
 attr = S, SP
-damage   = 6
+damage   = 18
 animtype = light
 guardflag = MA
 hitflag = MAFDP
@@ -1427,7 +1427,7 @@ projshadow = -1
 offset = 5,-32
 velocity = 4.5
 attr = S, SP
-damage   = 5
+damage   = 15
 animtype = light
 guardflag = MA
 hitflag = MAFDP

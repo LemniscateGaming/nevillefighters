@@ -13,7 +13,8 @@ cmd=NevilloudZX.cmd
 cns=NevilloudZX.cns
 st=NevilloudZX.cns
 stcommon=common1.cns
-pal1=NevilloudZX.act
+pal1=NevilloudZX_2.act
+
 [Arcade]
 intro.storyboard=
 ending.storyboard=
