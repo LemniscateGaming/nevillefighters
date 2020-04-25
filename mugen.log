@@ -17,7 +17,7 @@ Initializing graphics...gameCoord 1280x720...render mode 2_20...trying 1280x720x
 Setting callbacks...OK
 Initializing font...OK
 Initializing game variables...OK
-Session RNG seed is 1587757386
+Session RNG seed is 1587840662
 Loading system fonts...OK
 Loading options...
 Initializing pads...failed
@@ -86,12 +86,12 @@ Freeing players
 Game loop init
 Unreserved all palettes
 Charsel init
-Selected char 5 on teamslot 0.0
-Char NoloudStriffle.def (5) request pal 3 1 (1) -> reserved 0 (0)
+Selected char 7 on teamslot 0.0
+Char truejoel.def (7) request pal 3 1 (1) -> reserved 0 (0)
 End of charsel loop
 Game loop deinit
 Gameflow 8
-Char HoodieNolan.def (11) request pal 0 3F (3F) -> reserved 0 (3E)
+Char NoloudStriffle.def (5) request pal 8 1 (1) -> reserved 0 (0)
 Gameflow 9
 Gameflow 10
 Entering versus screen.
@@ -107,8 +107,22 @@ Loading stage...
   Loading BG...OK
 Stage loaded OK
   Allocating helpers...OK
-Match RNG seed: 1803868056
+Match RNG seed: 109499541
 Reset persist vars team 1
+Loading character chars/truejoel/truejoel.def...
+  Loading info...OK
+  Loading cmd command set truejoel.cmd...OK
+  Loading cns truejoel.cns...OK
+  Loading cmd state entry truejoel.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff truejoel.sff...OK
+  Loading anim truejoel.air...OK
+  Loading snd truejoel.snd...SND file loaded with errors: truejoel.snd
+OK
+  Loading pals...(1,1)OK
+  2697 expressions (706 on trigger lines)
+Character truejoel.def loaded OK
+New char truejoel loaded into cache: (1/4 cached) Load time: 20.000ms
 Loading character chars/NoloudStriffle/NoloudStriffle.def...
   Loading info...Info: Noloud Striffle loading in pre-1.0 compatible mode
 OK
@@ -123,7 +137,60 @@ OK
   Loading pals...(1,1)OK
   1716 expressions (621 on trigger lines)
 Character NoloudStriffle.def loaded OK
-New char NoloudStriffle loaded into cache: (1/4 cached) Load time: 60.000ms
+New char NoloudStriffle loaded into cache: (2/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 2.02s
+Total frames: 122 	Skipped frames: 0
+Avg game rate: 60.40
+Avg frame rate: 60.40
+
+Finishing match
+Freeing players
+Save persist vars P56 truejoel
+Player truejoel cache count reduced: 0
+Save persist vars P57 NoloudStriffle
+Player NoloudStriffle cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 7 on teamslot 0.0
+Char truejoel.def (7) request pal 3 1 (1) -> reserved 0 (0)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char HoodieNolan.def (11) request pal 4 3F (3F) -> reserved 4 (2F)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 200498837
+Reset persist vars team 1
+Player truejoel cache count increased: 1
 Loading character chars/HoodieNolan/HoodieNolan.def...
   Loading info...OK
   Loading cmd command set HoodieNolan.cmd...OK
@@ -137,27 +204,49 @@ Loading character chars/HoodieNolan/HoodieNolan.def...
   Loading learned AI HoodieNolan.ai...OK
   3361 expressions (1016 on trigger lines)
 Character HoodieNolan.def loaded OK
-New char HoodieNolan loaded into cache: (2/4 cached) Load time: 30.000ms
+New char HoodieNolan loaded into cache: (3/4 cached) Load time: 70.000ms
 Resetting round
 Match assets initialized OK
 Game loop init
 Match loop init
-Life power and time reset
-CloseWindow event forced common loop quit.
+Resetting round
 End of match loop
-Total time: 7.64s
-Total frames: 454 	Skipped frames: 0
-Avg game rate: 59.42
-Avg frame rate: 59.42
+Total time: 174.98s
+Total frames: 10472 	Skipped frames: 0
+Avg game rate: 59.85
+Avg frame rate: 59.85
 
 Finishing match
 Freeing players
-Save persist vars P56 NoloudStriffle
-Player NoloudStriffle cache count reduced: 0
+Save persist vars P56 truejoel
+Player truejoel cache count reduced: 0
 Save persist vars P57 HoodieNolan
 Player HoodieNolan cache count reduced: 0
 Match RNG closed
 Game loop deinit
+Gameflow 12
+Entering victory screen.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Victory screen init
+Life power and time reset
+End of victory screen loop
+Game loop deinit
+Gameflow 8
+Char HoodieNolan.def (11) unreserve pal 4 3F 2F -> 3F
+Char NoloudStriffle.def (5) request pal 1 1 (1) -> reserved 0 (0)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Canceled versus screen.
 Gameflow 6
 Reset persist vars team 0
 Reset persist vars team 1
@@ -165,7 +254,6 @@ Gameflow 7
 Entering character select.
 Unloading match assets
 Freeing players
-Unloading stage...OK
 Game loop init
 Unreserved all palettes
 Charsel init
@@ -181,13 +269,14 @@ End of mode select loop
 Game loop deinit
 Returned from gameflow loop
 Deinitializing...
-Frames      : 766
-Time elapsed: 13.070 sec
-ticks: 1307, tps: 100, start 358, end 1665
+Frames      : 11277
+Time elapsed: 188.380 sec
+ticks: 18838, tps: 100, start 172, end 19010
 
 Unloading match assets
 Freeing players
 Clearing player cache...Freeing player RC NoloudStriffle...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC truejoel...CMD...CNS...SFF...AIR...SND...Misc...OK
 Freeing player RC HoodieNolan...CMD...CNS...SFF...AIR...SND...Misc...OK
 OK
 Freeing character info...OK

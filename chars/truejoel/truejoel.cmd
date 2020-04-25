@@ -707,7 +707,7 @@ trigger1 = statetype = S
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
-; Light Kick Rush 2
+; Rush 2
 [State -1, Laser Punch Barrage]
 type = ChangeState
 value = 250
@@ -810,7 +810,7 @@ trigger1 = ctrl
 type = ChangeState
 value = 620
 triggerall = command = "z"
-triggerall = power > 399
+triggerall = power > 249
 trigger1 = statetype = A
 trigger1 = ctrl
 

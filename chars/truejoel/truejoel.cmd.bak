@@ -115,15 +115,71 @@ command.time = 30
 command.buffer.time = 1
 
 ;-| Super Motions |--------------------------------------------------------
+
+[Command]
+name = "CBeam"
+command = y, x, z
+time = 70
+
+[Command]
+name = "LKick1"
+command = /F, x
+time = 35
+
+[Command]
+name = "LKick2"
+command = /F, z
+time = 35
+
+[Command]
+name = "HKick"
+command = /F, y
+time = 35
+
 [Command]
 name = "Rush1"
-command = D, D, a
-time = 15
+command = a, D, D, a
+time = 35
 
 [Command]
 name = "Rush2"
-command = D, D, c
-time = 15
+command = c, D, D, c
+time = 35
+
+[Command]
+name = "SSpike"
+command = ~D, DF, F, x
+time = 30
+
+[Command]
+name = "SSpike2"
+command = ~D, DF, F, z
+time = 30
+
+[Command]
+name = "BSpike"
+command = ~D, DF, F, a
+time = 30
+
+[Command]
+name = "BSpike2"
+command = ~D, DF, F, c
+time = 30
+
+[Command]
+name = "IceShard"
+command = /D, x, z
+time = 50
+
+[Command]
+name = "TheJoel"
+command = ~D, ~DF, ~F, ~DF. ~D, DB, B, y
+time = 200
+
+[Command]
+name = "UltRush"
+command = ~D, ~DF, ~F, ~DF. ~D, DB, B, b
+time = 200
 
 ;-| Special Motions |------------------------------------------------------
 
@@ -512,6 +568,65 @@ trigger1 = ctrl
 
 ;===========================================================================
 ;---------------------------------------------------------------------------
+; Combo Beam
+[State -1, Combo Beam]
+type = changestate
+value = 680
+trigger1 = command = "CBeam"
+triggerall = statetype = S
+triggerall = ctrl
+
+;---------------------------------------------------------------------------
+; Ice Shard
+[State -1, Ice Shard]
+type = changestate
+value = 500
+trigger1 = command = "IceShard"
+triggerall = statetype = C
+triggerall = ctrl
+
+;---------------------------------------------------------------------------
+; Super Spikes
+[State -1, Spike Volley]
+type = changestate
+value = 460
+trigger1 = command = "SSpike"
+trigger2 = command = "SSpike2"
+triggerall = statetype = S
+triggerall = ctrl
+
+;---------------------------------------------------------------------------
+; The Joel
+[State -1, The Joel]
+type = changestate
+value = 480
+trigger1 = command = "TheJoel"
+triggerall = statetype = S
+triggerall = ctrl
+triggerall = power > 1999
+
+;---------------------------------------------------------------------------
+; Ultimate Rush
+[State -1, Ultimate Joel Rush]
+type = changestate
+value = 490
+trigger1 = command = "UltRush"
+triggerall = statetype = S
+triggerall = ctrl
+triggerall = power > 1999
+
+
+;---------------------------------------------------------------------------
+; Big Spike
+[State -1, Shard of Health]
+type = changestate
+value = 470
+trigger1 = command = "BSpike"
+trigger2 = command = "BSpike2"
+triggerall = statetype = S
+triggerall = ctrl
+
+;---------------------------------------------------------------------------
 ; Taunt
 [State -1, Taunt]
 type = ChangeState
@@ -519,6 +634,27 @@ value = 195
 triggerall = command = "s"
 trigger1 = statetype != A
 trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+; Light Kick
+[State -1, Light Kick]
+type = ChangeState
+value = 660
+trigger1 = command = "LKick1"
+trigger2 = command = "LKick2"
+triggerall = command != "holddown"
+triggerall = statetype = S
+triggerall = ctrl
+
+;---------------------------------------------------------------------------
+; Heavy Kick
+[State -1, Heavy Kick]
+type = ChangeState
+value = 670
+trigger1 = command = "HKick"
+triggerall = command != "holddown"
+triggerall = statetype = S
+triggerall = ctrl
 
 ;---------------------------------------------------------------------------
 ; Stand Light Punch
@@ -543,7 +679,7 @@ triggerall = ctrl
 
 ;---------------------------------------------------------------------------
 ; Light Kick Rush 1
-[State -1, Standing Strong Punch]
+[State -1, Super Joel Wind Striker]
 type = ChangeState
 value = 220
 triggerall = command = "Rush1"
@@ -571,8 +707,8 @@ trigger1 = statetype = S
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
-; Light Kick Rush 2
-[State -1, Standing Heavy Kick]
+; Rush 2
+[State -1, Laser Punch Barrage]
 type = ChangeState
 value = 250
 triggerall = command = "Rush2"
@@ -583,10 +719,10 @@ trigger1 = stateno = 230 && movehit
 [State -1, Crouching Light Punch]
 type = ChangeState
 value = 400
-triggerall = command = "x"
+trigger1 = command = "x"
+trigger2 = command = "z"
 triggerall = command = "holddown"
-trigger1 = statetype = C
-trigger1 = ctrl
+triggerall = statetype = C
 
 ;---------------------------------------------------------------------------
 ; Crouching Medium Punch
@@ -620,19 +756,23 @@ trigger1 = stateno = 420 && movehit
 [State -1, Crouching Light Kick]
 type = ChangeState
 value = 430
-triggerall = command = "a"
+trigger1 = command = "a"
 triggerall = command = "holddown"
-trigger1 = statetype = C
+trigger1 = power > 99
+triggerall = statetype = C
 trigger1 = ctrl
+trigger2 = command = "c"
+trigger2 = stateno = 450 && movehit
 
 ;---------------------------------------------------------------------------
 ; Crouching Medium Kick
 [State -1, Crouching Medium Kick]
 type = ChangeState
 value = 440
-triggerall = command = "b"
+trigger1 = command = "b"
 triggerall = command = "holddown"
-trigger1 = statetype = C
+trigger1 = power > 249
+triggerall = statetype = C
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
@@ -642,6 +782,7 @@ type = ChangeState
 value = 450
 triggerall = command = "c"
 triggerall = command = "holddown"
+triggerall = power > 499
 trigger1 = statetype = C
 trigger1 = ctrl
 
@@ -669,6 +810,7 @@ trigger1 = ctrl
 type = ChangeState
 value = 620
 triggerall = command = "z"
+triggerall = power > 399
 trigger1 = statetype = A
 trigger1 = ctrl
 

@@ -3,9 +3,9 @@
 ; take a look if would like to learn more about the cns.
 
 [Data]
-life = 1000			;Amount of life to start with
-power = 3000		;Amount of maximum power
-attack = 130		;attack power (more is stronger)
+life = 1250			;Amount of life to start with
+power = 2000		;Amount of maximum power
+attack = 100		;attack power (more is stronger)
 defence = 100		;defensive power (more is stronger)
 fall.defence_up = 50	;Percentage to increase defense everytime player is knocked down
 liedown.time = 60		;Time which player lies down for, before getting up
@@ -183,7 +183,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 20, 0			;Damage that move inflicts, guard damage
+damage = 40, 5			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -197,7 +197,7 @@ hitsound = 5, 0			;Sound to play on hit
 guardsound = 6, 0			;Sound to play on guard
 ground.type = High		;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5		;Time that the opponent slides back
-ground.hittime  = 10		;Time opponent is in hit state
+ground.hittime  = 12		;Time opponent is in hit state
 ground.velocity = -4		;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High			;Type: High, Low, Trip (def: same as ground.type)
@@ -228,7 +228,7 @@ anim = 210
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 15, 0			;Damage that move inflicts, guard damage
+damage = 50, 5			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -257,7 +257,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Standing Strong Punch
+; Rush1
 ; CNS difficulty: easy
 [Statedef 220]
 type    = A
@@ -301,7 +301,7 @@ trigger1 = animelem = 4
 attr = A, NA			;Attribute: Standing, Normal Attack
 damage = 20, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = MA			;Flags on how move is to be guarded against
+guardflag =			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
 priority = 2, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
@@ -327,7 +327,7 @@ trigger1 = animelem = 6
 attr = A, NA			;Attribute: Standing, Normal Attack
 damage = 30, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = MA			;Flags on how move is to be guarded against
+guardflag = 			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
 priority = 2, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
@@ -472,7 +472,7 @@ anim = 230
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 20, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -517,13 +517,13 @@ anim = 240
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 10, 0			;Damage that move inflicts, guard damage
+damage = 45, 5			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 2, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 2, 35			;Time attacker pauses, time opponent shakes
+pausetime = 2, 25			;Time attacker pauses, time opponent shakes
 sparkno = 4				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
@@ -531,7 +531,7 @@ hitsound = 5, 0			;Sound to play on hit
 guardsound = 6, 0			;Sound to play on guard
 ground.type = High		;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 0		;Time that the opponent slides back
-ground.hittime  = 10		;Time opponent is in hit state
+ground.hittime  = 30		;Time opponent is in hit state
 ground.velocity = -2		;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High			;Type: High, Low, Trip (def: same as ground.type)
@@ -547,7 +547,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Standing Strong Kick
+; Rush2
 ; CNS difficulty: easy
 [Statedef 250]
 type    = S
@@ -563,7 +563,7 @@ anim = 250
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -589,7 +589,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -615,7 +615,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -641,7 +641,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 4
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -667,7 +667,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 5
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -693,7 +693,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 6
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -759,7 +759,7 @@ hitsound = 5, 0			;Sound to play on hit
 guardsound = 6, 0			;Sound to play on guard
 ground.type = High		;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 20		;Time that the opponent slides back
-ground.hittime  = 10		;Time opponent is in hit state
+ground.hittime  = 30		;Time opponent is in hit state
 ground.velocity = -5,-3		;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High			;Type: High, Low, Trip (def: same as ground.type)
@@ -802,7 +802,7 @@ anim = 400
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 8, 0			;Damage that move inflicts, guard damage
+damage = 10, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -845,7 +845,7 @@ anim = 410
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 20, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -875,7 +875,7 @@ value = 11
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Crouching Strong Punch
+; Med Hit 2
 [Statedef 420]
 type    = C
 movetype= A
@@ -916,7 +916,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 15, 0			;Damage that move inflicts, guard damage
+damage = 50, 30			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -960,8 +960,8 @@ value = 11
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Big Punch Finisher
-; CNS difficulty: easy
+; Med Hit 3
+; CNS difficulty: easiny
 [Statedef 425]
 type    = C
 movetype= A
@@ -1069,7 +1069,7 @@ projshadow = -1
 offset = 44,-29
 velocity = 3
 attr = S, SP
-damage   = 20
+damage   = 30
 animtype = heavy
 guardflag = MA
 hitflag = MAFDP
@@ -1119,7 +1119,7 @@ projshadow = -1
 offset = 44,-29
 velocity = 1.5
 attr = S, SP
-damage   = 45
+damage   = 55
 animtype = heavy
 guardflag = MA
 hitflag = MAFDP
@@ -1165,7 +1165,7 @@ anim = 450
 type = hitdef
 trigger1 = animelem = 2
 attr = S, NA
-damage = 20,0
+damage = 50,0
 animtype = heavy
 guardflag = MA
 hitflag = MAFD
@@ -1190,7 +1190,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = hitdef
 trigger1 = animelem = 3
 attr = S, NA
-damage = 45,0
+damage = 75,0
 animtype = heavy
 guardflag = MA
 hitflag = MAFD
@@ -1236,7 +1236,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 type = HitDef
 trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 10, 0			;Damage that move inflicts, guard damage
+damage = 25, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -1262,7 +1262,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 15, 0			;Damage that move inflicts, guard damage
+damage = 30, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -1288,7 +1288,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 4
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 15, 0			;Damage that move inflicts, guard damage
+damage = 25, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -1314,7 +1314,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 5
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 20, 0			;Damage that move inflicts, guard damage
+damage = 25, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -1343,7 +1343,7 @@ value = 0
 ctrl = 1
 
 ;---------------------------------------------------------------------------
-; Big Spike
+; Healing Spike
 ; CNS difficulty: easy
 [Statedef 470]
 type    = S				;State-type: S-stand, C-crouch, A-air, L-liedown
@@ -1354,14 +1354,14 @@ juggle  = 1				;Number of air juggle points move takes
 velset = 0,0			;Set velocity (x,y) (Def: no change)
 ctrl = 0				;Set ctrl (Def: no change)
 anim = 470				;Change animation (Def: no change)
-poweradd = 20			;Power to add (Def: 0)
+poweradd = 0			;Power to add (Def: 0)
 sprpriority = 2			;Set layering priority to 2 (in front)
 
 [State 470, 1]
 type = HitDef
 trigger1 = AnimElem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 10, 0			;Damage that move inflicts, guard damage
+damage = 20, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -1387,7 +1387,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = LifeAdd
 triggerall = movehit
 trigger1 = animelem = 3
-value = 10
+value = 20
 kill = 1
 absolute = 1
 ;ignorehitpause =
@@ -1397,7 +1397,7 @@ absolute = 1
 type = LifeAdd
 triggerall = movehit
 trigger1 = animelem = 4
-value = 10
+value = 20
 kill = 1
 absolute = 1
 
@@ -1405,7 +1405,7 @@ absolute = 1
 type = LifeAdd
 triggerall = movehit
 trigger1 = animelem = 5
-value = 20
+value = 40
 kill = 1
 absolute = 1
 
@@ -1875,7 +1875,7 @@ down.bounce = 0
 type = HitDef
 trigger1 = AnimElem = 13
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 20, 0			;Damage that move inflicts, guard damage
+damage = 50, 0			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
@@ -1901,9 +1901,9 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = AnimElem = 13
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 60, 0			;Damage that move inflicts, guard damage
+damage = 300, 0			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = MA			;Flags on how move is to be guarded against
+guardflag = 			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 2, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
@@ -1991,7 +1991,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 15, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2006,7 +2006,7 @@ guardsound = 6, 0			;Sound to play on guard
 ground.type = High		;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5		;Time that the opponent slides back
 ground.hittime  = 10		;Time opponent is in hit state
-ground.velocity = 1,-2		;Velocity at which opponent is pushed
+ground.velocity = 0.5,-2		;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High			;Type: High, Low, Trip (def: same as ground.type)
 air.velocity = -1,-2		;X-velocity at which opponent is pushed,
@@ -2017,7 +2017,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 5, 0			;Damage that move inflicts, guard damage
+damage = 25, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2032,7 +2032,7 @@ guardsound = 6, 0			;Sound to play on guard
 ground.type = High		;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5		;Time that the opponent slides back
 ground.hittime  = 10		;Time opponent is in hit state
-ground.velocity = 1,-4		;Velocity at which opponent is pushed
+ground.velocity = 0.5,-4		;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High			;Type: High, Low, Trip (def: same as ground.type)
 air.velocity = -2,-5		;X-velocity at which opponent is pushed,
@@ -2043,7 +2043,7 @@ air.hittime = 12			;Time before opponent regains control in air
 type = HitDef
 trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 10, 0			;Damage that move inflicts, guard damage
+damage = 20, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2058,7 +2058,7 @@ guardsound = 6, 0			;Sound to play on guard
 ground.type = High		;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5		;Time that the opponent slides back
 ground.hittime  = 10		;Time opponent is in hit state
-ground.velocity = -3,-4		;Velocity at which opponent is pushed
+ground.velocity = 3,-4		;Velocity at which opponent is pushed
 airguard.velocity = -1.9,-.8	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
 air.type = High			;Type: High, Low, Trip (def: same as ground.type)
 air.velocity = -5,-5		;X-velocity at which opponent is pushed,
@@ -2087,7 +2087,7 @@ anim = 600
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 15, 0			;Damage that move inflicts, guard damage
+damage = 50, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2136,7 +2136,7 @@ anim = 610
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 25, 0			;Damage that move inflicts, guard damage
+damage = 40, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2177,7 +2177,7 @@ type    = A
 movetype= A
 physics = A
 juggle  = 4
-poweradd= -400
+poweradd= -250
 ctrl = 1
 anim = 620
 
@@ -2185,7 +2185,7 @@ anim = 620
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 25, 0			;Damage that move inflicts, guard damage
+damage = 0, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2228,7 +2228,7 @@ anim = 630
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 15, 0			;Damage that move inflicts, guard damage
+damage = 30, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2277,7 +2277,7 @@ anim = 640
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 35, 0			;Damage that move inflicts, guard damage
+damage = 40, 0			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2326,7 +2326,7 @@ anim = 650
 type = HitDef
 trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 40, 0			;Damage that move inflicts, guard damage
+damage = 50, 20			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2378,7 +2378,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 10, 0			;Damage that move inflicts, guard damage
+damage = 30, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
@@ -2425,7 +2425,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 20, 0			;Damage that move inflicts, guard damage
+damage = 40, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
