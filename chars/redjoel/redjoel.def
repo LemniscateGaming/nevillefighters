@@ -14,6 +14,8 @@ cns=redjoel.cns
 st=redjoel.cns
 stcommon=common1.cns
 pal1=redjoel.act
+pal2=redjoel2.act
+pal3=redjoel3.act
 [Arcade]
 intro.storyboard=
 ending.storyboard=

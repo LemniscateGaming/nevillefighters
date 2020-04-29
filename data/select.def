@@ -76,7 +76,7 @@ bluejoel, random
 redjoel, random
 randomselect
 NevillePrime, random
-NoloudStriffle, random
+NoloudStriffle, stages/nolanboulevard.def
 NevilloudZX, random
 truejoel, random
 nloud, random
@@ -95,6 +95,7 @@ stages/stage0-720.def
 stages/nevilleroom.def
 stages/nevillebox.def
 stages/mrhodesert.def
+stages/nolanboulevard.def
 
 ;---------------------------------------------------------------------
 [Options]

@@ -1,7 +1,7 @@
 [Info]
-name="l"
+name="nloud"
 displayname="N'loud"
-versiondate=11/2/2019
+versiondate=11/2/2020
 mugenversion=
 author="iNfin"
 pal.defaults=1,2,3,4,5
@@ -14,6 +14,8 @@ cns=nloud.cns
 st=nloud.cns
 stcommon=common1.cns
 pal1=nloud.act
+pal2=nloud2.act
+pal3=nloud3.act
 [Arcade]
 intro.storyboard=
 ending.storyboard=

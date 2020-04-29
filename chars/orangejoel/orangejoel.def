@@ -2,7 +2,7 @@
 name="orangejoel"
 displayname="Orange Jacket Joel"
 versiondate=7/7/2019
-mugenversion=1.1
+mugenversion=06,14,2003
 author="iNfin"
 pal.defaults=1,2,3,4,5,6
 [Files]
@@ -13,13 +13,13 @@ cmd=orangejoel.cmd
 cns=orangejoel.cns
 st=orangejoel.cns
 stcommon=common1.cns
-
 pal1=orangejoel.act
 pal2=orangejoel2.act
 pal3=orangejoel3.act
 pal4=orangejoel4.act
 pal5=orangejoel5.act
 pal6=orangejoel6.act
+
 
 ; Maps character selection buttons to palette numbers.
 [Palette Keymap]
