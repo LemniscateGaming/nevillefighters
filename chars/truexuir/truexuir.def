@@ -1,0 +1,28 @@
+[Info]
+name="truexuir"
+displayname="True Xuir"
+versiondate=9/8/19
+mugenversion=1.1
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=truexuir.sff
+;sound=truexuir.snd
+anim=truexuir.air
+cmd=truexuir.cmd
+cns=truexuir.cns
+st=truexuir.cns
+stcommon=common1.cns
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
+
+[Arcade]
+intro.storyboard=
+ending.storyboard=

@@ -2,18 +2,27 @@
 name="NevillePrime"
 displayname="Neville Prime"
 versiondate=8/6/2019
-mugenversion=
+mugenversion=1.1
 author="iNfin"
 pal.defaults=1,2,3,4,5
 [Files]
 sprite=NevillePrime.sff
-sound=NevillePrime.snd
+;sound=NevillePrime.snd
 anim=NevillePrime.air
 cmd=NevillePrime.cmd
 cns=NevillePrime.cns
 st=NevillePrime.cns
 stcommon=common1.cns
-pal1=NevillePrime.act
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
+
 [Arcade]
 intro.storyboard=
 ending.storyboard=

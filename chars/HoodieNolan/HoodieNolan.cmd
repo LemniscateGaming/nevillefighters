@@ -168,7 +168,7 @@ time = 40
 
 [Command]
 name = "MNGA Hat"
-command = ~B, ~F, b
+command = B, DB, D, b
 time = 20
 
 [Command]
@@ -596,13 +596,13 @@ trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
 ;MNGA Hat
-[State -1, Merch Ad]
+[State -1, MNGA Hat]
 type = ChangeState
 value = 880
 triggerall = command = "MNGA Hat"
-triggerall = power >= 250
-triggerall = var(9) + 300 < GameTime
-trigger1 = statetype = S
+triggerall = power >= 500
+triggerall = var(9) + 200 < GameTime
+trigger1 = statetype != A
 trigger1 = ctrl
 
 ;=========Genkai============================================================

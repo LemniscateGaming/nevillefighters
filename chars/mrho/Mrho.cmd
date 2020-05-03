@@ -640,7 +640,7 @@ type = ChangeState
 value = 260
 triggerall = command = "c"
 triggerall = command != "holddown"
-triggerall = power >= 150
+triggerall = power >= 500
 trigger1 = statetype = S
 trigger1 = ctrl
 
@@ -752,7 +752,7 @@ trigger1 = ctrl
 type = ChangeState
 value = 270
 triggerall = command = "c"
-triggerall = power >= 100
+triggerall = power >= 500
 trigger1 = statetype = A
 trigger1 = ctrl
 

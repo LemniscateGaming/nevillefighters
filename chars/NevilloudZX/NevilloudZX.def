@@ -7,13 +7,21 @@ author="iNfin"
 pal.defaults=1,2,3,4,5
 [Files]
 sprite=NevilloudZX.sff
-sound=NevilloudZX.snd
+;sound=NevilloudZX.snd
 anim=NevilloudZX.air
 cmd=NevilloudZX.cmd
 cns=NevilloudZX.cns
 st=NevilloudZX.cns
 stcommon=common1.cns
-pal1=NevilloudZX_2.act
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
 
 [Arcade]
 intro.storyboard=

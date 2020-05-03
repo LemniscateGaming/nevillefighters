@@ -1,0 +1,35 @@
+
+; Player information
+[Info]
+name         = "orangexuir"   ; Name of character
+displayname  = "Orange Jacket Xuir"  ; Name of character to display
+versiondate  = 4/28/20        ; Version date of character (MM,DD,YYYY or X.XX)
+mugenversion = 1.1        ; Version of M.U.G.E.N. character works on (X.XX)
+author       = "Jackachu"   ; Character author name
+pal.defaults = 1,2,3,4,5,6   ; Default palettes in order of preference (up to 4, starts from 1)
+
+; Files for the player
+[Files]
+cmd      = orangexuir.cmd          ; Command set
+cns      = orangexuir.cns          ; Constants
+st       = orangexuir.cns          ; States
+st1      = customstates.cns        ; Changing physics of a bunch of common states
+stcommon = common1.cns       ; Common states (from data or motif)
+sprite   = orangexuir.sff          ; Sprite
+anim     = orangexuir.air          ; Animation
+;sound    = orangexuir.snd          ; Sound
+ai       = orangexuir.ai           ; AI hints data (not used)
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
+
+; Arcade mode
+[Arcade]
+;intro.storyboard = intro.def
+;ending.storyboard = ending.def

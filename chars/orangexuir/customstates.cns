@@ -1,0 +1,367 @@
+;This is used for Orange Joel's palette effects
+
+
+;---------------------------------------------------------------------------
+; Run forward (Teleport behind in close range)
+[Statedef 100]
+type    = S
+physics = S
+anim = 100
+sprpriority = 1
+
+[State 100, 4]
+type = ChangeState
+trigger1 = time = 0
+trigger1 = abs(enemynear,pos x - pos x) <= 160
+trigger1 = abs(enemynear,pos x - pos x) >= 60
+value = 101
+
+[State 100, 1]
+type = VelSet
+trigger1 = 1
+x = const(velocity.run.fwd.x)
+
+[State 100, 2] ;Prevent run from canceling into walk
+type = AssertSpecial
+trigger1 = 1
+flag = NoWalk
+
+[State 100, 3] ;Prevent from turning
+type = AssertSpecial
+trigger1 = 1
+flag = NoAutoTurn
+
+[State 100, 4]
+type = ChangeState
+trigger1 = command != "holdfwd"
+value = 0
+
+;Teleport Behind
+[Statedef 101]
+type = S
+movetype = A
+physics = S
+anim = 101
+ctrl = 0
+
+[State 101, PosSet]
+type = PosSet
+trigger1 = animelem = 3
+x = enemynear, Pos X + 35*facing
+y = enemynear, Pos Y
+
+[State 101, StateTypeSet]
+type = StateTypeSet
+triggerall = Pos Y < 0
+trigger1 = animelem = 1
+trigger2 = animelem = 3
+statetype = A       ;S,A,C,L
+physics = A         ;A,C,S,N
+
+[State 101, VelSet]
+type = VelSet
+trigger1 = animelem = 3
+trigger1 = statetype = A
+y = enemynear, vel y
+
+[State 101, StateTypeSet]
+type = StateTypeSet
+trigger1 = Pos Y + Vel Y >= 0
+trigger1 = Pos Y < 0
+trigger2 = statetype = A
+trigger2 = animelem = 3
+trigger2 = enemynear,Pos Y = 0
+statetype = S       ;S,A,C,L
+physics = S         ;A,C,S,N
+
+[State 101, PosSet]
+type = PosSet
+trigger1 = Pos Y + Vel Y >= 0
+y = 0
+
+[State 0, VelSet]
+type = VelSet
+trigger1 = Pos Y = 0
+trigger1 = Vel Y > 0
+y = 0
+
+[State 101, Turn]
+type = Turn
+trigger1 = animelem = 3
+
+[State 101, HitDef]
+type = HitDef
+trigger1 = animelem = 5
+attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+hitflag = MAF        ;HLAFD+-
+guardflag = MA         ;HLA
+animtype = Light          ;Light, Medium, Hard, Back, Up, DiagUp
+air.animtype = Light
+damage = 5,0
+pausetime = 0,21
+guard.pausetime = 35,0
+hitsound = 5,1
+guardsound = 6,0
+ground.type = High      ;Low, Trip, None
+ground.velocity = -1,0
+
+[State 101, 4]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = ifelse(statetype = A, 50, 0)
+ctrl = 1
+
+
+;---------------------------------------------------------------------------
+; Hop backwards
+[Statedef 105]
+type    = A
+physics = A
+ctrl = 0
+anim = 105
+sprpriority = 1
+
+[State 105, 1]
+type = VelSet
+trigger1 = Time = 0
+x = const(velocity.run.back.x)
+y = const(velocity.run.back.y)
+
+[State 105, PosSet]
+type = PosSet
+trigger1 = animelem = 3, < 0
+trigger1 = BackEdgeBodyDist < 15
+x = FrontEdge + 100*facing
+
+[State 105, ChangeState]
+type = ChangeState
+trigger1 = animelem = 3, < 0
+trigger1 = FrontEdgeBodyDist < 5
+value = 106
+ctrl = 0
+
+[State 105, 2]
+type = CtrlSet
+trigger1 = animelem = 5
+value = 1
+
+[State 105, 3]
+type = ChangeState
+trigger1 = Vel Y > 0
+trigger1 = Pos Y >= 0
+value = 106
+
+;-----------------------------------------
+;Sidewarp Punch
+[Statedef 106]
+type = A
+movetype = A
+physics = A
+anim = 106
+ctrl = 0
+
+[State 105, Turn]
+type = Turn
+trigger1 = time = 0
+
+[State 106, HitDef]
+type = HitDef
+trigger1 = animelem = 4
+attr = A,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+hitflag = MAF        ;HLAFD+-
+guardflag = MA         ;HLA
+animtype = Light          ;Light, Medium, Hard, Back, Up, DiagUp
+air.animtype = Light
+damage = 12,0
+pausetime = 0,10
+guard.pausetime = 25,5
+hitsound = 5,1
+guardsound = 6,0
+ground.type = High      ;Low, Trip, None
+ground.velocity = -1,0
+
+[State 106, 3]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 50
+
+;---------------------------------------------------------------------------
+; Standing Counter
+; CNS difficulty: easy
+[Statedef 150]
+type    = S
+movetype= A
+physics = S
+juggle  = 4
+poweradd= 65
+ctrl = 0
+velset = 0,0
+anim = 150
+
+[State 130, 1]
+type = HitDef
+trigger1 = animelem = 2
+attr = S, NA			;Attribute: Standing, Normal Attack
+damage = 10, 0			;Damage that move inflicts, guard damage
+animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAF			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 0, 35			;Time attacker pauses, time opponent shakes
+sparkno = 4				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = 5, 1			;Sound to play on hit
+guardsound = 6, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 7		;Time that the opponent slides back
+ground.hittime  = 4		;Time opponent is in hit state
+ground.velocity = -3,-1	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,0	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -1.4,-.3		;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+
+palfx.time = 35
+palfx.mul = ifelse(palno=6,100,300),ifelse(palno=6,275,200),ifelse(palno=6,100,100)
+palfx.add = ifelse(palno=6,0,60),ifelse(palno=6,60,30),0
+
+[State 130, AfterImage]
+type = AfterImage
+trigger1 = AnimElem = 1
+time = 20
+
+[State 130, AfterImage]
+type = AfterImage
+trigger1 = AnimElem = 2
+time = 20
+
+[State 130, AfterImage]
+type = AfterImage
+trigger1 = AnimElem = 3
+time = 20
+
+[State 130, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 130
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; Crouch Counter
+; CNS difficulty: easy
+[Statedef 151]
+type    = C
+movetype= A
+physics = C
+juggle  = 4
+poweradd= 65
+ctrl = 0
+velset = 0,0
+anim = 151
+
+[State 130, 1]
+type = HitDef
+trigger1 = animelem = 1
+attr = C, NA			;Attribute: Standing, Normal Attack
+damage = 8, 0			;Damage that move inflicts, guard damage
+animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAF			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 0, 42			;Time attacker pauses, time opponent shakes
+sparkno = 4				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = 5, 1			;Sound to play on hit
+guardsound = 6, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 7		;Time that the opponent slides back
+ground.hittime  = 4		;Time opponent is in hit state
+ground.velocity = -3,-1	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,0	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -1.4,-.3		;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+
+palfx.time = 42
+palfx.mul = ifelse(palno=6,60,300),ifelse(palno=6,300,200),ifelse(palno=6,60,0)
+palfx.add = ifelse(palno=6,0,60),ifelse(palno=6,60,30),0
+
+[State 130, AfterImage]
+type = AfterImage
+trigger1 = AnimElem = 1
+time = 20
+
+[State 130, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 131
+ctrl = 0
+
+;---------------------------------------------------------------------------
+; Air Counter
+; CNS difficulty: easy
+[Statedef 152]
+type    = A
+movetype= A
+physics = A
+juggle  = 4
+poweradd= 65
+ctrl = 0
+velset = 0,0
+anim = 152
+
+[State 130, 1]
+type = HitDef
+trigger1 = animelem = 1
+attr = A, NA			;Attribute: Standing, Normal Attack
+damage = 11, 0			;Damage that move inflicts, guard damage
+animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAF			;Flags of conditions that move can hit
+priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
+					;Hit/Miss/Dodge type (Def: Hit)
+pausetime = 0, 25			;Time attacker pauses, time opponent shakes
+sparkno = 4				;Spark anim no (Def: set above)
+sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
+					;Y-offset for the spark rel. to p1
+hitsound = 5, 1			;Sound to play on hit
+guardsound = 6, 0			;Sound to play on guard
+ground.type = High		;Type: High, Low, Trip (def: Normal)
+ground.slidetime = 7		;Time that the opponent slides back
+ground.hittime  = 4		;Time opponent is in hit state
+ground.velocity = -3,-1	;Velocity at which opponent is pushed
+airguard.velocity = -1.9,0	;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+air.type = High			;Type: High, Low, Trip (def: same as ground.type)
+air.velocity = -1.4,-.3		;X-velocity at which opponent is pushed,
+					;Y-velocity at which opponent is pushed
+air.hittime = 12			;Time before opponent regains control in air
+
+palfx.time = 25
+palfx.mul = ifelse(palno=6,60,300),ifelse(palno=6,300,200),ifelse(palno=6,60,0)
+palfx.add = ifelse(palno=6,0,60),ifelse(palno=6,60,30),0
+
+[State 130, AfterImage]
+type = AfterImage
+trigger1 = AnimElem = 1
+time = 20
+
+[State 130, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 132
+ctrl = 0
+
+[Statedef -2]
+
+[State -2, Trans] ;Gives the green Orange Joel (6th palette) an additive transparency to make it look cool
+type = Trans
+trigger1 = palno = 6
+trigger1 = stateno = [5000,5310]
+trans = Add1     ;None, Add, AddAlpha, Add1, Sub
+ignorehitpause = 1

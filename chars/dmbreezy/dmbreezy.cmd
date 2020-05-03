@@ -568,24 +568,6 @@ trigger1 = var(20) > 5
 trigger1 = statetype = A
 trigger1 = ctrl
 
-;---------------------------------------------------------------------------
-; Throw
-[State -1, Throw]
-type = ChangeState
-value = 800
-triggerall = command = "y" || command = "z"
-triggerall = statetype = S
-triggerall = ctrl
-triggerall = stateno != 100
-trigger1 = command = "holdfwd"
-trigger1 = p2bodydist X < 10
-trigger1 = (p2statetype = S) || (p2statetype = C)
-trigger1 = p2movetype != H
-trigger2 = command = "holdback"
-trigger2 = p2bodydist X < 10
-trigger2 = (p2statetype = S) || (p2statetype = C)
-trigger2 = p2movetype != H
-
 ;===========================================================================
 ;---------------------------------------------------------------------------
 ; Snipe

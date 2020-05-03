@@ -13,9 +13,7 @@ cmd=nevillezx.cmd
 cns=nevillezx.cns
 st=nevillezx.cns
 stcommon=common1.cns
-pal1=nevillezx.act
-pal2=nevillezx2.act
-pal3=nevillezx3.act
+
 [Arcade]
 intro.storyboard=
 ending.storyboard=

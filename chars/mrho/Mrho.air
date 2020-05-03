@@ -41,7 +41,7 @@ Clsn2Default: 1
 0,0, 0,0, 6
 
 ; Walking Forward
-[Begin Action Walking Back]
+[Begin Action 21]
 Clsn2Default: 1
   Clsn2[0] = -11, -62, 14, 0
 20,0, 0,0, 6
@@ -49,8 +49,8 @@ Clsn2Default: 1
 20,1, 0,0, 6
 0,0, 0,0, 6
 
-; Walking Forward
-[Begin Action 20]
+; Walking Backward
+[Begin Action 21]
 Clsn2Default: 1
   Clsn2[0] = -11, -62, 14, 0
 20,0, 0,0, 9
@@ -206,64 +206,80 @@ LoopStart
 [Begin Action 195]
 Clsn2Default: 1
   Clsn2[0] = -9, -61, 12, 0
-180,0, 0,0, 12
-180,1, 0,0, 12
+180,0, 0,0, 10
+180,1, 0,0, 10
+Clsn1: 2
+  Clsn1[0] = -35, -76, -15, -55
+  Clsn1[1] = 21, -60, 38, -42
 LoopStart
-180,2, 0,0, 12
-180,3, 0,0, 12
+180,2, 0,0, 10
+Clsn1: 2
+  Clsn1[0] = -35, -74, -15, -53
+  Clsn1[1] = 21, -61, 38, -43
+180,3, 0,0, 10
+Clsn1: 2
+  Clsn1[0] = -35, -76, -15, -55
+  Clsn1[1] = 21, -60, 38, -42
+180,2, 0,0, 10
+Clsn1: 2
+  Clsn1[0] = -35, -74, -15, -53
+  Clsn1[1] = 21, -61, 38, -43
+180,3, 0,0, 10
+180,1, 0,0, 6
+180,0, 0,0, 6
 
 ;-----------------------------------
 ; Stand Light Punch
 [Begin Action 200]
 Clsn2Default: 1
   Clsn2[0] = -9, -61, 12, 0
-0,1, 0,0, 6
+0,1, 0,0, 4
 Clsn1: 1
   Clsn1[0] = 5, -39, 26, -28
-200,0, 0,0, 12
+200,0, 0,0, 8
 
 ;-----------------------------------
 ; Stand Strong Punch
 [Begin Action 210]
 Clsn2Default: 1
   Clsn2[0] = -9, -61, 12, 0
-0,1, 0,0, 10
+0,1, 0,0, 12
 Clsn1: 1
   Clsn1[0] = 7, -42, 29, -32
-200,1, 0,0, 25
+200,1, 0,0, 24
 
 ; Uppercut
 [Begin Action 220]
 Clsn2Default: 1
   Clsn2[0] = -9, -61, 12, 0
-201,0, 0,0, 14
+201,0, 0,0, 9
 Clsn1: 1
   Clsn1[0] = 12, -63, 26, -40
 Clsn2: 1
   Clsn2[0] = -12, -64, 14, 0
-201,1, 0,0, 14
+201,1, 0,0, 16
 201,1, 0,0, 3
 
 ; Standing Light Kick
 [Begin Action 230]
 Clsn2Default: 1
   Clsn2[0] = -10, -62, 13, 1
-208,0, 0,0, 7
+208,0, 0,0, 5
 Clsn1: 1
   Clsn1[0] = 13, -30, 34, -3
-208,1, 0,0, 13
-208,0, 0,0, 7
+208,1, 0,0, 12
+208,0, 0,0, 5
 
 ; Standing Strong Kick Kick=------
 ; Standing Strong Kick 
 [Begin Action 240]
 Clsn2Default: 1
   Clsn2[0] = -10, -62, 13, 1
-208,0, 0,0, 14
+208,0, 0,0, 12
 Clsn1: 1
   Clsn1[0] = 13, -26, 33, -3
 208,1, 0,0, 20
-208,0, 0,0, 15
+208,0, 0,0, 12
 
 ; Emerald Fist
 [Begin Action 250]
@@ -283,13 +299,13 @@ Clsn1: 1
 [Begin Action 260]
 Clsn2: 1
   Clsn2[0] = -8, -61, 11, 0
-0,1, 0,0, 4
+0,1, 0,0, 7
 Clsn1: 1
   Clsn1[0] = 6, -53, 22, -7
 200,0, 0,0, 28
-Clsn2: 1
+Clsn2Default: 1
   Clsn2[0] = -8, -61, 11, 0
-0,1, 0,0, 4
+0,1, 0,0, 3
 
 
 ; Teleport (Control)
@@ -379,7 +395,7 @@ Clsn2: 1
 Clsn2Default: 1
   Clsn2[0] = -10, -62, 13, 1
 204,0, 0,0, 5
-204,0, 0,0, 18
+204,0, 0,0, 10
 
 ; Forward Shot Longer
 [Begin Action 616]
@@ -456,14 +472,14 @@ Clsn1Default: 1
 Clsn2Default: 1
   Clsn2[0] = -8, -63, 11, 0
 206,0, 0,0, 4
-206,0, 0,0, 16
+206,0, 0,0, 10
 
 ; Jump strong punch (Up Shot)
 [Begin Action 620]
 Clsn2Default: 1
   Clsn2[0] = -8, -62, 11, 0
 205,0, 0,0, 5
-205,0, 0,0, 20
+205,0, 0,0, 10
 
 ; Jump kick
 [Begin Action 630]

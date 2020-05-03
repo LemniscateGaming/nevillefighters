@@ -3483,7 +3483,7 @@ movetype= A				;Move-type: A-attack, I-idle, H-gethit
 physics = S				;Physics: S-stand, C-crouch, A-air
 juggle  = 1				;Number of air juggle points move takes
 anim = 800				;Change animation (Def: no change)
-poweradd = -250	;Power to add (Def: 0)
+poweradd = -500	;Power to add (Def: 0)
 ctrl = 0
 
 [State 880, VarSet]
@@ -3501,7 +3501,7 @@ trigger1 = animelem = 7
 
 attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
-guardflag = MA         ;HLA
+guardflag = HA         ;HLA
 animtype = Medium
 damage = 25,10
 pausetime = 15,12

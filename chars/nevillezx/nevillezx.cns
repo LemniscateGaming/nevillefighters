@@ -1472,7 +1472,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 type = SuperPause
 trigger1 = animelem = 2
 time = 10
-anim = 97985796858956985985
+anim = 97985796858956985985 ;justin wtf
 sound = S10,0
 pos = 0,0
 move = 0
@@ -1524,7 +1524,7 @@ pausemovetime = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = 20, 0			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = 			;Flags on how move is to be guarded against
+guardflag = H			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)

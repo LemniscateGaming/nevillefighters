@@ -2,7 +2,7 @@
 M.U.G.E.N ver 1.1.0 Beta 1 P1 (2013.08.11) status log
 ---------------------------------------------------
 Parsing command line...
-Command line: C:\Users\jackc\Desktop\NF Repositories\nevillefighters\mugen.exe ffs_0 ffs_0
+Command line: C:\Users\jackc\Desktop\NF Repositories\nevillefighters\mugen.exe
 Parse command line OK
 Initializing...
 Allocating game variables
@@ -17,7 +17,7 @@ Initializing graphics...gameCoord 1280x720...render mode 2_20...trying 1280x720x
 Setting callbacks...OK
 Initializing font...OK
 Initializing game variables...OK
-Session RNG seed is 1588037710
+Session RNG seed is 1588475674
 Loading system fonts...OK
 Loading options...
 Initializing pads...failed
@@ -60,74 +60,158 @@ Lua init complete
 System loaded OK
 Initialize OK
 Set up graphics...timer...OK
-Playing quick VS.
 
 Entering gameflow loop
 Gameflow 0
 Gameflow 1
 Gameflow 2
 Initializing character info...OK
+Initializing select screen...finding characters...OK
 Gameflow 3
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
 Gameflow 6
 Reset persist vars team 0
 Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 1 on teamslot 0.0
+Char orangexuir.def (1) request pal 5 3F (3F) -> reserved 5 (1F)
+End of charsel loop
+Game loop deinit
 Gameflow 8
+Char NevilleZX.def (13) request pal 10 0 (0) -> reserved 0 (0)
 Gameflow 9
 Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
 Gameflow 11
 Loading match assets...
 Loading stage...
   Loading BG...OK
 Stage loaded OK
   Allocating helpers...OK
-Match RNG seed: 1223027055
-Reset persist vars team 0
+Match RNG seed: 1685568982
 Reset persist vars team 1
-Loading character chars/ffs_0/ffs_0.def...
+Loading character chars/orangexuir/orangexuir.def...
   Loading info...OK
-  Loading cmd command set bluejoel.cmd...OK
-  Loading cns bluejoel.cns...OK
-  Loading cmd state entry bluejoel.cmd...OK
+  Loading cmd command set orangexuir.cmd...OK
+  Loading cns orangexuir.cns...OK
+  Loading cns customstates.cns...OK
+  Loading cmd state entry orangexuir.cmd...OK
   Loading common states common1.cns...OK
-  Loading sff bluejoel.sff...OK
-  Loading anim bluejoel.air...OK
-  Loading snd bluejoel.snd...OK
-  Loading pals...(1,1)(1,2)(1,3)(1,4)OK
-  1656 expressions (611 on trigger lines)
-Character ffs_0.def loaded OK
-New char bluejoel loaded into cache: (1/4 cached) Load time: 20.000ms
-Player bluejoel cache count increased: 2
+  Loading sff orangexuir.sff...OK
+  Loading anim orangexuir.air...OK
+  Loading pals...OK
+  Loading learned AI orangexuir.ai...OK
+  2675 expressions (778 on trigger lines)
+Character orangexuir.def loaded OK
+New char orangexuir loaded into cache: (1/4 cached) Load time: 20.000ms
+Loading character chars/NevilleZX/NevilleZX.def...
+  Loading info...Info: Neville ZX loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set nevillezx.cmd...OK
+  Loading cns nevillezx.cns...OK
+  Loading cmd state entry nevillezx.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff nevillezx.sff...OK
+  Loading anim nevillezx.air...OK
+  Loading snd nevillezx.snd...SND file loaded with errors: nevillezx.snd
+OK
+  Loading pals...OK
+  2599 expressions (748 on trigger lines)
+Character NevilleZX.def loaded OK
+New char nevillezx loaded into cache: (2/4 cached) Load time: 10.000ms
 Resetting round
 Match assets initialized OK
 Game loop init
 Match loop init
-CloseWindow event forced common loop quit.
+Resetting round
 End of match loop
-Total time: 2.25s
-Total frames: 133 	Skipped frames: 0
-Avg game rate: 59.11
-Avg frame rate: 59.11
+Total time: 84.01s
+Total frames: 5042 	Skipped frames: 0
+Avg game rate: 60.02
+Avg frame rate: 60.02
 
 Finishing match
 Freeing players
-Save persist vars P56 bluejoel
-Player bluejoel cache count reduced: 1
-Save persist vars P57 bluejoel
-Player bluejoel cache count reduced: 0
+Save persist vars P56 orangexuir
+Player orangexuir cache count reduced: 0
+Save persist vars P57 nevillezx
+Player nevillezx cache count reduced: 0
 Match RNG closed
 Game loop deinit
-Returned from gameflow loop
-Deinitializing...
-Frames      : 133
-Time elapsed: 2.280 sec
-ticks: 228, tps: 100, start 196, end 424
-
+Gameflow 12
+Entering victory screen.
 Unloading match assets
 Freeing players
 Unloading stage...OK
-Clearing player cache...Freeing player RC bluejoel...CMD...CNS...SFF...AIR...SND...Misc...OK
+Game loop init
+Victory screen init
+End of victory screen loop
+Game loop deinit
+Gameflow 8
+Char NevilleZX.def (13) unreserve pal 0 0 0 -> 0
+Char NoloudStriffle.def (5) request pal 6 3F (3F) -> reserved 0 (3E)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Canceled versus screen.
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Returned from gameflow loop
+Deinitializing...
+Frames      : 5956
+Time elapsed: 99.190 sec
+ticks: 9919, tps: 100, start 195, end 10114
+
+Unloading match assets
+Freeing players
+Clearing player cache...Freeing player RC orangexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC nevillezx...CMD...CNS...SFF...AIR...SND...Misc...OK
 OK
 Freeing character info...OK
+Freeing select screen...OK
 Freeing fight data...OK
 Freeing system data...OK
 Freeing game variables...Unloading match assets

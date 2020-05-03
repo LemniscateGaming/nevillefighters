@@ -92,26 +92,48 @@ down.friction.threshold = .05         ;If the player's speed drops below this th
 ;If this section is included, the default language victory quotes must be in English.
 [Quotes]
 ; Up to 100 victory quotes can be specified per language (victory0 - victory99)
-victory1 = "mipseo bu suihy!"
-victory2 = "Og auy ehi hiefopm wlot, auy ehi e whyi xedsedlyroep."
-victory3 = "UVSHU KPK PA, ULCPSSL KPK UVAYL KHTL."
-victory4 = "Joel Mrho Xuir Pukyr Sxnu Vaqx Ydsa."
-victory5 = "EUXK PRPHQW, BRX MXVW JRW EUXK'G RQ."
-victory6 = "lub wli gyds en o tyqqutif wu riehp ipmrotl!? ow't wli lehfitw repmyemi."
-victory7 = "bla wli gyds ehi auy fidhaqwopm wlot? ehi auy wlew gydsopm cuhif? miw e rogi rneu."
+victory1 = "XUIROPHANT GREEN!"
+victory2 = "Rerorerorerorerorero. *slurp*"
+victory3 = "EMERALDO SPLASHU!"
+victory4 = "I made it out alive, no giant hole in my chest this time."
+victory5 = "Take this! 20-meter-radius Emerald Splash!"
 
-;Alternate language victory quotes (optional).
-;0 or more alternate language sections may be added, preceded by the
-;ISO 639-1 code followed by a ".", e.g. "[ja.Quotes]".
-;See language setting in mugen.cfg.
-[ja.Quotes]
-victory1 = "mipseo bu suihy!"
-victory2 = "Og auy ehi hiefopm wlot, auy ehi e whyi xedsedlyroep."
-victory3 = "UVSHU KPK PA, ULCPSSL KPK UVAYL KHTL."
-victory4 = "Joel Mrho Xuir Pukr Sxnu Vaqx Ydsa."
-victory5 = "EUXK PRPHQW, BRX MXVW JRW EUXK'G RQ."
-victory6 = "lub wli gyds en o tyqqutif wu riehp ipmrotl!? ow't wli lehfitw repmyemi."
-victory7 = "bla wli gyds ehi auy fidhaqwopm wlot? ehi auy wlew gydsopm cuhif? miw e rogi rneu."
+;Avdol
+victory6 = "MAGICIAN'S RED!!"
+victory7 = "Y E S , I A M !"
+victory8 = "HELL 2 U!!"
+victory9 = "You thought you could out-predict me, a fortune teller?"
+victory10 = "You know I wouldn't let myself die for the 3rd time!"
+
+;Polnareff
+victory11 = "SILVER CHARIOT!"
+victory12 = "Giant metal piston spike."
+victory13 = "YEEAAHHHH!!!"
+victory14 = "I'll turn you into a puncushion!"
+victory14 = "Polnareffland will not be just a dream!"
+
+;Joseph
+victory16 = "OH MY GOD!"
+victory17 = "HOLY SHIT!"
+victory18 = "SON OF A BITCH!"
+victory19 = "Your next line is, \"This is a bruh moment\"!"
+victory20 = "Yes yes yes... oh my god."
+
+;Jotaro
+victory21 = "Yare yare daze..."
+victory22 = "ORAORAORA!!"
+victory23 = "You truly are the lowest scum in history."
+victory24 = "I can't beat the shit out of you without getting closer."
+victory25 = "YES YES YES YES YES, Y E S ! ! !"
+
+;Dio
+victory26 = "ZA WARUDO! TOKI YO TOMARE!"
+victory27 = "HERE'S A ROAD ROLLER! MUDAMMUDAMUDA!"
+victory28 = "WRYYYYYYY!!!!!!"
+victory29 = "Oh? You're approaching me?"
+victory30 = "MUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDAMUDA!!!!!!!!!!!!!!"
+
+
 
 ;---------------------------------------------------------------------------
 ; Variable usage:
@@ -176,6 +198,11 @@ ctrl = 0
 anim = 190
 velset = 0,0
 
+[State 191, VictoryQuote] ;Sets a random victory quote out of the 5 quotes per palette
+type = VictoryQuote
+trigger1 = time = 0
+value = 5*(palno-1) + ceil(random/200)
+
 [State 0, VarSet] ; I am using this for Mrho's insufficient mana animation that is on a few attacks.
 type = VarSet
 trigger1 = 1
@@ -204,16 +231,38 @@ type = S
 ctrl = 0
 anim = 195
 velset = 0,0
-movetype = I
+movetype = A
 physics = S
 sprpriority = 2
 
-[State 195, 1]
-type = CtrlSet
-trigger1 = Time = 40
-value = 1
+[State 195, HitDef]
+type = HitDef
+triggerall = MoveContact = 0
+triggerall = enemynear,stateno != [5000,5500]
+trigger1 = animelem = 3
+trigger2 = animelem = 4
+trigger3 = animelem = 5
+trigger4 = animelem = 6
+attr = S,NA        
+hitflag = MAF        
+guardflag = MA         
+animtype = Light          ;Light, Medium, Hard, Back, Up, DiagUp
+damage = 5,0
+pausetime = 0,75
+hitsound = 5,0
+guardsound = 6,0
+ground.type = High      ;Low, Trip, None
+ground.slidetime = 8
+ground.hittime = 20
+ground.velocity = -3,-2
+ground.cornerpush.veloff = -15
+air.velocity = -3,-2
+getpower = 200,20
+givepower = -200,-20
+palfx.time = 75
+palfx.mul = 240,272,240
 
-[State 195, 2]
+[State 200, 5]
 type = ChangeState
 trigger1 = AnimTime = 0
 value = 0
@@ -237,7 +286,7 @@ sprpriority = 2                  ;Set p1's sprite layering priority to 2 (in fro
 type = HitDef
 trigger1 = AnimElem = 2
 attr = S, NA                     ;Attribute: Standing, Normal Attack
-damage = 20, 0                   ;Damage that move inflicts, guard damage
+damage = 22, 0                   ;Damage that move inflicts, guard damage
 animtype = Light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAF                    ;Flags of conditions that move can hit
@@ -251,11 +300,10 @@ hitsound = 5, 0                  ;Sound to play on hit
 guardsound = 6, 0                ;Sound to play on guard
 ground.type = High               ;Type: High, Low, Trip (def: Normal)
 ground.slidetime = 5             ;Time that the opponent slides back
-ground.hittime  = 11             ;Time opponent is in hit state
-ground.velocity = -1            ;Velocity at which opponent is pushed
-airguard.velocity = -1.9,-.8     ;Guard velocity in air (def: (air.xvel*1.5, air.yvel/2))
+ground.hittime  = 10             ;Time opponent is in hit state
+ground.velocity = -1.5            ;Velocity at which opponent is pushed
 air.type = High                  ;Type: High, Low, Trip (def: same as ground.type)
-air.velocity = -1.4,-1           ;X-velocity at which opponent is pushed,
+air.velocity = -1.5,-1           ;X-velocity at which opponent is pushed,
 ;Y-velocity at which opponent is pushed
 air.hittime = 15                 ;Time before opponent regains control in air
 
@@ -282,17 +330,17 @@ sprpriority = -1
 type = HitDef
 trigger1 = AnimElem = 2
 attr = S, NA
-animtype  = Medium
-damage    = 35
+animtype  = Hard
+damage    = 48
 guardflag = MA
-pausetime = 12,12
+pausetime = 0,6
 sparkno = 1
 sparkxy = -10,-70
 hitsound   = 5,2
 guardsound = 6,0
 ground.type = High
 ground.slidetime = 12
-ground.hittime  = 16
+ground.hittime  = 18
 ground.velocity = -10
 air.velocity = -12
 forcenofall = 1
@@ -319,13 +367,13 @@ anim = 220
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 20, 0			;Damage that move inflicts, guard damage
-animtype = Hard			;Animation type: Light, Medium, Heavy, Back (def: Light)
+damage = 22, 0			;Damage that move inflicts, guard damage
+animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 12, 8			;Time attacker pauses, time opponent shakes
+pausetime = 0, 4			;Time attacker pauses, time opponent shakes
 sparkno = 2				;Spark anim no (Def: set above)
 sparkxy = -10, -42		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
@@ -364,8 +412,8 @@ sprpriority = 2
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA
-animtype  = Medium
-damage    = 16
+animtype  = Light
+damage    = 18
 guardflag = MA
 pausetime = 12,12
 sparkno = 0
@@ -401,8 +449,8 @@ sprpriority = 2
 type = HitDef
 trigger1 = Time = 0
 attr = S, NA
-animtype  = Medium
-damage    = 27
+animtype  = Hard
+damage    = 36
 guardflag = MA
 pausetime = 12,12
 sparkno = 1
@@ -428,12 +476,13 @@ type    = S
 movetype= A
 physics = S
 juggle  = 5
-poweradd= -150
+poweradd= -500
 ctrl = 0
 anim = 260
 
 [State 260, Turn]
 type = Turn
+trigger1 = time <= 1
 trigger1 = Command = "holdback"
 
 [State 0, VelSet]
@@ -445,13 +494,13 @@ x = 18
 type = HitDef
 trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 25, 0			;Damage that move inflicts, guard damage
+damage = 30, 15			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = MA			;Flags on how move is to be guarded against
+guardflag = LA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 0, 40			;Time attacker pauses, time opponent shakes
+pausetime = 0, 36			;Time attacker pauses, time opponent shakes
 sparkno = 4				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
@@ -491,7 +540,7 @@ type    = A
 movetype= A
 physics = A
 juggle  = 5
-poweradd= -100
+poweradd= -500
 ctrl = 0
 anim = 260
 
@@ -530,6 +579,7 @@ persistent = 1
 
 [State 0, VelSet]
 type = VelSet
+trigger1 = var(39) = 1
 trigger1 = Vel X < Const(movement.stand.friction.threshold)
 x = 0
 persistent = 0
@@ -538,13 +588,13 @@ persistent = 0
 type = HitDef
 trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 22, 0			;Damage that move inflicts, guard damage
+damage = 30, 15			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
-pausetime = 0, 30			;Time attacker pauses, time opponent shakes
+pausetime = 0, 36			;Time attacker pauses, time opponent shakes
 sparkno = 4				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
@@ -574,8 +624,24 @@ trans = add
 [State 270, 5]
 type = ChangeState
 trigger1 = AnimTime = 0
+trigger1 = var(39) = 0
+value = 50
+ctrl = 1
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = AnimTime = 0
+trigger1 = var(39) = 1
+y = 0
+
+[State 270, 5]
+type = ChangeState
+trigger1 = AnimTime = 0
+trigger1 = var(39) = 1
 value = 0
 ctrl = 1
+
+
 
 ;---------------------------------------------------------------------------
 ;Teleport
@@ -590,7 +656,6 @@ anim = 280
 [State 280, Helper]
 type = Helper
 trigger1 = time = 0
-helpertype = Normal ;Player
 name = "Teleport Shadow"
 ID = 280
 stateno = 283
@@ -899,7 +964,7 @@ anim = 424
 
 [State 424, destroyself] ; destroy when time = 31, which is them the actual brush appears
 type = destroyself
-trigger1 = time = 31
+trigger1 = parent,animelem = 2
 
 ;---------------------------------------------------------------------------
 ;brush
@@ -937,6 +1002,9 @@ air.type = High			;Type: High, Low, Trip (def: same as ground.type)
 air.velocity = -4,-7		;X-velocity at which opponent is pushed,
 					;Y-velocity at which opponent is pushed
 air.hittime = 12			;Time before opponent regains control in air
+palfx.time = 42
+palfx.mul = 200,280,200
+palfx.add = 0,50,0
 
 [State 425, destroyself]
 type = destroyself
@@ -992,7 +1060,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 24,-37
 velocity = 5
@@ -1000,7 +1067,7 @@ attr = S, SP
 damage   = 6
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAFD
 pausetime = 3,3
 hitsound   = 5,2
 sparkno = 0
@@ -1010,7 +1077,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = -2
-air.animtype = Low
+air.animtype = Light
 air.velocity = -3,0.5
 air.juggle = 3
 air.fall = 1
@@ -1038,7 +1105,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 11,-16
 velocity = 0,6
@@ -1046,7 +1112,7 @@ attr = S, SP
 damage   = 15
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 6,6
 hitsound   = 5,2
 sparkno = 0
@@ -1056,7 +1122,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = 0.5
-air.animtype = Low
+air.animtype = Light
 air.velocity = 1,3
 air.juggle = 3
 air.fall = 1
@@ -1083,7 +1149,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 11,-64
 velocity = 0,-6
@@ -1091,7 +1156,7 @@ attr = S, SP
 damage   = 12
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 5,5
 hitsound   = 5,2
 sparkno = 0
@@ -1101,7 +1166,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = 0,-2
-air.animtype = Low
+air.animtype = Light
 air.velocity = 0,-2
 air.juggle = 3
 air.fall = 1
@@ -1165,7 +1230,7 @@ sparkno = 1
 sparkxy = -10,-40
 hitsound   = 5,3
 guardsound = 6,0
-animtype = Med
+animtype = Medium
 ground.type = High
 ground.slidetime = 12
 ground.hittime  = 15
@@ -1191,7 +1256,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 24,-37
 velocity = 5.5
@@ -1199,7 +1263,7 @@ attr = S, SP
 damage   = 25,0
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 3,3
 hitsound   = 5,2
 sparkno = 0
@@ -1209,7 +1273,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = -5, -2
-air.animtype = Low
+air.animtype = Light
 air.velocity = -6, -2.5
 air.juggle = 3
 air.fall = 1
@@ -1243,14 +1307,13 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 24,0
 velocity = 1.5
 attr = S, SP
 damage   = 24
 animtype = light
-hitflag = MAFDP
+hitflag = MAF   
 guardflag = L ;must be crouch guarded.
 pausetime = 3,3
 hitsound   = 5,2
@@ -1262,7 +1325,7 @@ ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = -2, -11
 guard.velocity = -1.6
-air.animtype = Low
+air.animtype = Light
 air.velocity = -2.5, -12
 air.juggle = 3
 air.fall = 1
@@ -1296,7 +1359,7 @@ poweradd = -100
 type = HitDef
 trigger1 = AnimElem = 4
 attr = S, NA                     ;Attribute: Standing, Normal Attack
-damage = 100, 0                   ;Damage that move inflicts, guard damage
+damage = 60, 0                   ;Damage that move inflicts, guard damage
 animtype = Light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA                   ;Flags on how move is to be guarded against
 hitflag = MAF                    ;Flags of conditions that move can hit
@@ -1320,13 +1383,12 @@ air.hittime = 15                 ;Time before opponent regains control in air
 
 [State 1020, EnvShake]
 type = EnvShake
-trigger1 = MoveContact
-time = 1
-freq = 60
+trigger1 = MoveHit
+time = 15
+freq = 25
 ampl = -4
 phase = 90
-;ignorehitpause = 
-;persistent = 
+persistent = 0
 
 
 [State 1020, 5]
@@ -1354,7 +1416,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 5,-32
 velocity = 2.5
@@ -1362,7 +1423,7 @@ attr = S, SP
 damage   = 21
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 3,3
 hitsound   = 5,2
 sparkno = 0
@@ -1372,7 +1433,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = 0
-air.animtype = Low
+air.animtype = Light
 air.velocity = 0, 1
 air.juggle = 3
 air.fall = 0
@@ -1388,7 +1449,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 5,-32
 velocity = 3.5
@@ -1396,7 +1456,7 @@ attr = S, SP
 damage   = 18
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 3,3
 hitsound   = 5,2
 sparkno = 0
@@ -1406,7 +1466,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = -1
-air.animtype = Low
+air.animtype = Light
 air.velocity = -1, 1
 air.juggle = 3
 air.fall = 1
@@ -1422,7 +1482,6 @@ projhitanim = 10000
 projpriority = 1
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 5,-32
 velocity = 4.5
@@ -1430,7 +1489,7 @@ attr = S, SP
 damage   = 15
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 3,3
 hitsound   = 5,2
 sparkno = 0
@@ -1440,7 +1499,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = -1
-air.animtype = Low
+air.animtype = Light
 air.velocity = -1, 1
 air.juggle = 3
 air.fall = 1
@@ -1484,7 +1543,6 @@ trigger6 = animelem = 9
 trigger7 = animelem = 10
 trigger8 = animelem = 11
 trigger9 = animelem = 12
-helpertype = normal ;player
 name = "splashProjectile"
 size.xscale = 0.75
 size.yscale = 0.75
@@ -1629,7 +1687,6 @@ unhittable = 1
 [State 1050, Helper]
 type = Helper
 trigger1 = time = 0
-helpertype = normal ;player
 name = "Xuirophant Green Stand"
 ID = 1051
 stateno = 1051
@@ -1776,7 +1833,6 @@ priority = 1
 projpriority = 2
 projheightbound = -240, 100
 projedgebound = 100
-projscreenbound = 100
 projshadow = -1
 offset = 15, 0 - random/15 ;picks random number from 0-999 /15, subtracts that from 0 and that is the height offset from the bottom of Xuirophant Green.
 velocity = 10
@@ -1784,7 +1840,7 @@ attr = S, SP
 damage   = 12,6
 animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF   
 pausetime = 2,2
 hitsound   = 5,2
 sparkno = 0
@@ -1800,7 +1856,7 @@ ground.type = High
 ground.slidetime = 0
 ground.hittime  = 5
 ground.velocity = -0.5
-air.animtype = Low
+air.animtype = Light
 air.velocity = -0.5
 air.juggle = 3
 air.fall = 0
@@ -1828,7 +1884,7 @@ damage = 50, 50                   ;Damage that move inflicts, guard damage
 priority = 7,Hit
 animtype = Light                 ;Animation type: Light, Medium, Heavy, Back (def: Light)
 ;no guard flags :)
-hitflag = MAFTP                    ;Flags of conditions that move can hit
+hitflag = MAF                    ;Flags of conditions that move can hit
 pausetime = 0,0                ;Time attacker pauses, time opponent shakes
 sparkno = 0                      ;Spark anim no (Def: set above)
 sparkxy = -10, -76               ;X-offset for the "hit spark" rel. to p2,
@@ -1864,3 +1920,4 @@ value = 0
 [State 1051, DestroySelf]
 type = destroyself
 trigger1 = time > var(5) + 60 ;dissappears a little bit after shooting ends and after the dissappear animation happens
+
