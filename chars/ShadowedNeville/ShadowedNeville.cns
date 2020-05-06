@@ -24,8 +24,8 @@ FloatPersistIndex = 40
 
 
 [Size]
-xscale = 1           ;Horizontal scaling factor.
-yscale = 1           ;Vertical scaling factor.
+xscale = 1.1          ;Horizontal scaling factor.
+yscale = 1.1           ;Vertical scaling factor.
 ground.back = 15     ;Player width (back, ground)
 ground.front = 16    ;Player width (front, ground)
 air.back = 12        ;Player width (back, air)
@@ -610,7 +610,7 @@ value = 1
 type = VarSet
 trigger1 = Anim = 201
 trigger1 = MoveContact > 0
-trigger1 = MoveContact < 10 
+trigger1 = MoveContact < 10
 v = 1    ;0=none, 1=second hit, 2=third hit
 value = 2
 [State 200, VarSet]
@@ -623,6 +623,7 @@ value = HitCount
 type = ChangeState
 trigger1 = Command = "x"
 trigger1 = var(1) != 0
+trigger1 = !IsHelper(891) || GameTime - var(4) >= 625
 value = 200
 ctrl = 0
 [State 200, ChangeState] ;Punch end animation
@@ -1485,9 +1486,9 @@ sparkxy = 0,0
 hitsound = S22,floor(random/250)
 guardsound = S6,2+floor(random/499)
 ground.type = High      ;Low, Trip, None. 
-ground.slidetime = 25
+ground.slidetime = 18
 ;guard.slidetime = 
-ground.hittime = 22
+ground.hittime = 21
 ;guard.hittime = 
 ;air.hittime = 
 
@@ -1511,6 +1512,7 @@ value = 2
 type = ChangeState
 trigger1 = Command = "x"
 trigger1 = var(1) != 0
+trigger1 = !IsHelper(891) || GameTime - var(4) >= 625
 value = 400
 ctrl = 0
 [State 400, ChangeState] ;Punch end animation
@@ -4533,6 +4535,13 @@ trigger2 = ProjHit823 = 1, = 1
 trigger2 = ProjContact823 = 1, = 1
 time = 30
 freq = 90
+
+[State 0, DisplayToClipboard]
+type = DisplayToClipboard
+trigger1 = 1
+text = "GAMETIME:%d"
+params = GameTime
+
 
 [State -3, StopSnd]
 type = StopSnd
