@@ -90,8 +90,8 @@ menu.item.spacing = 0, 13
 ; Names for each of the items in the menu. Names must be in quotes.
 ; Use "" to disable an item. If all are disabled, goes straight to demo mode
 ; (hold Esc to quit demos).
-menu.itemname.arcade = "ARCADE"
-menu.itemname.versus = "VS MODE"
+menu.itemname.arcade = "NEVILLE BOX MODE"
+menu.itemname.versus = "1V1 MODE"
 menu.itemname.teamarcade = "TEAM ARCADE"
 menu.itemname.teamversus = "TEAM VS"
 menu.itemname.teamcoop = "TEAM CO-OP"

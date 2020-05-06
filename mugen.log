@@ -17,7 +17,7 @@ Initializing graphics...gameCoord 1280x720...render mode 2_20...trying 1280x720x
 Setting callbacks...OK
 Initializing font...OK
 Initializing game variables...OK
-Session RNG seed is 1588733475
+Session RNG seed is 1588791786
 Loading system fonts...OK
 Loading options...
 Initializing pads...failed
@@ -45,7 +45,7 @@ Loading system...
   Load [End Credits]...OK
   Load TitleBG...VersusBG...VictoryBG...SelectBG...OptionBG...OK
   Loading fight data
-    Opening fight data file data/mugen1/fight.def...OK
+    Opening fight data file data/nf/fight.def...OK
     Reading [Files]...OK
     Loading fonts...OK
     Load fight anim...OK
@@ -76,15 +76,1552 @@ Game loop init
 Mode select init
 End of mode select loop
 Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 0 on teamslot 0.0
+Char Person.def (0) request pal 5 3F (3F) -> reserved 5 (1F)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char HoodieNolan.def (11) request pal 3 FFF (FFF) -> reserved 3 (FF7)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Canceled versus screen.
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 0 on teamslot 0.0
+Char Person.def (0) request pal 4 3F (3F) -> reserved 4 (2F)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char HoodieNolan.def (11) request pal 9 FFF (FFF) -> reserved 9 (DFF)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 917735948
+Reset persist vars team 1
+Loading character chars/Person/Person.def...
+  Loading info...OK
+  Loading cmd command set Person.cmd...OK
+  Loading cns Person.cns...OK
+  Loading cmd state entry Person.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff Person.sff...OK
+  Loading anim Person.air...OK
+  Loading pals...OK
+  1533 expressions (589 on trigger lines)
+Character Person.def loaded OK
+New char Person loaded into cache: (1/4 cached) Load time: 10.000ms
+Loading character chars/HoodieNolan/HoodieNolan.def...
+  Loading info...OK
+  Loading cmd command set HoodieNolan.cmd...OK
+  Loading cns HoodieNolan.cns...OK
+  Loading cns HoodieNolan-2.st...OK
+  Loading cmd state entry HoodieNolan.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff HoodieNolan.sff...OK
+  Loading anim HoodieNolan.air...OK
+  Loading snd HoodieNolan.snd...OK
+  Loading pals...OK
+  Loading learned AI HoodieNolan.ai...OK
+  3479 expressions (1054 on trigger lines)
+Character HoodieNolan.def loaded OK
+New char HoodieNolan loaded into cache: (2/4 cached) Load time: 30.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 0.80s
+Total frames: 49 	Skipped frames: 0
+Avg game rate: 61.25
+Avg frame rate: 61.25
+
+Finishing match
+Freeing players
+Save persist vars P56 Person
+Player Person cache count reduced: 0
+Save persist vars P57 HoodieNolan
+Player HoodieNolan cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 0 on teamslot 0.0
+Char Person.def (0) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char NoloudStriffle.def (5) request pal 2 3F (3F) -> reserved 2 (3B)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 73370199
+Reset persist vars team 1
+Player Person cache count increased: 1
+Loading character chars/NoloudStriffle/NoloudStriffle.def...
+  Loading info...Info: Noloud Striffle loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set NoloudStriffle.cmd...OK
+  Loading cns NoloudStriffle.cns...OK
+  Loading cmd state entry NoloudStriffle.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff NoloudStriffle.sff...OK
+  Loading anim NoloudStriffle.air...OK
+  Loading pals...OK
+  1716 expressions (621 on trigger lines)
+Character NoloudStriffle.def loaded OK
+New char NoloudStriffle loaded into cache: (3/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.03s
+Total frames: 63 	Skipped frames: 1
+Avg game rate: 61.17
+Avg frame rate: 60.19
+
+Finishing match
+Freeing players
+Save persist vars P56 Person
+Player Person cache count reduced: 0
+Save persist vars P57 NoloudStriffle
+Player NoloudStriffle cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 1 on teamslot 0.0
+Char orangexuir.def (1) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char Person.def (0) request pal 10 3F (3F) -> reserved 4 (2F)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1130383880
+Reset persist vars team 1
+Loading character chars/orangexuir/orangexuir.def...
+  Loading info...OK
+  Loading cmd command set orangexuir.cmd...OK
+  Loading cns orangexuir.cns...OK
+  Loading cns customstates.cns...OK
+  Loading cmd state entry orangexuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff orangexuir.sff...OK
+  Loading anim orangexuir.air...OK
+  Loading pals...OK
+  Loading learned AI orangexuir.ai...OK
+  2691 expressions (788 on trigger lines)
+Character orangexuir.def loaded OK
+New char orangexuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Player Person cache count increased: 1
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 0.82s
+Total frames: 50 	Skipped frames: 0
+Avg game rate: 60.98
+Avg frame rate: 60.98
+
+Finishing match
+Freeing players
+Save persist vars P56 orangexuir
+Player orangexuir cache count reduced: 0
+Save persist vars P57 Person
+Player Person cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 2 on teamslot 0.0
+Char bluexuir.def (2) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char truexuir.def (7) request pal 7 3F (3F) -> reserved 1 (3D)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1686043976
+Reset persist vars team 1
+Player HoodieNolan purged from cache: 1
+Freeing player RC HoodieNolan...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/bluexuir/bluexuir.def...
+  Loading info...OK
+  Loading cmd command set bluexuir.cmd...OK
+  Loading cns bluexuir.cns...OK
+  Loading cmd state entry bluexuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff bluexuir.sff...OK
+  Loading anim bluexuir.air...OK
+  Loading pals...OK
+  1656 expressions (611 on trigger lines)
+Character bluexuir.def loaded OK
+New char bluexuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Player NoloudStriffle purged from cache: 3
+Freeing player RC NoloudStriffle...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/truexuir/truexuir.def...
+  Loading info...OK
+  Loading cmd command set truexuir.cmd...OK
+  Loading cns truexuir.cns...OK
+  Loading cmd state entry truexuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff truexuir.sff...OK
+  Loading anim truexuir.air...OK
+  Loading pals...OK
+  2694 expressions (706 on trigger lines)
+Character truexuir.def loaded OK
+New char truexuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.45s
+Total frames: 88 	Skipped frames: 0
+Avg game rate: 60.69
+Avg frame rate: 60.69
+
+Finishing match
+Freeing players
+Save persist vars P56 bluexuir
+Player bluexuir cache count reduced: 0
+Save persist vars P57 truexuir
+Player truexuir cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 3 on teamslot 0.0
+Char redxuir.def (3) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char HoodieNolan.def (11) request pal 6 FFF (FFF) -> reserved 6 (FBF)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1604445519
+Reset persist vars team 1
+Player Person purged from cache: 5
+Freeing player RC Person...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/redxuir/redxuir.def...
+  Loading info...OK
+  Loading cmd command set redxuir.cmd...OK
+  Loading cns redxuir.cns...OK
+  Loading cmd state entry redxuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff redxuir.sff...OK
+  Loading anim redxuir.air...OK
+  Loading pals...OK
+  1762 expressions (621 on trigger lines)
+Character redxuir.def loaded OK
+New char redxuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Player orangexuir purged from cache: 6
+Freeing player RC orangexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/HoodieNolan/HoodieNolan.def...
+  Loading info...OK
+  Loading cmd command set HoodieNolan.cmd...OK
+  Loading cns HoodieNolan.cns...OK
+  Loading cns HoodieNolan-2.st...OK
+  Loading cmd state entry HoodieNolan.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff HoodieNolan.sff...OK
+  Loading anim HoodieNolan.air...OK
+  Loading snd HoodieNolan.snd...OK
+  Loading pals...OK
+  Loading learned AI HoodieNolan.ai...OK
+  3479 expressions (1054 on trigger lines)
+Character HoodieNolan.def loaded OK
+New char HoodieNolan loaded into cache: (4/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 2.49s
+Total frames: 150 	Skipped frames: 0
+Avg game rate: 60.24
+Avg frame rate: 60.24
+
+Finishing match
+Freeing players
+Save persist vars P56 redxuir
+Player redxuir cache count reduced: 0
+Save persist vars P57 HoodieNolan
+Player HoodieNolan cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 12 on teamslot 0.0
+Char ShadowedNeville.def (12) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char NevilloudZX.def (6) request pal 8 3F (3F) -> reserved 2 (3B)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 132657114
+Reset persist vars team 1
+Player truexuir purged from cache: 7
+Freeing player RC truexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/ShadowedNeville/ShadowedNeville.def...
+  Loading info...OK
+  Loading cmd command set ShadowedNeville.cmd...OK
+  Loading cns ShadowedNeville.cns...OK
+  Loading cmd state entry ShadowedNeville.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff ShadowedNeville.sff...OK
+  Loading anim ShadowedNeville.air...OK
+  Loading snd ShadowedNeville.snd...OK
+  Loading pals...OK
+  Loading learned AI ShadowedNeville.ai...OK
+  3896 expressions (1286 on trigger lines)
+Character ShadowedNeville.def loaded OK
+New char ShadowedNeville loaded into cache: (4/4 cached) Load time: 30.000ms
+Player bluexuir purged from cache: 8
+Freeing player RC bluexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/NevilloudZX/NevilloudZX.def...
+  Loading info...Info: Nevilloud ZX loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set NevilloudZX.cmd...OK
+  Loading cns NevilloudZX.cns...OK
+  Loading cmd state entry NevilloudZX.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff NevilloudZX.sff...OK
+  Loading anim NevilloudZX.air...OK
+  Loading pals...OK
+  1707 expressions (621 on trigger lines)
+Character NevilloudZX.def loaded OK
+New char NevilloudZX loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.55s
+Total frames: 94 	Skipped frames: 0
+Avg game rate: 60.65
+Avg frame rate: 60.65
+
+Finishing match
+Freeing players
+Save persist vars P56 ShadowedNeville
+Player ShadowedNeville cache count reduced: 0
+Save persist vars P57 NevilloudZX
+Player NevilloudZX cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 4 on teamslot 0.0
+Char NevillePrime.def (4) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char jahlil.def (10) request pal 8 FFF (FFF) -> reserved 8 (EFF)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1866679843
+Reset persist vars team 1
+Player HoodieNolan purged from cache: 9
+Freeing player RC HoodieNolan...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/NevillePrime/NevillePrime.def...
+  Loading info...OK
+  Loading cmd command set NevillePrime.cmd...OK
+  Loading cns NevillePrime.cns...OK
+  Loading cmd state entry NevillePrime.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff NevillePrime.sff...OK
+  Loading anim NevillePrime.air...OK
+  Loading pals...OK
+  1670 expressions (594 on trigger lines)
+Character NevillePrime.def loaded OK
+New char NevillePrime loaded into cache: (4/4 cached) Load time: 10.000ms
+Player redxuir purged from cache: 10
+Freeing player RC redxuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/jahlil/jahlil.def...
+  Loading info...OK
+  Loading cmd command set jahlil.cmd...OK
+  Loading cns jahlil.cns...OK
+  Loading cmd state entry jahlil.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff jahlil.sff...OK
+  Loading anim jahlil.air...OK
+  Loading snd jahlil.snd...OK
+  Loading pals...OK
+  2780 expressions (789 on trigger lines)
+Character jahlil.def loaded OK
+New char jahlil loaded into cache: (4/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.35s
+Total frames: 82 	Skipped frames: 0
+Avg game rate: 60.74
+Avg frame rate: 60.74
+
+Finishing match
+Freeing players
+Save persist vars P56 NevillePrime
+Player NevillePrime cache count reduced: 0
+Save persist vars P57 jahlil
+Player jahlil cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 5 on teamslot 0.0
+Char NoloudStriffle.def (5) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char HoodieNolan.def (11) request pal 3 FFF (FFF) -> reserved 3 (FF7)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1151977830
+Reset persist vars team 1
+Player NevilloudZX purged from cache: 11
+Freeing player RC NevilloudZX...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/NoloudStriffle/NoloudStriffle.def...
+  Loading info...Info: Noloud Striffle loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set NoloudStriffle.cmd...OK
+  Loading cns NoloudStriffle.cns...OK
+  Loading cmd state entry NoloudStriffle.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff NoloudStriffle.sff...OK
+  Loading anim NoloudStriffle.air...OK
+  Loading pals...OK
+  1716 expressions (621 on trigger lines)
+Character NoloudStriffle.def loaded OK
+New char NoloudStriffle loaded into cache: (4/4 cached) Load time: 10.000ms
+Player ShadowedNeville purged from cache: 12
+Freeing player RC ShadowedNeville...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/HoodieNolan/HoodieNolan.def...
+  Loading info...OK
+  Loading cmd command set HoodieNolan.cmd...OK
+  Loading cns HoodieNolan.cns...OK
+  Loading cns HoodieNolan-2.st...OK
+  Loading cmd state entry HoodieNolan.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff HoodieNolan.sff...OK
+  Loading anim HoodieNolan.air...OK
+  Loading snd HoodieNolan.snd...OK
+  Loading pals...OK
+  Loading learned AI HoodieNolan.ai...OK
+  3479 expressions (1054 on trigger lines)
+Character HoodieNolan.def loaded OK
+New char HoodieNolan loaded into cache: (4/4 cached) Load time: 30.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.43s
+Total frames: 87 	Skipped frames: 0
+Avg game rate: 60.84
+Avg frame rate: 60.84
+
+Finishing match
+Freeing players
+Save persist vars P56 NoloudStriffle
+Player NoloudStriffle cache count reduced: 0
+Save persist vars P57 HoodieNolan
+Player HoodieNolan cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 6 on teamslot 0.0
+Char NevilloudZX.def (6) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char redxuir.def (3) request pal 7 3F (3F) -> reserved 1 (3D)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1772150559
+Reset persist vars team 1
+Player jahlil purged from cache: 13
+Freeing player RC jahlil...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/NevilloudZX/NevilloudZX.def...
+  Loading info...Info: Nevilloud ZX loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set NevilloudZX.cmd...OK
+  Loading cns NevilloudZX.cns...OK
+  Loading cmd state entry NevilloudZX.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff NevilloudZX.sff...OK
+  Loading anim NevilloudZX.air...OK
+  Loading pals...OK
+  1707 expressions (621 on trigger lines)
+Character NevilloudZX.def loaded OK
+New char NevilloudZX loaded into cache: (4/4 cached) Load time: 10.000ms
+Player NevillePrime purged from cache: 14
+Freeing player RC NevillePrime...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/redxuir/redxuir.def...
+  Loading info...OK
+  Loading cmd command set redxuir.cmd...OK
+  Loading cns redxuir.cns...OK
+  Loading cmd state entry redxuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff redxuir.sff...OK
+  Loading anim redxuir.air...OK
+  Loading pals...OK
+  1762 expressions (621 on trigger lines)
+Character redxuir.def loaded OK
+New char redxuir loaded into cache: (4/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.06s
+Total frames: 65 	Skipped frames: 0
+Avg game rate: 61.32
+Avg frame rate: 61.32
+
+Finishing match
+Freeing players
+Save persist vars P56 NevilloudZX
+Player NevilloudZX cache count reduced: 0
+Save persist vars P57 redxuir
+Player redxuir cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 7 on teamslot 0.0
+Char truexuir.def (7) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char nloud.def (8) request pal 3 3F (3F) -> reserved 3 (37)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1468069816
+Reset persist vars team 1
+Player HoodieNolan purged from cache: 15
+Freeing player RC HoodieNolan...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/truexuir/truexuir.def...
+  Loading info...OK
+  Loading cmd command set truexuir.cmd...OK
+  Loading cns truexuir.cns...OK
+  Loading cmd state entry truexuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff truexuir.sff...OK
+  Loading anim truexuir.air...OK
+  Loading pals...OK
+  2694 expressions (706 on trigger lines)
+Character truexuir.def loaded OK
+New char truexuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Player NoloudStriffle purged from cache: 16
+Freeing player RC NoloudStriffle...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/nloud/nloud.def...
+  Loading info...Info: N'loud loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set nloud.cmd...OK
+  Loading cns nloud.cns...OK
+  Loading cmd state entry nloud.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff nloud.sff...OK
+  Loading anim nloud.air...OK
+  Loading pals...OK
+  1954 expressions (638 on trigger lines)
+Character nloud.def loaded OK
+New char nloud loaded into cache: (4/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.68s
+Total frames: 102 	Skipped frames: 0
+Avg game rate: 60.71
+Avg frame rate: 60.71
+
+Finishing match
+Freeing players
+Save persist vars P56 truexuir
+Player truexuir cache count reduced: 0
+Save persist vars P57 nloud
+Player nloud cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 8 on teamslot 0.0
+Char nloud.def (8) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char NevillePrime.def (4) request pal 6 3F (3F) -> reserved 0 (3E)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1511429593
+Reset persist vars team 1
+Player nloud cache count increased: 1
+Player redxuir purged from cache: 17
+Freeing player RC redxuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/NevillePrime/NevillePrime.def...
+  Loading info...OK
+  Loading cmd command set NevillePrime.cmd...OK
+  Loading cns NevillePrime.cns...OK
+  Loading cmd state entry NevillePrime.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff NevillePrime.sff...OK
+  Loading anim NevillePrime.air...OK
+  Loading pals...OK
+  1670 expressions (594 on trigger lines)
+Character NevillePrime.def loaded OK
+New char NevillePrime loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 2.52s
+Total frames: 152 	Skipped frames: 0
+Avg game rate: 60.32
+Avg frame rate: 60.32
+
+Finishing match
+Freeing players
+Save persist vars P56 nloud
+Player nloud cache count reduced: 0
+Save persist vars P57 NevillePrime
+Player NevillePrime cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 9 on teamslot 0.0
+Char mrho.def (9) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char dmbreezy.def (14) request pal 7 3F (3F) -> reserved 1 (3D)
+Gameflow 9
+Playing storyboard intro.def: scene
+Storyboard file not found: intro.defGameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 147909808
+Reset persist vars team 1
+Player NevilloudZX purged from cache: 18
+Freeing player RC NevilloudZX...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/mrho/mrho.def...
+  Loading info...OK
+  Loading cmd command set Mrho.cmd...OK
+  Loading cns Mrho.cns...OK
+  Loading cmd state entry Mrho.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff Mrho.sff...OK
+  Loading anim Mrho.air...OK
+  Loading snd Mrho.snd...OK
+  Loading pals...OK
+  2052 expressions (710 on trigger lines)
+Character mrho.def loaded OK
+New char Mrho loaded into cache: (4/4 cached) Load time: 30.000ms
+Player truexuir purged from cache: 20
+Freeing player RC truexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/dmbreezy/dmbreezy.def...
+  Loading info...OK
+  Loading cmd command set dmbreezy.cmd...OK
+  Loading cns dmbreezy.cns...OK
+  Loading cmd state entry dmbreezy.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff dmbreezy.sff...OK
+  Loading anim dmbreezy.air...OK
+  Loading snd dmbreezy.snd...SND file loaded with errors: dmbreezy.snd
+OK
+  Loading pals...OK
+  2192 expressions (727 on trigger lines)
+Character dmbreezy.def loaded OK
+New char dmbreezy loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 2.11s
+Total frames: 127 	Skipped frames: 0
+Avg game rate: 60.19
+Avg frame rate: 60.19
+
+Finishing match
+Freeing players
+Save persist vars P56 Mrho
+Player Mrho cache count reduced: 0
+Save persist vars P57 dmbreezy
+Player dmbreezy cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 10 on teamslot 0.0
+Char jahlil.def (10) request pal 1 FFF (FFF) -> reserved 1 (FFD)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char Person.def (0) request pal 2 3F (3F) -> reserved 2 (3B)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 776396381
+Reset persist vars team 1
+Player NevillePrime purged from cache: 21
+Freeing player RC NevillePrime...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/jahlil/jahlil.def...
+  Loading info...OK
+  Loading cmd command set jahlil.cmd...OK
+  Loading cns jahlil.cns...OK
+  Loading cmd state entry jahlil.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff jahlil.sff...OK
+  Loading anim jahlil.air...OK
+  Loading snd jahlil.snd...OK
+  Loading pals...OK
+  2780 expressions (789 on trigger lines)
+Character jahlil.def loaded OK
+New char jahlil loaded into cache: (4/4 cached) Load time: 20.000ms
+Player nloud purged from cache: 22
+Freeing player RC nloud...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/Person/Person.def...
+  Loading info...OK
+  Loading cmd command set Person.cmd...OK
+  Loading cns Person.cns...OK
+  Loading cmd state entry Person.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff Person.sff...OK
+  Loading anim Person.air...OK
+  Loading pals...OK
+  1533 expressions (589 on trigger lines)
+Character Person.def loaded OK
+New char Person loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 4.85s
+Total frames: 292 	Skipped frames: 0
+Avg game rate: 60.21
+Avg frame rate: 60.21
+
+Finishing match
+Freeing players
+Save persist vars P56 jahlil
+Player jahlil cache count reduced: 0
+Save persist vars P57 Person
+Player Person cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 11 on teamslot 0.0
+Char HoodieNolan.def (11) request pal 1 FFF (FFF) -> reserved 1 (FFD)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char nloud.def (8) request pal 1 3F (3F) -> reserved 1 (3D)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1397260800
+Reset persist vars team 1
+Player dmbreezy purged from cache: 23
+Freeing player RC dmbreezy...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/HoodieNolan/HoodieNolan.def...
+  Loading info...OK
+  Loading cmd command set HoodieNolan.cmd...OK
+  Loading cns HoodieNolan.cns...OK
+  Loading cns HoodieNolan-2.st...OK
+  Loading cmd state entry HoodieNolan.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff HoodieNolan.sff...OK
+  Loading anim HoodieNolan.air...OK
+  Loading snd HoodieNolan.snd...OK
+  Loading pals...OK
+  Loading learned AI HoodieNolan.ai...OK
+  3479 expressions (1054 on trigger lines)
+Character HoodieNolan.def loaded OK
+New char HoodieNolan loaded into cache: (4/4 cached) Load time: 20.000ms
+Player Mrho purged from cache: 24
+Freeing player RC Mrho...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/nloud/nloud.def...
+  Loading info...Info: N'loud loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set nloud.cmd...OK
+  Loading cns nloud.cns...OK
+  Loading cmd state entry nloud.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff nloud.sff...OK
+  Loading anim nloud.air...OK
+  Loading pals...OK
+  1954 expressions (638 on trigger lines)
+Character nloud.def loaded OK
+New char nloud loaded into cache: (4/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 0.70s
+Total frames: 43 	Skipped frames: 0
+Avg game rate: 61.43
+Avg frame rate: 61.43
+
+Finishing match
+Freeing players
+Save persist vars P56 HoodieNolan
+Player HoodieNolan cache count reduced: 0
+Save persist vars P57 nloud
+Player nloud cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 12 on teamslot 0.0
+Char ShadowedNeville.def (12) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char jahlil.def (10) request pal 6 FFF (FFF) -> reserved 6 (FBF)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 214202876
+Reset persist vars team 1
+Player Person purged from cache: 25
+Freeing player RC Person...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/ShadowedNeville/ShadowedNeville.def...
+  Loading info...OK
+  Loading cmd command set ShadowedNeville.cmd...OK
+  Loading cns ShadowedNeville.cns...OK
+  Loading cmd state entry ShadowedNeville.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff ShadowedNeville.sff...OK
+  Loading anim ShadowedNeville.air...OK
+  Loading snd ShadowedNeville.snd...OK
+  Loading pals...OK
+  Loading learned AI ShadowedNeville.ai...OK
+  3896 expressions (1286 on trigger lines)
+Character ShadowedNeville.def loaded OK
+New char ShadowedNeville loaded into cache: (4/4 cached) Load time: 30.000ms
+Player jahlil cache count increased: 1
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.17s
+Total frames: 71 	Skipped frames: 0
+Avg game rate: 60.68
+Avg frame rate: 60.68
+
+Finishing match
+Freeing players
+Save persist vars P56 ShadowedNeville
+Player ShadowedNeville cache count reduced: 0
+Save persist vars P57 jahlil
+Player jahlil cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 13 on teamslot 0.0
+Char NevilleZX.def (13) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char redxuir.def (3) request pal 8 3F (3F) -> reserved 2 (3B)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 650149950
+Reset persist vars team 1
+Player nloud purged from cache: 27
+Freeing player RC nloud...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/NevilleZX/NevilleZX.def...
+  Loading info...Info: Neville ZX loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set nevillezx.cmd...OK
+  Loading cns nevillezx.cns...OK
+  Loading cmd state entry nevillezx.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff nevillezx.sff...OK
+  Loading anim nevillezx.air...OK
+  Loading snd nevillezx.snd...SND file loaded with errors: nevillezx.snd
+OK
+  Loading pals...OK
+  2599 expressions (748 on trigger lines)
+Character NevilleZX.def loaded OK
+New char nevillezx loaded into cache: (4/4 cached) Load time: 20.000ms
+Player HoodieNolan purged from cache: 28
+Freeing player RC HoodieNolan...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/redxuir/redxuir.def...
+  Loading info...OK
+  Loading cmd command set redxuir.cmd...OK
+  Loading cns redxuir.cns...OK
+  Loading cmd state entry redxuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff redxuir.sff...OK
+  Loading anim redxuir.air...OK
+  Loading pals...OK
+  1762 expressions (621 on trigger lines)
+Character redxuir.def loaded OK
+New char redxuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 1.69s
+Total frames: 102 	Skipped frames: 0
+Avg game rate: 60.36
+Avg frame rate: 60.36
+
+Finishing match
+Freeing players
+Save persist vars P56 nevillezx
+Player nevillezx cache count reduced: 0
+Save persist vars P57 redxuir
+Player redxuir cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 14 on teamslot 0.0
+Char dmbreezy.def (14) request pal 1 3F (3F) -> reserved 1 (3D)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char nloud.def (8) request pal 11 3F (3F) -> reserved 5 (1F)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 980623612
+Reset persist vars team 1
+Player jahlil purged from cache: 29
+Freeing player RC jahlil...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/dmbreezy/dmbreezy.def...
+  Loading info...OK
+  Loading cmd command set dmbreezy.cmd...OK
+  Loading cns dmbreezy.cns...OK
+  Loading cmd state entry dmbreezy.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff dmbreezy.sff...OK
+  Loading anim dmbreezy.air...OK
+  Loading snd dmbreezy.snd...SND file loaded with errors: dmbreezy.snd
+OK
+  Loading pals...OK
+  2192 expressions (727 on trigger lines)
+Character dmbreezy.def loaded OK
+New char dmbreezy loaded into cache: (4/4 cached) Load time: 20.000ms
+Player ShadowedNeville purged from cache: 30
+Freeing player RC ShadowedNeville...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/nloud/nloud.def...
+  Loading info...Info: N'loud loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set nloud.cmd...OK
+  Loading cns nloud.cns...OK
+  Loading cmd state entry nloud.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff nloud.sff...OK
+  Loading anim nloud.air...OK
+  Loading pals...OK
+  1954 expressions (638 on trigger lines)
+Character nloud.def loaded OK
+New char nloud loaded into cache: (4/4 cached) Load time: 10.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 3.73s
+Total frames: 225 	Skipped frames: 2
+Avg game rate: 60.32
+Avg frame rate: 59.79
+
+Finishing match
+Freeing players
+Save persist vars P56 dmbreezy
+Player dmbreezy cache count reduced: 0
+Save persist vars P57 nloud
+Player nloud cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 0 on teamslot 0.0
+Char Person.def (0) request pal 1 3F (3F) -> reserved 1 (3D)
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Selected char 2 on teamslot 0.0
+Char bluexuir.def (2) request pal 2 3F (3F) -> reserved 2 (3B)
+Selected char 2 on teamslot 0.1
+Char bluexuir.def (2) request pal 2 3F (3B) -> reserved 3 (33)
+End of charsel loop
+Game loop deinit
+Gameflow 8
+Char dmbreezy.def (14) request pal 7 3F (3F) -> reserved 1 (3D)
+Char truexuir.def (7) request pal 1 3F (3F) -> reserved 1 (3D)
+Gameflow 9
+Gameflow 10
+Entering versus screen.
+Unloading match assets
+Freeing players
+Game loop init
+Versus screen init
+End of versus screen loop
+Game loop deinit
+Gameflow 11
+Loading match assets...
+Loading stage...
+  Loading BG...OK
+Stage loaded OK
+  Allocating helpers...OK
+Match RNG seed: 1314383021
+Reset persist vars team 1
+Player redxuir purged from cache: 31
+Freeing player RC redxuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/bluexuir/bluexuir.def...
+  Loading info...OK
+  Loading cmd command set bluexuir.cmd...OK
+  Loading cns bluexuir.cns...OK
+  Loading cmd state entry bluexuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff bluexuir.sff...OK
+  Loading anim bluexuir.air...OK
+  Loading pals...OK
+  1656 expressions (611 on trigger lines)
+Character bluexuir.def loaded OK
+New char bluexuir loaded into cache: (4/4 cached) Load time: 10.000ms
+Player bluexuir cache count increased: 2
+Player dmbreezy cache count increased: 1
+Player nevillezx purged from cache: 32
+Freeing player RC nevillezx...CMD...CNS...SFF...AIR...SND...Misc...OK
+Loading character chars/truexuir/truexuir.def...
+  Loading info...OK
+  Loading cmd command set truexuir.cmd...OK
+  Loading cns truexuir.cns...OK
+  Loading cmd state entry truexuir.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff truexuir.sff...OK
+  Loading anim truexuir.air...OK
+  Loading pals...OK
+  2694 expressions (706 on trigger lines)
+Character truexuir.def loaded OK
+New char truexuir loaded into cache: (4/4 cached) Load time: 20.000ms
+Resetting round
+Match assets initialized OK
+Game loop init
+Match loop init
+End of match loop
+Total time: 0.61s
+Total frames: 38 	Skipped frames: 0
+Avg game rate: 62.30
+Avg frame rate: 62.30
+
+Finishing match
+Freeing players
+Save persist vars P56 bluexuir
+Player bluexuir cache count reduced: 1
+Save persist vars P58 dmbreezy
+Player dmbreezy cache count reduced: 0
+Save persist vars P57 bluexuir
+Player bluexuir cache count reduced: 0
+Save persist vars P59 truexuir
+Player truexuir cache count reduced: 0
+Match RNG closed
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Unloading stage...OK
+Game loop init
+Unreserved all palettes
+Charsel init
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
+Gameflow 6
+Reset persist vars team 0
+Reset persist vars team 1
+Gameflow 7
+Entering character select.
+Unloading match assets
+Freeing players
+Game loop init
+Unreserved all palettes
+Charsel init
+Game loop deinit
+Canceled character select.
+Gameflow 4
+Entering mode select.
+Unloading match assets
+Freeing players
+Game loop init
+Mode select init
+End of mode select loop
+Game loop deinit
 Returned from gameflow loop
 Deinitializing...
-Frames      : 26
-Time elapsed: 0.530 sec
-ticks: 53, tps: 100, start 342, end 395
+Frames      : 4862
+Time elapsed: 80.960 sec
+ticks: 8096, tps: 100, start 169, end 8265
 
 Unloading match assets
 Freeing players
-Clearing player cache...OK
+Clearing player cache...Freeing player RC bluexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC truexuir...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC nloud...CMD...CNS...SFF...AIR...SND...Misc...OK
+Freeing player RC dmbreezy...CMD...CNS...SFF...AIR...SND...Misc...OK
+OK
 Freeing character info...OK
 Freeing select screen...OK
 Freeing fight data...OK

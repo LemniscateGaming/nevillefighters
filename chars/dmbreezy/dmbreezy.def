@@ -4,7 +4,8 @@ displayname="DM Breezy"
 versiondate=3/26/2020
 mugenversion=1.1
 author="iNfin"
-pal.defaults=1,2,3,4,5
+pal.defaults=1,2,3,4,5,6
+
 [Files]
 sprite=dmbreezy.sff
 sound=dmbreezy.snd
@@ -13,10 +14,7 @@ cmd=dmbreezy.cmd
 cns=dmbreezy.cns
 st=dmbreezy.cns
 stcommon=common1.cns
-pal1=dmbreezy.act
-pal2=dmbreezy2.act
-pal3=dmbreezy3.act
-pal4=dmbreezy4.act
+
 [Arcade]
 intro.storyboard=
 ending.storyboard=
