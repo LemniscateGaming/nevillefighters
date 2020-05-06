@@ -809,7 +809,7 @@ trigger1 = ctrl
 type = ChangeState
 value = 203
 triggerall = command = "PunchFinisher"
-trigger1 = stateno = 200 && MoveHit
+trigger1 = stateno = 200 && MoveContact > 0 && MoveContact < 10
 
 ;---------------------------------------------------------------------------
 ; Stand Medium Punch

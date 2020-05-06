@@ -2,9 +2,9 @@
 name="jahlil"
 displayname="Jahlil"
 versiondate=1/23/20
-mugenversion=
+mugenversion=1.1
 author="iNfin"
-pal.defaults=1,2,3,4,5
+pal.defaults=1,2,3,4,5,6
 [Files]
 sprite=jahlil.sff
 sound=jahlil.snd
@@ -13,6 +13,22 @@ cmd=jahlil.cmd
 cns=jahlil.cns
 st=jahlil.cns
 stcommon=common1.cns
+
+; Maps character selection buttons to palette numbers.
+[Palette Keymap]
+x  = 1 ;Press button X to select palette 1, etc.
+y  = 2
+z  = 3
+a  = 4
+b  = 5
+c  = 6
+x2 = 7
+y2 = 8
+z2 = 9
+a2 = 10
+b2 = 11
+c2 = 12
+
 [Arcade]
 intro.storyboard=
 ending.storyboard=

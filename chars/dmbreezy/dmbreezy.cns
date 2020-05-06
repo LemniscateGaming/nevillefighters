@@ -2253,41 +2253,18 @@ value = 5100 ;Hit ground
 ; States that are executed when in self's state file (use statedef -3)
 ;---------------------------------------------------------------------------
 
-[Statedef -3]
+[Statedef -2]
 
 ;This controller plays a sound everytime the player lands from a jump, or
 ;from a back-dash.
-[State -3, Landing Sound]
+[State -2, Landing Sound]
 type = PlaySnd
 triggerall = Time = 1
 trigger1 = stateno = 52 ;Jump land
 trigger2 = stateno = 106 ;Run-back land
 value = 40, 0
 
-[State 0, VarSet]
-;Counts the amount of sanitizer left
-type = VarSet
-trigger1 = roundstate = 0
-v = 10    ;fv = 10
-value = 3
-;ignorehitpause =
-;persistent =
-
-[State 0, VarSet]
-;Number is greater than 0 if sanitizer has been fully upgraded
-type = VarSet
-trigger1 = roundstate = 0
-v = 12    ;fv = 10
-value = 0
-
-[State 0, VarSet]
-;Activated if hand sanitizer reaches zero
-type = VarSet
-trigger1 = roundstate = 0
-v = 13    ;fv = 10
-value = 0
-
-[State 0, VarSet]
+[State -2, VarSet]
 ;Activated if hand sanitizer reaches zero
 type = VarSet
 trigger1 = var(10) = 0
@@ -2301,17 +2278,9 @@ trigger1 = var(10) = var(20)
 v = 13    ;fv = 10
 value = 0
 
-[State 0, VarSet]
-;Counts the amount of maximum amount of sanitizer unlocked
-type = VarSet
-trigger1 = roundstate = 0
-v = 20    ;fv = 10
-value = 3
-
 [State 0, PalFX]
 type = PalFX
-trigger1 = var(10) = 7
-trigger2 = var(10) > 7
+trigger1 = var(10) >= 7
 time = 1
 add = 0,0,0
 ;mul = 1,1,1
@@ -2330,7 +2299,7 @@ invertall = 0
 color = 256
 
 [State 0, PalFX]
-type = PalFX
+type = Null
 trigger1 = var(10) = 5
 time = 1
 add = 100,100,100
@@ -2340,7 +2309,7 @@ invertall = 0
 color = 256
 
 [State 0, PalFX]
-type = PalFX
+type = Null
 trigger1 = var(10) = 4
 time = 1
 add = 50,50,50
@@ -2350,7 +2319,7 @@ invertall = 0
 color = 256
 
 [State 0, PalFX]
-type = PalFX
+type = Null
 trigger1 = var(10) = 2
 time = 1
 add = 0,0,500
@@ -2362,7 +2331,7 @@ color = 256
 ;persistent =
 
 [State 0, PalFX]
-type = PalFX
+type = Null
 trigger1 = var(10) = 1
 time = 1
 add = 500,0,0
@@ -2375,9 +2344,58 @@ color = 256
 type = PalFX
 trigger1 = var(10) = 0
 time = 1
-add = 0,500,0
+add = -25,50,-25
 ;mul = 256,256,256
 ;sinadd = 0,0,0,10
 invertall = 0
 color = 256
+
+[State 0, Helper]
+type = Helper
+trigger1 = !NumHelper(9999)
+name = "UIManager"
+ID = 9999
+stateno = 9999
+Pos = 0,0
+Postype = p1
+
+
+[Statedef 9999]
+Type = S
+Ctrl = 0
+Anim = 9999
+Velset = 0,0
+MoveType = I
+Physics = N
+Sprpriority = 200
+
+[State 0, VarSet]
+type = VarSet
+trigger1 = time = 0
+v = 11    ;fv = 10
+value = 0
+persistent = 0
+
+[State 0, Explod]
+type = Explod
+trigger1 = var(11) < parent,var(10)
+anim = 6000
+ID = var(11)
+space = screen
+pos = ifelse(teamside=1,60,220)+var(11)*10,30
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = var(11) < parent,var(10)
+v = 11
+value = 1
+
+[State 0, RemoveExplod]
+type = RemoveExplod
+trigger1 = var(11) > parent,var(10)
+id = var(11)-1
+[State 0, VarAdd]
+type = VarAdd
+trigger1 = var(11) > parent,var(10)
+v = 11
+value = -1
 

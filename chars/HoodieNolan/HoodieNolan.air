@@ -160,6 +160,12 @@ Clsn2: 1
   Clsn2[0] = -10, -58, 9, 0
 170,1, 1,-1, 10
 
+; Guard Air
+[Begin Action 132]
+Clsn2: 1
+  Clsn2[0] = -10, -58, 9, 0
+120,1, 0,0, 10
+
 ; Guardend Stand
 [Begin Action 140]
 Clsn2Default: 1
@@ -1396,6 +1402,22 @@ Clsn1: 1
 2000,20, 0,0, 10
 2000,21, 0,0, 10
 
+; UI Meter
+[Begin Action 2100]
+2100,0, 19,4, -1
+
+; UI Meter
+[Begin Action 2101]
+2100,1, 19,4, -1
+
+; UI Meter
+[Begin Action 2102]
+2100,2, 19,4, -1
+
+; UI Bar
+[Begin Action 2105]
+2100,3, 19,4, -1
+
 ; Stand/Air Hit High Light
 [Begin Action 5000]
 Clsn2Default: 2
@@ -1673,3 +1695,6 @@ Clsn2Default: 1
 5000,0, -2,0, 5
 5000,0, 0,0, 5
 5000,0, 2,0, 5
+; helper
+[Begin Action 9999]
+-1,0, 0,0, 0

@@ -188,8 +188,8 @@ trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage =ifelse(p2life<101,100,ifelse(var(10)=0,5,10)), 2			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = MAFDT			;Flags on how move is to be guarded against
-hitflag = ifelse(p2life<101,,MAF)			;Flags of conditions that move can hit
+guardflag = MA			;Flags on how move is to be guarded against
+hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 0			;Time attacker pauses, time opponent shakes
@@ -203,28 +203,6 @@ air.type = High			;Type: High, Low, Trip (def: same as ground.type)
 air.velocity = -1.4,-3		;X-velocity at which opponent is pushed,
 					;Y-velocity at which opponent is pushed
 air.hittime = 12			;Time before opponent regains control in air
-
-[State 0, EnvShake]
-type = EnvShake
-trigger1 = p2life <201
-triggerall = animelem = 1
-time = 400
-freq = 1000
-;ampl = -4
-;phase = 90
-;ignorehitpause = 
-;persistent = 
-
-[State 0, EnvColor]
-type = EnvColor
-trigger1 = p2life < 101
-trigger1 = movehit
-value = 255,0,0
-time = 40
-under = 1
-;ignorehitpause = 
-;persistent = 
-
 
 [State 195, 2]
 type = ChangeState
@@ -2997,11 +2975,11 @@ value = 5100 ;Hit ground
 ; States that are executed when in self's state file (use statedef -3)
 ;---------------------------------------------------------------------------
 
-[Statedef -3]
+[Statedef -2]
 
 ;This controller plays a sound everytime the player lands from a jump, or
 ;from a back-dash.
-[State -3, Landing Sound]
+[State -2, Landing Sound]
 type = PlaySnd
 triggerall = Time = 1
 trigger1 = stateno = 52 ;Jump land
@@ -3024,4 +3002,38 @@ trigger1 = roundstate = 0
 v = 15    ;fv = 10
 value = 0
 
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = P2life <= 200
+trigger1 = stateno = [200,4999]
+trigger1 = animelem = 1
+freq = (200 - P2life)*0.5
+time = 40
+ignorehitpause = 1
+
+[State 0, BGPalFX]
+type = BGPalFX
+trigger1 = P2life <= 200
+trigger1 = stateno = [200,4999]
+time = 1
+mul = 255+(200-P2life)*0.25,255-(200-P2life)*0.25,255-(200-P2life)*0.25
+add = (200-P2life)*0.5,(200-P2life)*-0.5,(200-P2life)*-0.5
+ignorehitpause = 1
+
+[State 0, EnvColor]
+type = EnvColor
+trigger1 = P2Life = 0
+trigger1 = RoundState = 3
+value = 255,0,0
+time = 60
+under = 1
+persistent = 0
+
+[State 0, EnvShake]
+type = EnvShake
+trigger1 = P2Life = 0
+trigger1 = RoundState = 3
+time = 60
+freq = 100
+persistent = 0
 

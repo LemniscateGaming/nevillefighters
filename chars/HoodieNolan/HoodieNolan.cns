@@ -26,16 +26,16 @@ FloatPersistIndex = 40
 
 
 [Size]
-xscale = 1           ;Horizontal scaling factor.
-yscale = 1           ;Vertical scaling factor.
+xscale = 1.1           ;Horizontal scaling factor.
+yscale = 1.1           ;Vertical scaling factor.
 ground.back = 15     ;Player width (back, ground)
 ground.front = 16    ;Player width (front, ground)
 air.back = 12        ;Player width (back, air)
 air.front = 12       ;Player width (front, air)
 height = 60          ;Height of player (for opponent to jump over)
-attack.dist = 160    ;Default attack distance
+attack.dist = 135    ;Default attack distance
 proj.attack.dist = 90 ;Default attack distance for projectiles
-proj.doscale = 0     ;Set to 1 to scale projectiles too
+proj.doscale = 1     ;Set to 1 to scale projectiles too
 head.pos = -5, -90   ;Approximate position of head
 mid.pos = -5, -60    ;Approximate position of midsection
 shadowoffset = 0     ;Number of pixels to vertically offset the shadow
@@ -3190,6 +3190,11 @@ physics = S				;Physics: S-stand, C-crouch, A-air
 juggle  = 1				;Number of air juggle points move takes
 anim = 851				;Change animation (Def: no change)
 
+[State 851, AttackDist]
+type = AttackDist
+trigger1 = 1
+value = 30
+
 [State 851, SprPriority]
 type = SprPriority
 trigger1 = time = 0
@@ -3591,123 +3596,3 @@ value = 190
 type = ChangeState
 trigger1 = 1
 value = 0
-
-;=======ALWAYS RUNNING=============
-[Statedef -2]
-
-[State -2, PlaySnd]
-type = PlaySnd
-trigger1 = var(2) >= 100
-trigger1 = var(3) = 0
-value = 1,2
-volumescale = 100
-channel = 3
-
-[State -2, PlaySnd]
-type = PlaySnd
-trigger1 = var(2) >= 100
-trigger1 = var(3) = 0
-value = 0,0
-volumescale = 100
-channel = 0
-
-[State -2, AfterImage]
-type = AfterImage
-trigger1 = var(2) >= 100
-trigger1 = var(3) = 0
-time = -1
-length = 20
-palcolor = 256
-palinvertall = 0
-palbright = 30,30,30
-palcontrast = 120,120,220
-palpostbright = 0,0,0
-paladd = 10,10,25
-palmul = .65,.65,.75
-timegap = 1
-framegap = 4
-trans = Add ;None, Add1, Sub
-
-[State -2, PalFX]
-type = PalFX
-trigger1 = var(2) >= 100
-trigger1 = var(3) = 0
-time = -1
-add = 48,48,64
-mul = 200,200,200
-;sinadd = 0,0,0,10
-invertall = 0
-color = 256
-;ignorehitpause = 
-;persistent = 
-
-[State -2, PalFX]
-type = PalFX
-trigger1 = var(2) < 100
-trigger1 = var(3) = 1
-time = 0
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = var(2) >= 100
-trigger1 = var(3) = 0
-v = 3    ;fv = 10
-value = 1
-
-[State -2, VarSet]
-type = VarSet
-trigger1 = var(2) < 100
-trigger1 = var(3) = 1
-v = 3    ;fv = 10
-value = 0
-
-[State -2, AfterImageTime]
-type = AfterImageTime
-trigger1 = var(2) < 100
-time = 0
-
-[State -2, Pause]
-type = Pause
-trigger1 = ProjHit821 = 1, = 1
-trigger1 = ProjContact821 = 1, = 1
-trigger2 = ProjHit823 = 1, = 1
-trigger2 = ProjContact823 = 1, = 1
-time = 30
-
-[State -2, BGPalFX]
-type = BGPalFX
-trigger1 = ProjHit821 = 1, = 1
-trigger1 = ProjContact821 = 1, = 1
-trigger2 = ProjHit823 = 1, = 1
-trigger2 = ProjContact823 = 1, = 1 
-triggerall = p2life > 0
-time = 30
-mul = 120,120,140
-
-[State -2, BGPalFX]
-type = BGPalFX
-trigger1 = ProjHit821 = 1, = 1 
-trigger1 = ProjContact821 = 1,  = 1 
-trigger2 = ProjHit823 = 1, = 1 
-trigger2 = ProjContact823 = 1, = 1 
-triggerall = p2life <= 0
-time = 30
-add = 32,0,0
-mul = 256,64,64
-
-[State -2, EnvShake]
-type = EnvShake
-trigger1 = ProjHit821 = 1, = 1
-trigger1 = ProjContact821 = 1, = 1
-trigger2 = ProjHit823 = 1, = 1
-trigger2 = ProjContact823 = 1, = 1
-time = 30
-freq = 90
-
-[Statedef -3] ;executes when in self's state file
-
-[State -3, StopSnd]
-type = StopSnd
-trigger1 = stateno != 840 && stateno != 69420
-trigger1 = var(2) < 100
-channel = 3

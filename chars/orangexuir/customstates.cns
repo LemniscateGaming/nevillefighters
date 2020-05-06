@@ -365,3 +365,45 @@ trigger1 = palno = 6
 trigger1 = stateno = [5000,5310]
 trans = Add1     ;None, Add, AddAlpha, Add1, Sub
 ignorehitpause = 1
+
+[State -2, Helper]
+type = Helper
+trigger1 = GameTime = 1
+name = "TestUI"
+ID = 2000
+stateno = 2000
+pos = 120, TopEdge + 70
+postype = left
+ownpal = 1
+
+[State -2, e]
+Type = Explod
+trigger1 = Teamside = 1 && Time = 0
+trigger2 = Teamside = 2 && Time = 0
+Anim = 2001
+ID = 2001
+space = screen
+pos = 120,-70
+facing = ifelse(Teamside = 1,1,-1)
+scale = Ifelse(1.0*gamewidth/gameheight<1.34,1.3,1),Ifelse(1.0*gamewidth/gameheight<1.34,1.3,1)
+bindTime = -1
+Sprpriority = 22
+ownpal = 1
+ontop = 1
+reMoveongetHit = 0
+superMoveTime = 99999
+pauseMoveTime = 99999
+ignoreHitpause = 1
+persistent = 0
+
+[Statedef 2000]
+type = S
+anim = 0
+
+[State 0, PosSet]
+type = PosSet
+trigger1 = 1
+x = -120
+y = TopEdge + 70
+
+

@@ -237,12 +237,7 @@ sprpriority = 2
 
 [State 195, HitDef]
 type = HitDef
-triggerall = MoveContact = 0
-triggerall = enemynear,stateno != [5000,5500]
 trigger1 = animelem = 3
-trigger2 = animelem = 4
-trigger3 = animelem = 5
-trigger4 = animelem = 6
 attr = S,NA        
 hitflag = MAF        
 guardflag = MA         

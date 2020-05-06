@@ -2054,6 +2054,46 @@ trigger1 = 1
 source = 1,1
 dest = 1,palno
 
+[State 0, VarSet]
+;Counts the amount of maximum amount of sanitizer unlocked
+type = VarSet
+trigger1 = 1
+v = 20    ;fv = 10
+value = 3
+persistent = 0
+
+
+[State 0, VarSet]
+;The amount of sanitizer elements currently displayed
+type = VarSet
+trigger1 = 1
+v = 11    ;fv = 10
+value = 0
+persistent = 0
+
+[State 0, VarSet]
+;Counts the amount of sanitizer left
+type = VarSet
+trigger1 = 1
+v = 10    ;fv = 10
+value = 3
+;ignorehitpause =
+;persistent =
+
+[State 0, VarSet]
+;Number is greater than 0 if sanitizer has been fully upgraded
+type = VarSet
+trigger1 = 1
+v = 12    ;fv = 10
+value = 0
+
+[State 0, VarSet]
+;Activated if hand sanitizer reaches zero
+type = VarSet
+trigger1 = 1
+v = 13    ;fv = 10
+value = 0
+
 [State 5900, 4] ;Intro for round 1
 type = ChangeState
 trigger1 = roundno = 1
@@ -2063,3 +2103,4 @@ value = 190
 type = ChangeState
 trigger1 = 1
 value = 0
+

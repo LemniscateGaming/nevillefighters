@@ -2,7 +2,7 @@
 name="dmbreezy"
 displayname="DM Breezy"
 versiondate=3/26/2020
-mugenversion=
+mugenversion=1.1
 author="iNfin"
 pal.defaults=1,2,3,4,5
 [Files]

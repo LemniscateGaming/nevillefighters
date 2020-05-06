@@ -14,6 +14,7 @@ localcoord   = 320,240       ; Local coordinate space (width, height)
 cmd      = HoodieNolan.cmd          ; Command set
 cns      = HoodieNolan.cns          ; Constants
 st       = HoodieNolan.cns          ; States
+st1       = HoodieNolan-2.st          ; States
 stcommon = common1.cns       ; Common states (from data or motif)
 sprite   = HoodieNolan.sff          ; Sprite
 anim     = HoodieNolan.air          ; Animation
