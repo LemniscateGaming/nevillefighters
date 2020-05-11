@@ -172,6 +172,11 @@ command = B, DB, D, b
 time = 20
 
 [Command]
+name = "BuildWall"
+command = B, DB, D, y
+time = 20
+
+[Command]
 name = "GenkaiCharge"
 command = a+c
 time = 5
@@ -194,7 +199,7 @@ time = 200
 [Command]
 name = "PunchBarrage"
 command = x,y,z
-time = 500
+time = 200
 
 ;-| Standard |------------------------------------------------------
 ;Quarter Circles
@@ -566,16 +571,6 @@ trigger1 = statetype = S
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
-;Notre Wall Summon
-[State -1, Notre Wall Summon]
-type = ChangeState
-value = 860
-triggerall = power >= 1000
-triggerall = command = "NotreWallSummon"
-trigger1 = statetype = S
-trigger1 = ctrl
-
-;---------------------------------------------------------------------------
 ;Merch Ad
 [State -1, Merch Ad]
 type = ChangeState
@@ -601,7 +596,19 @@ type = ChangeState
 value = 880
 triggerall = command = "MNGA Hat"
 triggerall = power >= 500
-triggerall = var(9) + 200 < GameTime
+triggerall = NumProjID(880) = 0
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Wall Build
+[State -1, Wall Build]
+type = ChangeState
+value = 925
+triggerall = command = "BuildWall"
+triggerall = power >= 500
+triggerall = stateno != 925
+triggerall = NumHelper(1250) = 0
 trigger1 = statetype != A
 trigger1 = ctrl
 

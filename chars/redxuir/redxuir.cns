@@ -13,7 +13,7 @@ airjuggle = 15		;Number of points for juggling
 sparkno = 2			;Default hit spark number for HitDefs
 guard.sparkno = 40	;Default guard spark number
 KO.echo = 0			;1 to enable echo on KO
-volume = 0			;Volume offset (negative for softer)
+volumescale = 100			;Volume offset (negative for softer)
 IntPersistIndex = 60	;Variables with this index and above will not have their values
 FloatPersistIndex = 40  ;reset to 0 between rounds or matches. There are 60 int variables,
   				;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.

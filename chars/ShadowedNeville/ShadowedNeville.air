@@ -137,8 +137,8 @@ LoopStart
 ; Guardstart Crouch
 [Begin Action 121]
 Clsn2Default: 1
-  Clsn2[0] = -10, -58, 9, 0
-170,0, 1,-1, 8
+  Clsn2[0] = -10, -40, 9, 0
+120,3, 1,-1, 8
 
 ; Guardstart Air
 [Begin Action 122]
@@ -157,8 +157,8 @@ Clsn2: 1
 ; Guard Crouch
 [Begin Action 131]
 Clsn2: 1
-  Clsn2[0] = -10, -58, 9, 0
-170,1, 1,-1, 10
+  Clsn2[0] = -10, -40, 9, 0
+120,4, 1,-1, 10
 
 ; Guardend Stand
 [Begin Action 140]
@@ -170,8 +170,10 @@ LoopStart
 
 ; Guardend Crouch
 [Begin Action 141]
+Clsn2: 1
+  Clsn2[0] = -9, -40, 9, 0
 LoopStart
-170,0, 1,-1, 8
+120,3, 1,-1, 8
 
 ; Guardend Air
 [Begin Action 142]
@@ -191,9 +193,9 @@ Clsn2Default: 1
 ; Hit while guarding
 [Begin Action 151]
 Clsn2Default: 1
-  Clsn2[0] = -10, -58, 9, 0
-170,0, 0,-1, 9
-170,1, 1,-1, -1
+  Clsn2[0] = -10, -41, 9, 0
+120,5, 0,-1, 9
+120,4, 1,-1, -1
 
 ; Hit while guarding
 [Begin Action 152]

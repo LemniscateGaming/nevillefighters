@@ -17,7 +17,7 @@ Initializing graphics...gameCoord 1280x720...render mode 2_20...trying 1280x720x
 Setting callbacks...OK
 Initializing font...OK
 Initializing game variables...OK
-Session RNG seed is 1588799223
+Session RNG seed is 1589163760
 Loading system fonts...OK
 Loading options...
 Initializing pads...failed
@@ -86,33 +86,12 @@ Freeing players
 Game loop init
 Unreserved all palettes
 Charsel init
-Game loop deinit
-Canceled character select.
-Gameflow 4
-Entering mode select.
-Unloading match assets
-Freeing players
-Game loop init
-Mode select init
-End of mode select loop
-Game loop deinit
-Gameflow 6
-Reset persist vars team 0
-Reset persist vars team 1
-Gameflow 7
-Entering character select.
-Unloading match assets
-Freeing players
-Game loop init
-Unreserved all palettes
-Charsel init
-Selected char 11 on teamslot 0.0
-Char HoodieNolan.def (11) request pal 0 FFF (FFF) -> reserved 0 (FFE)
-Selected char 12 on teamslot 1.0
-Char ShadowedNeville.def (12) request pal 2 3F (3F) -> reserved 2 (3B)
+Selected char 12 on teamslot 0.0
+Char ShadowedNeville.def (12) request pal 5 3F (3F) -> reserved 5 (1F)
 End of charsel loop
 Game loop deinit
 Gameflow 8
+Char nloud.def (8) request pal 9 3F (3F) -> reserved 3 (37)
 Gameflow 9
 Gameflow 10
 Entering versus screen.
@@ -128,24 +107,8 @@ Loading stage...
   Loading BG...OK
 Stage loaded OK
   Allocating helpers...OK
-Match RNG seed: 1282050183
-Reset persist vars team 0
+Match RNG seed: 1874584164
 Reset persist vars team 1
-Loading character chars/HoodieNolan/HoodieNolan.def...
-  Loading info...OK
-  Loading cmd command set HoodieNolan.cmd...OK
-  Loading cns HoodieNolan.cns...OK
-  Loading cns HoodieNolan-2.st...OK
-  Loading cmd state entry HoodieNolan.cmd...OK
-  Loading common states common1.cns...OK
-  Loading sff HoodieNolan.sff...OK
-  Loading anim HoodieNolan.air...OK
-  Loading snd HoodieNolan.snd...OK
-  Loading pals...OK
-  Loading learned AI HoodieNolan.ai...OK
-  3479 expressions (1054 on trigger lines)
-Character HoodieNolan.def loaded OK
-New char HoodieNolan loaded into cache: (1/4 cached) Load time: 40.000ms
 Loading character chars/ShadowedNeville/ShadowedNeville.def...
   Loading info...OK
   Loading cmd command set ShadowedNeville.cmd...OK
@@ -157,25 +120,38 @@ Loading character chars/ShadowedNeville/ShadowedNeville.def...
   Loading snd ShadowedNeville.snd...OK
   Loading pals...OK
   Loading learned AI ShadowedNeville.ai...OK
-  3900 expressions (1289 on trigger lines)
+  3914 expressions (1299 on trigger lines)
 Character ShadowedNeville.def loaded OK
-New char ShadowedNeville loaded into cache: (2/4 cached) Load time: 50.000ms
+New char ShadowedNeville loaded into cache: (1/4 cached) Load time: 70.000ms
+Loading character chars/nloud/nloud.def...
+  Loading info...Info: N'loud loading in pre-1.0 compatible mode
+OK
+  Loading cmd command set nloud.cmd...OK
+  Loading cns nloud.cns...OK
+  Loading cmd state entry nloud.cmd...OK
+  Loading common states common1.cns...OK
+  Loading sff nloud.sff...OK
+  Loading anim nloud.air...OK
+  Loading pals...OK
+  1954 expressions (638 on trigger lines)
+Character nloud.def loaded OK
+New char nloud loaded into cache: (2/4 cached) Load time: 70.000ms
 Resetting round
 Match assets initialized OK
 Game loop init
 Match loop init
 End of match loop
-Total time: 16.53s
-Total frames: 993 	Skipped frames: 0
-Avg game rate: 60.07
-Avg frame rate: 60.07
+Total time: 1.04s
+Total frames: 63 	Skipped frames: 0
+Avg game rate: 60.58
+Avg frame rate: 60.58
 
 Finishing match
 Freeing players
-Save persist vars P56 HoodieNolan
-Player HoodieNolan cache count reduced: 0
-Save persist vars P57 ShadowedNeville
+Save persist vars P56 ShadowedNeville
 Player ShadowedNeville cache count reduced: 0
+Save persist vars P57 nloud
+Player nloud cache count reduced: 0
 Match RNG closed
 Game loop deinit
 Gameflow 6
@@ -201,13 +177,13 @@ End of mode select loop
 Game loop deinit
 Returned from gameflow loop
 Deinitializing...
-Frames      : 1713
-Time elapsed: 28.540 sec
-ticks: 2854, tps: 100, start 190, end 3044
+Frames      : 423
+Time elapsed: 7.140 sec
+ticks: 714, tps: 100, start 197, end 911
 
 Unloading match assets
 Freeing players
-Clearing player cache...Freeing player RC HoodieNolan...CMD...CNS...SFF...AIR...SND...Misc...OK
+Clearing player cache...Freeing player RC nloud...CMD...CNS...SFF...AIR...SND...Misc...OK
 Freeing player RC ShadowedNeville...CMD...CNS...SFF...AIR...SND...Misc...OK
 OK
 Freeing character info...OK

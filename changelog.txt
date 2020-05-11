@@ -1,0 +1,11 @@
+=== NEVILLE FIGHTERS CHANGE LOG ===
+Current release: Beta 1.0.1
+
+> 1.0.1 - 5/10/20
+-Hoodie Nolan's Build Wall move added
+-Many characters received new crouch animations (all have unique crouches now)
+-Many fixes to Shadowed Neville's Shadow Clone
+-Minor changes to several characters
+
+> 1.0.0 - 5/06/20
+Game took a huge leap up from Alpha. Brand new UI and major character updates. New major changes will now be logged

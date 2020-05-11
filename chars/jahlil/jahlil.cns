@@ -1282,11 +1282,12 @@ pausemovetime = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(var(10)=0,75,125), 100			;Damage that move inflicts, guard damage
 animtype = Medium			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = 			;Flags on how move is to be guarded against
+guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 7, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 150			;Time attacker pauses, time opponent shakes
+guard.pausetime = 0,55 ;i had to do it justin
 sparkno = 37284723984732984				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-3offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1

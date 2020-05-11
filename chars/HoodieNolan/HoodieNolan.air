@@ -137,8 +137,8 @@ LoopStart
 ; Guardstart Crouch
 [Begin Action 121]
 Clsn2Default: 1
-  Clsn2[0] = -10, -58, 9, 0
-170,0, 1,-1, 8
+  Clsn2[0] = -9, -41, 10, 0
+120,3, 1,0, 8
 
 ; Guardstart Air
 [Begin Action 122]
@@ -157,8 +157,8 @@ Clsn2: 1
 ; Guard Crouch
 [Begin Action 131]
 Clsn2: 1
-  Clsn2[0] = -10, -58, 9, 0
-170,1, 1,-1, 10
+  Clsn2[0] = -9, -41, 10, 0
+120,4, 1,0, 10
 
 ; Guard Air
 [Begin Action 132]
@@ -176,8 +176,10 @@ LoopStart
 
 ; Guardend Crouch
 [Begin Action 141]
+Clsn2: 1
+  Clsn2[0] = -6, -40, 8, -2
 LoopStart
-170,0, 1,-1, 8
+120,3, 1,0, 8
 
 ; Guardend Air
 [Begin Action 142]
@@ -197,9 +199,9 @@ Clsn2Default: 1
 ; Hit while guarding
 [Begin Action 151]
 Clsn2Default: 1
-  Clsn2[0] = -10, -58, 9, 0
-170,0, 0,-1, 9
-170,1, 1,-1, -1
+  Clsn2[0] = -9, -40, 10, 0
+120,5, 0,0, 9
+120,4, 1,0, -1
 
 ; Hit while guarding
 [Begin Action 152]
@@ -207,6 +209,65 @@ Clsn2Default: 1
   Clsn2[0] = -10, -58, 9, 0
 120,2, 0,0, 9
 120,1, 0,0, -1
+
+; Wall Build
+[Begin Action 925]
+Clsn2Default: 2
+  Clsn2[0] = -8, -39, 8, 0
+  Clsn2[1] = 7, -23, 18, -19
+125,0, 0,0, 8
+125,1, 0,0, 8
+125,1, 0,0, 24
+Clsn2Default: 2
+  Clsn2[0] = -8, -39, 8, 0
+  Clsn2[1] = 7, -23, 18, -19
+125,1, 0,0, 4
+125,0, 0,0, 4
+
+; Wall
+[Begin Action 1127]
+Clsn2: 1
+  Clsn2[0] = 24, -5, 31, 0
+Clsn1: 1
+  Clsn1[0] = 24, -5, 31, 0
+125,2, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = 24, -15, 31, 0
+Clsn1: 1
+  Clsn1[0] = 24, -15, 31, 0
+125,3, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = 24, -25, 31, 0
+Clsn1: 1
+  Clsn1[0] = 24, -25, 31, 0
+125,4, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = 24, -38, 31, 0
+Clsn1: 1
+  Clsn1[0] = 24, -38, 31, 0
+125,5, 0,0, 4
+Clsn2: 1
+  Clsn2[0] = 24, -54, 31, 0
+LoopStart
+Clsn1: 1
+  Clsn1[0] = 24, -54, 31, 0
+125,6, 0,0, 4
+
+; Wall Unbuild
+[Begin Action 1128]
+Clsn2: 1
+  Clsn2[0] = 24, -35, 31, 0
+125,5, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 24, -25, 31, 0
+125,4, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 24, -15, 31, 0
+125,3, 0,0, 2
+Clsn2: 1
+  Clsn2[0] = 24, -5, 31, 0
+125,2, 0,0, 2
+-1,0, 0,0, 4
 
 ; Lose by match over
 [Begin Action 170]
@@ -892,10 +953,10 @@ Clsn1: 1
 Clsn2Default: 2
   Clsn2[0] = -8, -25, 12, -11
   Clsn2[1] = -10, -38, 3, -26
-450,0, 0,0, 9
-450,1, 0,0, 9
-450,2, 0,0, 8
-450,3, 0,0, 8
+450,0, 0,0, 6
+450,1, 0,0, 6
+450,2, 0,0, 5
+450,3, 0,0, 5
 Clsn1: 1
   Clsn1[0] = 13, -14, 37, -1
 450,5, 0,0, 30

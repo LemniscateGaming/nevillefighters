@@ -1954,10 +1954,39 @@ trigger1 = animelem = 13
 x = -5
 y = 0
 
+[State 0, PlaySnd]
+type = PlaySnd
+trigger1 = animelem = 14
+value = 20,0
+
+[State 0, EnvColor]
+type = EnvColor
+trigger1 = animelemno(0) = 14
+trigger1 = HitCount > 0
+value = 200,100,0
+time = 1
+under = 1 
+
+[State 0, EnvColor]
+type = EnvColor
+trigger1 = animelemno(0) = 15
+trigger1 = HitCount > 0
+value = 0,100,255
+time = 1
+under = 1 
+
+[State 0, EnvColor]
+type = EnvColor
+trigger1 = animelemno(0) = 16
+trigger1 = HitCount > 0
+value = 246,10,0
+time = 1
+under = 1 
+
 [State 490, VelSet]
 type = VelSet
-trigger1 = animelem = 14
-x = 15
+trigger1 = animelem = 15
+x = 13.5
 y = 0
 
 [State 490, 25]

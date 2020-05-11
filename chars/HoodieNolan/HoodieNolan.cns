@@ -13,7 +13,7 @@ airjuggle         = 15	;Number of points for juggling
 sparkno           = 2	;Default hit spark number for HitDefs
 guard.sparkno     = 40	;Default guard spark number
 KO.echo           = 0	;1 to enable echo on KO
-volume            = 0	;Volume offset (negative for softer)
+volumescale            = 100	;Volume offset (negative for softer)
 ;Variables with this index and above will not have their values
 ;reset to 0 between rounds or matches. There are 60 int variables,
 ;indexed from 0 to 59, and 40 float variables, indexed from 0 to 39.
@@ -26,8 +26,8 @@ FloatPersistIndex = 40
 
 
 [Size]
-xscale = 1.1           ;Horizontal scaling factor.
-yscale = 1.1           ;Vertical scaling factor.
+xscale = 1.05           ;Horizontal scaling factor.
+yscale = 1.05           ;Vertical scaling factor.
 ground.back = 15     ;Player width (back, ground)
 ground.front = 16    ;Player width (front, ground)
 air.back = 12        ;Player width (back, air)
@@ -85,11 +85,17 @@ down.friction.threshold = .05         ;If the player's speed drops below this th
 ;The default language victory quotes must be implemented in English.
 [Quotes]
 ; Up to 100 victory quotes can be specified per language (victory0 - victory99)
-victory1 = "You shouldv'e bought the merch, maybe I wouldv'e spared you!"
-victory2 = "Notre dame has been did done!"
-victory3 = "Feel the power of the nolan memes!"
-victory4 = "I, Nolan Ballard, have a dream."
-victory5 = "lmao oof..."
+
+victory1 =  "You shouldv'e bought the merch, maybe I wouldv'e spared you!"
+victory2 =  "Notre dame has been did done!"
+victory3 =  "Feel the power of the nolan memes!"
+victory4 =  "I, Nolan Ballard, have a dream."
+victory5 =  "lmao oof..."
+victory6 =  "I am Nolan, I am Matt. I want to start Nolan memes."
+victory7 =  "Yare yare daze..."
+victory8 =  "I did it!"
+victory9 =  "Bruh moment."
+victory10 = "Neville did it."
 
 ;---------------------------------------------------------------------------
 ; Format:
@@ -169,7 +175,6 @@ value = 0
 [State 190, Helper]
 type = Helper
 trigger1 = animelem = 7
-helpertype = Normal ;Player
 name = "NotreDame"
 stateno = 191
 pos = 0,0
@@ -277,7 +282,6 @@ color = 256
 type = Helper
 trigger1 = time%3 = 0
 trigger1 = enemy,alive = 0
-helpertype = Normal ;Player
 name = "NotreDame"
 stateno = 851
 pos = ((random-499)/3),0
@@ -645,7 +649,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 1.25
-volume = 50
+volumescale = 50
 
 [State 221, Pause]
 type = Pause
@@ -1023,7 +1027,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 1.25
-volume = 50
+volumescale = 50
 
 [State 251, Pause]
 type = Pause
@@ -1148,11 +1152,11 @@ trigger1 = animelem = 5
 trigger2 = anim != 400
 trigger2 = animelem = 4
 getpower = 32
-damage = 16*(1.025**HitCount),0
+damage = 15*(1.025**HitCount),0
 pausetime = 8,0 	;Time player freezes, time opponent shakes
 guard.pausetime = 8,8
-ground.velocity = -1.15*(1.025**HitCount)
-guard.velocity = -1.25*(1.025**HitCount)
+ground.velocity = floor(-1.2*(1.025**HitCount))
+guard.velocity = floor(-1.3*(1.025**HitCount))
 air.velocity = -0.1
 getpower = 10 	;Only if hit ssuccessfully
 attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
@@ -1165,9 +1169,9 @@ sparkxy = 0,0
 hitsound = S22,floor(random/250)
 guardsound = S6,2+floor(random/499)
 ground.type = High      ;Low, Trip, None. 
-ground.slidetime = 25
+ground.slidetime = 21
 ;guard.slidetime = 
-ground.hittime = 22
+ground.hittime = 21
 ;guard.hittime = 
 ;air.hittime = 
 
@@ -1446,7 +1450,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 1.25
-volume = 50
+volumescale = 50
 
 [State 421, Pause]
 type = Pause
@@ -1694,7 +1698,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 1.25
-volume = 50
+volumescale = 50
 
 [State 451, Pause]
 type = Pause
@@ -1963,7 +1967,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 1.25
-volume = 50
+volumescale = 50
 
 [State 621, Pause]
 type = Pause
@@ -2362,7 +2366,7 @@ ground.velocity = -1
 ;guard.velocity = -1
 air.velocity = -1
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Light          ;Light/Medium/Hard
@@ -2449,7 +2453,7 @@ ground.velocity = -1.6
 ;guard.velocity = -1
 air.velocity = -1.6
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Medium          ;Light/Medium/Hard
@@ -2536,7 +2540,7 @@ ground.velocity = -1.6
 ;guard.velocity = -1
 air.velocity = -1.6
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Hard          ;Light/Medium/Hard
@@ -2643,7 +2647,7 @@ ground.velocity = -4
 guard.velocity = -2.5
 air.velocity = -4
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Hard          ;Light/Medium/Hard
@@ -2705,7 +2709,7 @@ ground.velocity = -1
 ;guard.velocity = -1
 air.velocity = -1
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Light          ;Light/Medium/Hard
@@ -2766,7 +2770,7 @@ ground.velocity = -1.6
 ;guard.velocity = -1
 air.velocity = -1.6
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Medium          ;Light/Medium/Hard
@@ -2827,7 +2831,7 @@ ground.velocity = -1.6
 ;guard.velocity = -1
 air.velocity = -1.6
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Medium          ;Light/Medium/Hard
@@ -2888,7 +2892,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 1.25
-volume = 50
+volumescale = 50
 
 [State 823, Pause]
 type = Pause
@@ -2919,7 +2923,7 @@ ground.velocity = -4
 guard.velocity = -3
 air.velocity = -4
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Hard          ;Light/Medium/Hard
@@ -2973,7 +2977,7 @@ ctrl = 1
 type = PlaySnd
 trigger1 = time = 0
 value = 1,1
-volume = 75
+volumescale = 75
 channel = 3
 
 [State 840, VarAdd]
@@ -2986,7 +2990,6 @@ value = 1
 [State 840, Helper]
 type = Helper
 trigger1 = time = 0
-helpertype = Normal ;Player
 name = "Limit Meter"
 stateno = 2000
 pos = 0,-60
@@ -3019,7 +3022,7 @@ ctrl = 1
 type = PlaySnd
 trigger1 = time = 0
 value = 1,1
-volume = 75
+volumescale = 75
 channel = 3
 
 [State 69420, VarAdd]
@@ -3032,7 +3035,6 @@ value = 3
 [State 69420, Helper]
 type = Helper
 trigger1 = time = 0
-helpertype = Normal ;Player
 name = "Limit Meter"
 stateno = 2000
 pos = 0,-45
@@ -3133,7 +3135,7 @@ type = PlaySnd
 trigger1 = !time
 value = 23,1
 freqmul = 0.75
-volume = 75
+volumescale = 75
 
 [State 850, VarAdd]
 type = VarAdd
@@ -3143,7 +3145,6 @@ var(2) = 10 ;this is just alternate notation, it adds 1
 [State 850, Helper]
 type = Helper
 trigger1 = time = 10
-helpertype = Normal ;Player
 name = "NotreDame"
 stateno = 851
 pos = 0,0
@@ -3166,8 +3167,6 @@ time = 120
 add = 40,20,0
 mul = 200,120,40
 
-
-
 [State 850, Pause]
 type = Pause
 trigger1 = time = 0
@@ -3175,7 +3174,7 @@ time = 30
 
 [State 850, ChangeState]
 type = ChangeState
-trigger1 = time = 120
+trigger1 = time = 90
 value = 0
 ctrl = 1
 
@@ -3264,18 +3263,16 @@ color = 256
 
 [State 851, HitDef]
 type = HitDef
-trigger1 = Time%10 = 0
-trigger1 = Time <= 90
-trigger2 = Time > 90
-damage = 30,5
+trigger1 = (Time%10)%5 = 0
+damage = ifelse(time<90,25,50),5
 p1sprpriority = -5
-pausetime = ifelse(time>90,12,2),2 	;Time player freezes, time opponent shakes
+pausetime = 2,0 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
-ground.velocity = ifelse(time>90,-2,-0.5),ifelse(time>90,-0.5,-2.5)
-guard.velocity = ifelse(time>90,-2,-0.5)
-air.velocity = ifelse(time>90,-2,-0.5),ifelse(time>90,-0.5,-2.5)
+ground.velocity = ifelse(time<90,0,ifelse(facing*(Pos X - enemynear,Pos X)>0,2.5,-2.5)),-8
+guard.velocity = ifelse(time<90,-0.5,-2)
+air.velocity = ifelse(time<90,0,ifelse(facing*(Pos X - enemynear,Pos X)>0,2.25,-2.25)),-8
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,SA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 ;guardflag = MA         ;HLA
 animtype = Medium          ;Light/Medium/Hard
@@ -3285,11 +3282,9 @@ sparkxy = 0,0
 hitsound = S9,floor(random/333)
 guardsound = S6,6+floor(random/500)
 ground.type = High      ;Low, Trip, None. 
-ground.slidetime = 20
-;guard.slidetime = 
 ground.hittime = 20
-;guard.hittime = 
-;air.hittime = 
+guard.hittime = 20
+air.hittime = 20
 
 [State 851, PlaySnd]
 type = PlaySnd
@@ -3310,12 +3305,10 @@ trigger2 = Time%40 = 0
 trigger2 = Time > 90
 damage = 25,5
 pausetime = 0,0 	;Time player freezes, time opponent shakes
-;guard.pausetime = 
-ground.velocity = 0
+ground.velocity = -1.5
 guard.velocity = -2.1
-air.velocity = 0
-;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+air.velocity = -1.2
+attr = S,SP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Hard          ;Light/Medium/Hard
@@ -3356,12 +3349,10 @@ trigger2 = Time > 90
 
 damage = 25,5
 pausetime = 0,0 	;Time player freezes, time opponent shakes
-;guard.pausetime = 
-ground.velocity = 0
+ground.velocity = -1.5
 guard.velocity = -2.1
-air.velocity = 0
-;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+air.velocity = -1.2
+attr = S,SP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Hard          ;Light/Medium/Hard
@@ -3441,7 +3432,7 @@ ground.velocity = -1.6
 ;guard.velocity = -1
 air.velocity = -1.6
 ;getpower = 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = MA         ;HLA
 animtype = Light          ;Light/Medium/Hard
@@ -3504,7 +3495,7 @@ value = GameTime
 type = Projectile
 trigger1 = animelem = 7
 
-attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
+attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
 guardflag = HA         ;HLA
 animtype = Medium
@@ -3532,15 +3523,13 @@ projscale = 0.5,0.8
 projremove = 1
 projremovetime = 600
 velocity = 6.6,0
-remvelocity = 0,0
-accel = -0.09,0
+accel = -0.0886,0
 projhits = 10
 projmisstime = 0
 projpriority = 2
 projsprpriority = 4
-projedgebound = 999
-projstagebound = 999
-projheightbound = -240
+projedgebound = 250 ; max of t/2 * (2(6.6) +(t-1)0.0886) is almost exactly 250
+projstagebound = 250
 offset = 14*Const(size.xscale),-34*Const(size.yscale)
 postype = P1         ;P2, Front, Back, Left, Right
 projshadow = 0,0,0

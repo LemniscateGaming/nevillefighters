@@ -3,7 +3,7 @@
 
 [Data]
 life              = 750 ;Amount of life to start with
-attack            = 120	;attack power (more is stronger)
+attack            = 122	;attack power (more is stronger)
 defence           = 100	;defensive power (more is stronger)
 fall.defence_up   = 50	;Percentage to increase defense everytime player is knocked down
 liedown.time      = 60	;Time which player lies down for, before getting up
@@ -24,8 +24,8 @@ FloatPersistIndex = 40
 
 
 [Size]
-xscale = 1.1          ;Horizontal scaling factor.
-yscale = 1.1           ;Vertical scaling factor.
+xscale = 1.05          ;Horizontal scaling factor.
+yscale = 1.05           ;Vertical scaling factor.
 ground.back = 15     ;Player width (back, ground)
 ground.front = 16    ;Player width (front, ground)
 air.back = 12        ;Player width (back, air)
@@ -623,13 +623,25 @@ value = HitCount
 type = ChangeState
 trigger1 = Command = "x"
 trigger1 = var(1) != 0
-trigger1 = !IsHelper(891) || GameTime - var(4) >= 625
 value = 200
 ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = IsHelper(891)
+triggerall = animelemno(0) > 3
+trigger1 = GameTime - var(4) >= 625
+trigger1 = Enemy, Alive = 1
+trigger2 = Parent, Alive = 0
+trigger3 = parent,stateno = 901
+value = 205
+ctrl = 0
+
+
 [State 200, ChangeState] ;Punch end animation
 type = ChangeState
 trigger1 = AnimTime = 0
-value = 205 ;205 if first punch, 206 if second
+value = 205
 ctrl = 0
 
 ; Standing Light Punch Finisher (y+z after at least 4 hits)
@@ -1512,13 +1524,24 @@ value = 2
 type = ChangeState
 trigger1 = Command = "x"
 trigger1 = var(1) != 0
-trigger1 = !IsHelper(891) || GameTime - var(4) >= 625
 value = 400
 ctrl = 0
+
+[State 0, ChangeState]
+type = ChangeState
+triggerall = IsHelper(891)
+triggerall = animelemno(0) > 3
+trigger1 = GameTime - var(4) >= 625
+trigger1 = Enemy, Alive = 1
+trigger2 = Parent, Alive = 0
+trigger3 = parent,stateno = 901
+value = 405
+ctrl = 0
+
 [State 400, ChangeState] ;Punch end animation
 type = ChangeState
 trigger1 = AnimTime = 0
-value = 405 ;205 if first punch, 206 if second
+value = 405
 ctrl = 0
 
 ; Crouching Light Punch Finisher (x+y after at least 4 hits)
@@ -4054,7 +4077,6 @@ ground.velocity = 0
 air.velocity = 0
 attr = S,NA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
-guardflag = H
 animtype = Medium          ;Light/Medium/Hard
 sparkno = 0
 guard.sparkno = 0
@@ -4158,7 +4180,7 @@ y = 13
 type = HitDef
 trigger1 = time >= 10
 trigger1 = AnimElemNo(0) >= 8
-damage = 375,375
+damage = 330,330
 pausetime = 0,45 	;Time player freezes, time opponent shakes
 ground.velocity = -6, -12
 air.velocity = -6, -12
