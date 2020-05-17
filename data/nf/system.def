@@ -16,8 +16,8 @@
 ;----------------------------
 [Info]
 name = "NevilleFighters"           ;Name of motif
-author = "Elecbyte"       ;Motif author name
-versiondate = 01,01,2011  ;Version date of motif (MM-DD-YYYY) (new in MUGEN 1.0)
+author = "Lemniscate"       ;Motif author name
+versiondate = 05,10,2020  ;Version date of motif (MM-DD-YYYY) (new in MUGEN 1.0)
 mugenversion = 1.1        ;Version of M.U.G.E.N motif is compatible with (new in MUGEN 1.0)
 localcoord = 1280,720     ;Local coordinate space width and height (new in MUGEN 1.0)
 
@@ -226,9 +226,9 @@ _
 fadein.time = 10
 fadeout.time = 10
 rows = 3
-columns = 10
+columns = 11
 wrapping = 1              ;1 to let cursor wrap around
-pos = 170,450           ;Position to draw to
+pos = 155,455           ;Position to draw to
 showemptyboxes = 1        ;1 to show empty boxes
 moveoveremptyboxes = 1    ;1 to allow cursor to move over empty boxes
 cell.size = 75,75       ;x,y size of each cell (in pixels)

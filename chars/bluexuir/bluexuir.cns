@@ -60,6 +60,20 @@ yaccel = .44		;Vertical acceleration
 stand.friction = .85	;Friction coefficient when standing
 crouch.friction = .82	;Friction coefficient when crouching
 
+[Quotes]
+;General (1-10)
+victory1 = "Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel Joel"
+victory2 = "The Joel Alarm will counter all your vulnerabilities!"
+victory3 = "while (joelalarm.on) { message.channel.send(\"Joel\") };"
+victory4 = "Worship me, as I am under control of the Joel Alarm!"
+victory5 = "The Joel Alarms never faulter!  ...well except for that one time..."
+victory6 = "e."
+victory7 = "Get spammed bruh!"
+victory8 = "@everyone it's 4:20"
+victory9 = "My epic memes are far too powerful! Bow down to me!"
+victory10 = "You have been JOELED!!!!!"
+
+
 ;---------------------------------------------------------------------------
 ; Format:
 ; [Statedef STATENO]

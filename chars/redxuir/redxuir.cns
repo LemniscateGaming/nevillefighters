@@ -60,6 +60,19 @@ yaccel = .44		;Vertical acceleration
 stand.friction = .85	;Friction coefficient when standing
 crouch.friction = .82	;Friction coefficient when crouching
 
+[Quotes]
+;General (1-10)
+victory1 = "Power courses through me."
+victory2 = "Begone, THOT!"
+victory3 = "You are a slave. Want emancipaton?"
+victory4 = "Come on! Show me your true form next time!"
+victory5 = "I look forward to our next encounter... where I will utterly defeat you once again."
+victory6 = "You cannot defeat me and my Shadow Joels. I have an infinite supply!"
+victory7 = "You dare challenge me, a master of deception?"
+victory8 = "Haha! That was easier than I thought!"
+victory9 = "Well.. That's that."
+victory10 = "Feel my STANDO POWAH!"
+
 ;---------------------------------------------------------------------------
 ; Format:
 ; [Statedef STATENO]

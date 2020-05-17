@@ -645,6 +645,41 @@ trigger1 = statetype = S
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
+;Insufficient Mana Anim (Stand)
+[State -1, Crouching Light Punch]
+type = ChangeState
+value = 460
+triggerall = statetype = S
+triggerall = ctrl
+trigger1 = command = "c"
+trigger1 = power < 500
+trigger2 = command = "QCF_x"
+trigger2 = power < 100
+trigger3 = command = "QCF_y"
+trigger3 = power < 100
+trigger4 = command = "QCF_z"
+trigger4 = power < 50
+trigger5 = command = "QCF_a"
+trigger5 = power < 1000
+trigger6 = command = "XuirophantGreen"
+trigger6 = power < 3000
+
+;---------------------------------------------------------------------------
+;Insufficient Mana Anim (Crouch)
+[State -1, Crouching Light Punch]
+type = ChangeState
+value = 465
+triggerall = command = "holddown"
+triggerall = statetype = C
+triggerall = ctrl
+trigger1 = command = "x"
+trigger1 = power < 50
+trigger2 = command = "y"
+trigger2 = power < 50
+trigger3 = command = "z"
+trigger3 = power < 150
+
+;---------------------------------------------------------------------------
 ;Crouching Light Punch (Dominance)
 [State -1, Crouching Light Punch]
 type = ChangeState

@@ -60,6 +60,20 @@ yaccel = .44		;Vertical acceleration
 stand.friction = .85	;Friction coefficient when standing
 crouch.friction = .82	;Friction coefficient when crouching
 
+[Quotes]
+
+;General (1-10)
+victory1 = "You just got destroyed by a stick figure."
+victory2 = "This is what happens when you don't nerf me."
+victory3 = "I may be a testing character, but that doesn't mean I can't be broken! The opposite, in fact."
+victory4 = "Rise up, Person mains!"
+victory5 = "You must train harder if you wish to defeat me."
+victory6 = "I may have won but that doesn't mean you should nerf me."
+victory7 = "I've been in this game longer than anyone here! Of course I'll win every battle."
+victory8 = "I'm the most badass stick figure you'll ever meet!"
+victory9 = "I'm as thin as a toothpick but as powerful as a semitruck!"
+victory10 = "Don't underestimate me just because I'm a stick figure."
+
 ;---------------------------------------------------------------------------
 ; Format:
 ; [Statedef STATENO]
@@ -1217,11 +1231,87 @@ value = 5100 ;Hit ground
 
 [Statedef -3]
 
-;This controller plays a sound everytime the player lands from a jump, or
-;from a back-dash.
-[State -3, Landing Sound]
-type = PlaySnd
-triggerall = Time = 1
-trigger1 = stateno = 52 ;Jump land
-trigger2 = stateno = 106 ;Run-back land
-value = 40, 0
+[State 180, GeneralQuote]
+type =  VictoryQuote
+trigger1 = time = 0
+value = 1+random%10
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "person"
+value = 11
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "orangexuir"
+value = 12
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "bluexuir"
+value = 13
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "redxuir"
+value = 14
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NevillePrime"
+value = 15
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NoloudStriffle"
+value = 16
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NevilloudZX"
+value = 17
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "truexuir"
+value = 18
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "nloud"
+value = 19
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "mrho"
+value = 20
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "jahlil"
+value = 21
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "HoodieNolan"
+value = 22
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "ShadowedNeville"
+value = 23
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "nevillezx"
+value = 24
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "dmbreezy"
+value = 25
+[State 180, GeneralQuote]
+type =  VictoryQuote
+trigger1 = time = 0
+trigger1 = random%4 = 0
+value = 1+random%10

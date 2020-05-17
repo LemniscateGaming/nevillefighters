@@ -70,22 +70,39 @@
  ;
  ;Insert your characters below.
 
+HoodieNolan, stages/nolanboulevard.def
 Person, stages/stage0-720.def
-orangexuir, random
+orangexuir, stages/xuirstreet.def
 bluexuir, random
 redxuir, random
-randomselect
-NevillePrime, random
-NoloudStriffle, stages/nolanboulevard.def
-NevilloudZX, random
-truexuir, random
-nloud, random
 mrho, stages/mrhodesert.def
+truexuir, random
+NevillePrime, random
+NoloudStriffle, random
+NevilloudZX, random
+nloud, random
+NevilleZX, stages/nevillebox.def
 jahlil, random
-HoodieNolan, stages/nevillebox.def
-ShadowedNeville, stages/nevilleroom.def
-NevilleZX, random
 dmbreezy, random
+ShadowedNeville, stages/nevilleroom.def
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+none, none
+randomselect
 
 ;-----------------------
 [ExtraStages]
@@ -96,6 +113,7 @@ stages/nevilleroom.def
 stages/nevillebox.def
 stages/mrhodesert.def
 stages/nolanboulevard.def
+stages/xuirstreet.def
 
 ;---------------------------------------------------------------------
 [Options]

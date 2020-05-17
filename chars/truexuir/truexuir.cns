@@ -3,9 +3,9 @@
 ; take a look if would like to learn more about the cns.
 
 [Data]
-life = 1250			;Amount of life to start with
+life = 1200			;Amount of life to start with
 power = 2000		;Amount of maximum power
-attack = 100		;attack power (more is stronger)
+attack = 97		;attack power (more is stronger)
 defence = 100		;defensive power (more is stronger)
 fall.defence_up = 50	;Percentage to increase defense everytime player is knocked down
 liedown.time = 60		;Time which player lies down for, before getting up

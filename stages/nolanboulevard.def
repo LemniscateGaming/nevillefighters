@@ -312,18 +312,18 @@ velocity = 0, 0
 tile = 1, 0
 tilespacing = 0, 0
 
-;----------
-;[BG snow] ;if we dont like the look of the snow, we can turn this off
-;type = normal
-;spriteno = 3, 1
-;layerno = 0               
-;start = -540, 0
-;delta = 0.1, 0.1
-;trans = none
-;mask = 1
-;velocity = 0, 0
-;tile = 1, 0
-;tilespacing = 0, 0
+----------
+[BG snow] ;if we dont like the look of the snow, we can turn this off
+type = normal
+spriteno = 3, 1
+layerno = 0               
+start = -540, 0
+delta = 0.1, 0.1
+trans = none
+mask = 1
+velocity = 0, 0
+tile = 1, 0
+tilespacing = 0, 0
 
 ;----------
 ;[BG clouds_front]

@@ -5,7 +5,7 @@
 [Data]
 life = 1000			;Amount of life to start with
 power = 3000		;Amount of maximum power
-attack = 100		;attack power (more is stronger)
+attack = 80		;attack power (more is stronger)
 defence = 100		;defensive power (more is stronger)
 fall.defence_up = 50	;Percentage to increase defense everytime player is knocked down
 liedown.time = 60		;Time which player lies down for, before getting up
@@ -113,7 +113,7 @@ value = 181
 [Statedef 181]
 type = S
 ctrl = 0
-anim = 180
+anim = ifelse(var(10)=0,180,181)
 velset = 0,0
 
 [State 181, 1]
@@ -160,12 +160,12 @@ sprpriority = 2
 
 [State 195, 1]
 type = HitDef
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage =ifelse(p2life<101,150,ifelse(var(10)=0,5,20)),2			;Damage that move inflicts, guard damage
+damage = ifelse(p2life<101,150,ifelse(var(10)=0,5,20)),2			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = ifelse(var(10)=0,MAFDT,)			;Flags on how move is to be guarded against
-hitflag = ifelse(p2life<101,,MAF)			;Flags of conditions that move can hit
+guardflag = MA		;Flags on how move is to be guarded against
+hitflag = MAF		;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 0			;Time attacker pauses, time opponent shakes
@@ -184,7 +184,7 @@ air.hittime = 12			;Time before opponent regains control in air
 
 [State 195, 2]
 type = HitDef
-trigger1 = animelem = 2
+trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage =ifelse(p2life<101,100,ifelse(var(10)=0,5,10)), 2			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -227,7 +227,7 @@ sprpriority = 2			;Set layering priority to 2 (in front)
 
 [State 200, 1]
 type = HitDef
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(var(10)=0,15,20), ifelse(var(10)=0,0,5)			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -236,7 +236,7 @@ hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 8, 8			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -253,7 +253,7 @@ air.hittime = 5			;Time before opponent regains control in air
 
 [State 200, 2]
 type = HitDef
-trigger1 = animelem = 2
+trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(var(10)=0,20,25), ifelse(var(10)=0,0,5)			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -262,7 +262,7 @@ hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 8, 8			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -318,7 +318,7 @@ hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 0			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -374,7 +374,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 30			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -430,7 +430,7 @@ hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 0			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -486,7 +486,7 @@ hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 5			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -538,7 +538,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 40			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -564,7 +564,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 20			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -615,7 +615,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, ifelse(movehit,40,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -666,7 +666,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, ifelse(movehit,20,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -749,7 +749,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 40			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -818,7 +818,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, ifelse(movehit,5,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -908,7 +908,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0,2			;Sound to play on hit
@@ -943,7 +943,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0,0			;Sound to play on hit
@@ -986,7 +986,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-3offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0,0			;Sound to play on hit
@@ -1029,7 +1029,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-3offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0,0			;Sound to play on hit
@@ -1072,7 +1072,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-3offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0,4		;Sound to play on hit
@@ -1288,7 +1288,7 @@ priority = 7, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 150			;Time attacker pauses, time opponent shakes
 guard.pausetime = 0,55 ;i had to do it justin
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-3offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0,4		;Sound to play on hit
@@ -1347,7 +1347,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, ifelse(p2life<201,20,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1415,12 +1415,12 @@ trigger1 = animelem = 1
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(p2life<201,20,7), 4			;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = CA			;Flags on how move is to be guarded against
+guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, ifelse(p2life<201,20,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1441,12 +1441,12 @@ trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
 pausetime = 5, ifelse(p2life<201,20,0)				;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = CA			;Flags on how move is to be guarded against
+guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, 0			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1467,12 +1467,12 @@ trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
 pausetime = 5, ifelse(p2life<201,20,0)				;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = CA			;Flags on how move is to be guarded against
+guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, 0			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1493,12 +1493,12 @@ trigger1 = animelem = 4
 attr = S, NA			;Attribute: Standing, Normal Attack
 pausetime = 5, ifelse(p2life<201,20,0)				;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = CA			;Flags on how move is to be guarded against
+guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, 0			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1519,12 +1519,12 @@ trigger1 = animelem = 5
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(p2life<201,35,7), 10				;Damage that move inflicts, guard damage
 animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
-guardflag = CA			;Flags on how move is to be guarded against
+guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 2, 1			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1579,7 +1579,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, ifelse(p2life<201,20,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1649,7 +1649,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 4, ifelse(p2life<201,20,0)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1892,7 +1892,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, ifelse(p2life<201,100,50)			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -1948,17 +1948,17 @@ type = Projectile
 trigger1 = animelem = 2
 ProjID = 600
 projanim = ifelse(var(10)=0,601,9601)
-projhitanim = ifelse(var(10)=0,601,9601)
-projremanim = ifelse(var(10)=0,601,9601)
-projcancelanim = ifelse(var(10)=0,601,9601)
+projhitanim = ifelse(var(10)=0,602,9601)
+projremanim = ifelse(var(10)=0,602,9601)
+projcancelanim = ifelse(var(10)=0,602,9601)
 projscale = 1,1
 projremove = 1
 projremovetime = -1
-velocity = 3,1.5
-remvelocity = 0,0
+velocity = ifelse(var(10)=0,2,4),ifelse(var(10)=0,2.5,1)
+remvelocity = 0.5,0.25
 accel = 0,0
-velmul = 1
-projhits = 1
+velmul = ifelse(var(10)=0,1.025,1),ifelse(var(10)=0,0.975,1)
+projhi/ltl/;; l/s = 1
 projmisstime = 0
 projpriority = 1
 projsprpriority = 3
@@ -1972,9 +1972,9 @@ supermovetime = 0
 pausemovetime = 0
 attr = S, SP
 damage   = ifelse(var(10)=0,15,25)
-animtype = heavy
+animtype = light
 guardflag = MA
-hitflag = MAFDP
+hitflag = MAF
 pausetime = 1,1
 hitsound   = s0,1
 sparkxy = 500,500
@@ -2021,7 +2021,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 10, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2047,7 +2047,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 10, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2159,38 +2159,43 @@ physics = A
 juggle  = 10
 poweradd= 20
 ctrl = 1
-anim = ifelse(var(10)=0,630,9630)
+
+[State 0, ChangeAnim]
+type = ChangeAnim
+trigger1 = time = 0
+value = ifelse(var(10)=0,630,9630)
+elem = ifelse(MoveHit,2,1)
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 y = -2
 ;ignorehitpause = 
 ;persistent = 
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 2
+trigger1 = animelem = 3
 y = -3
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 3
+trigger1 = animelem = 4
 y = -4
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 4
+trigger1 = animelem = 5
 y = -5
 
 [State 0, VelSet]
 type = VelSet
-trigger1 = animelem = 5
+trigger1 = animelem = 6
 y = 0
 
 [State 610, 1]
 type = HitDef
-trigger1 = animelem = 1
+trigger1 = animelem = 2
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(var(10)=0,2,4),1			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2199,7 +2204,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 10, 20			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -10		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2216,7 +2221,7 @@ air.hittime = 20			;Time before opponent regains control in air
 
 [State 610, 2]
 type = HitDef
-trigger1 = animelem = 2
+trigger1 = animelem = 3
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = 15,5			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2225,7 +2230,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 10, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2242,7 +2247,7 @@ air.hittime = 20			;Time before opponent regains control in air
 
 [State 610, 3]
 type = HitDef
-trigger1 = animelem = 3
+trigger1 = animelem = 4
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = 20,5			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2251,7 +2256,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 10, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2268,7 +2273,7 @@ air.hittime = 20			;Time before opponent regains control in air
 
 [State 610, 4]
 type = HitDef
-trigger1 = animelem = 4
+trigger1 = animelem = 5
 attr = S, NA			;Attribute: Standing, Normal Attack
 damage = ifelse(var(10)=0,20,40),5			;Damage that move inflicts, guard damage
 animtype = Heavy			;Animation type: Light, Medium, Heavy, Back (def: Light)
@@ -2277,7 +2282,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 5, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 10, 10			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2326,7 +2331,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 5			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2353,7 +2358,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 5			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = s0, 0			;Sound to play on hit
@@ -2417,7 +2422,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 9			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -2444,7 +2449,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 5			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -2471,7 +2476,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 5			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -2540,7 +2545,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 1			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -2567,7 +2572,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 1			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -2594,7 +2599,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 1			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -2621,7 +2626,7 @@ hitflag = MAFD			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
 					;Hit/Miss/Dodge type (Def: Hit)
 pausetime = 0, 1			;Time attacker pauses, time opponent shakes
-sparkno = 37284723984732984				;Spark anim no (Def: set above)
+sparkno = -1				;Spark anim no (Def: set above)
 sparkxy = -10, -76		;X-offset for the "hit spark" rel. to p2,
 					;Y-offset for the spark rel. to p1
 hitsound = 5, 0			;Sound to play on hit
@@ -3017,8 +3022,8 @@ type = BGPalFX
 trigger1 = P2life <= 200
 trigger1 = stateno = [200,4999]
 time = 1
-mul = 255+(200-P2life)*0.25,255-(200-P2life)*0.25,255-(200-P2life)*0.25
-add = (200-P2life)*0.5,(200-P2life)*-0.5,(200-P2life)*-0.5
+mul = floor(255+(200-P2life)*0.25),floor(255-(200-P2life)*0.25),floor(255-(200-P2life)*0.25)
+add = floor((200-P2life)*0.5),floor((200-P2life)*-0.5),floor((200-P2life)*-0.5)
 ignorehitpause = 1
 
 [State 0, EnvColor]

@@ -82,12 +82,32 @@ down.friction.threshold = .05         ;If the player's speed drops below this th
 ;Default language victory quotes **MUGEN 1.0**
 ;The default language victory quotes must be implemented in English.
 [Quotes]
-; Up to 100 victory quotes can be specified per language (victory0 - victory99)
-victory1 = "You shouldv'e bought the merch, maybe I wouldv'e spared you!"
-victory2 = "Notre dame has been did done!"
-victory3 = "Feel the power of the nolan memes!"
-victory4 = "I, Nolan Ballard, have a dream."
-victory5 = "lmao oof..."
+;General (1-10), Player-Specific(11-25)
+victory1 =  "My Road Rollers will forever crush you!"
+victory2 =  "You thought you could beat me!? How foolish!"
+victory3 =  "You cannot predict my Big-Brain plays."
+victory4 =  "Niceu niceu! Very niceu, shadow clones!"
+victory5 =  "You incompetent humans..."
+victory6 =  "WRRRYYYYYYYYYYYYYYYYY!!!!!"
+victory7 =  "Road rollar da!"
+victory8 =  "Total darkness is the best solution."
+victory9 =  "To the shadow realm with you!"
+victory10 = "Kono Shadowed Neville Da..."
+victory11 = "No one likes you Person, you deserve a hundred more nerfs." ;Person
+victory12 = "Xuir.EXE, huh? Too bad, even immortals have VPN." ;Orange Xuir
+victory13 = "The Joel Alarm isn't even that powerful. Insolent humans... You don't know true power." ;Blue Xuir
+victory14 = "Another Shadow Clone user, I see? Too bad. I outclass you in every way, Red Xuir!" ;Red Xiur
+victory15 = "Prime... You have underestimated the Shadow Realm!" ;Neville Prime
+victory16 = "Sazuki Castle, such a weak army... How many beatings will it take..." ;Noloud
+victory17 = "Nevilloud, the Shadow Realm is more powerful than you think. Reconsider your chances next time you challenge us." ;Nevilloud
+victory18 = "I don't need to be a member of the Protegent Anti-Joel to know you're a weakling at most, True Joel!" ;True Xuir
+victory19 = "N'Loud? I though I trapped you in the Shadow Realm!" ;N'Loud
+victory20 = "I can decrypt your language, Mrho. I can decrypt any message. Find another way to fool me... oh wait, there isn't one." ;Mrho Xuir
+victory21 = "I have defeated my own master... What more is there to accomplish on this planet?" ;Jahlil
+victory22 = "You're nothing but a puny version of me, Hoodie Nolan! Rot in hell!" ;Hoodie Nolan
+victory23 = "Am I a clone of you, or are you a clone of me? Clearly you are the clone, because I am superior." ;Shadowed Neville
+victory24 = "Your advanced civilization cannot affect me. No technology is advanced enough to outcompete pure intelligence." ;Neville ZX
+victory25 = "I am the embodiment of darkness, DM Breezy. Did you think you could purify me with mere hand sanitizer!? Pathetic!" ;DM Breezy
 
 ;---------------------------------------------------------------------------
 ; Format:
@@ -4558,14 +4578,7 @@ trigger2 = ProjContact823 = 1, = 1
 time = 30
 freq = 90
 
-[State 0, DisplayToClipboard]
-type = DisplayToClipboard
-trigger1 = 1
-text = "GAMETIME:%d"
-params = GameTime
-
-
-[State -3, StopSnd]
+[State -2, StopSnd]
 type = StopSnd
 trigger1 = stateno != 840 && stateno != 69420
 trigger1 = var(2) < 100
@@ -4728,3 +4741,90 @@ id = 2105
 ;scale = floor(0.20 * (ifelse(root,var(2) > 100, 100, root,var(2)))) * 0.05, 1
 trans = Add
 alpha = ifelse(root,stateno=840,64,256),ifelse(root,stateno=840,192,0)
+
+[Statedef -3]
+
+[State 180, GeneralQuote]
+type =  VictoryQuote
+trigger1 = time = 0
+value = 1+random%10
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "person"
+value = 11
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "orangexuir"
+value = 12
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "bluexuir"
+value = 13
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "redxuir"
+value = 14
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NevillePrime"
+value = 15
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NoloudStriffle"
+value = 16
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NevilloudZX"
+value = 17
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "truexuir"
+value = 18
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "nloud"
+value = 19
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "mrho"
+value = 20
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "jahlil"
+value = 21
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "HoodieNolan"
+value = 22
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "ShadowedNeville"
+value = 23
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "nevillezx"
+value = 24
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "dmbreezy"
+value = 25
+[State 180, GeneralQuote]
+type =  VictoryQuote
+trigger1 = time = 0
+trigger1 = random%4 = 0
+value = 1+random%10

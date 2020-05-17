@@ -40,10 +40,6 @@ Clsn2: 1
   Clsn2[0] = -6, -62, 9, -1
 0,2, 0,0, 6
 
-; Crouch to stand
-[Begin Action 12]
--1,0, 0,0, 0
-
 ; Walking Forward
 [Begin Action 20]
 Clsn2Default: 1
@@ -393,12 +389,21 @@ Clsn2: 1
 201,0, 0,0, 5
 201,1, 0,0, 5
 
+; Insufficient Power Anim
+[Begin Action 460]
+Clsn2Default: 1
+  Clsn2[0] = -8, -60, 11, 1
+
+1100,0, 0,0, 15
+1100,1, 0,0, 15
+
 ; Jump light punch (Forward Shot)
 [Begin Action 600]
 Clsn2Default: 1
   Clsn2[0] = -10, -62, 13, 1
-204,0, 0,0, 5
+204,0, 0,0, 8
 204,0, 0,0, 10
+204,0, 0,0, -1
 
 ; Forward Shot Longer
 [Begin Action 616]
@@ -476,22 +481,25 @@ Clsn2Default: 1
   Clsn2[0] = -8, -63, 11, 0
 206,0, 0,0, 4
 206,0, 0,0, 10
+206,0, 0,0, -1
 
 ; Jump strong punch (Up Shot)
 [Begin Action 620]
 Clsn2Default: 1
   Clsn2[0] = -8, -62, 11, 0
-205,0, 0,0, 5
+205,0, 0,0, 4
 205,0, 0,0, 10
+205,0, 0,0, -1
 
 ; Jump kick
 [Begin Action 630]
 Clsn2Default: 1
   Clsn2[0] = -9, -63, 15, -1
-208,0, 0,0, 11
+208,0, 0,0, 4
 Clsn1: 1
   Clsn1[0] = 13, -27, 33, -5
-208,1, 0,0, 14
+208,1, 0,0, 6
+208,0, 0,0, -1
 
 ; Emerald Fist
 [Begin Action 1020]

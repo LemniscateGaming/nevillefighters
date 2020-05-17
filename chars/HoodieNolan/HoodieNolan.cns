@@ -5,7 +5,7 @@
 
 [Data]
 life              = 1100	;Amount of life to start with
-attack            = 100	;attack power (more is stronger)
+attack            = 92	;attack power (more is stronger)
 defence           = 100	;defensive power (more is stronger)
 fall.defence_up   = 50	;Percentage to increase defense everytime player is knocked down
 liedown.time      = 60	;Time which player lies down for, before getting up
@@ -86,16 +86,32 @@ down.friction.threshold = .05         ;If the player's speed drops below this th
 [Quotes]
 ; Up to 100 victory quotes can be specified per language (victory0 - victory99)
 
+;General (1-10), Player-Specific(11-25)
 victory1 =  "You shouldv'e bought the merch, maybe I wouldv'e spared you!"
 victory2 =  "Notre dame has been did done!"
 victory3 =  "Feel the power of the nolan memes!"
-victory4 =  "I, Nolan Ballard, have a dream."
-victory5 =  "lmao oof..."
+victory4 =  "I, Nolan P. Ballard, have a dream."
+victory5 =  "ngl, you just got destroyed..."
 victory6 =  "I am Nolan, I am Matt. I want to start Nolan memes."
-victory7 =  "Yare yare daze..."
+victory7 =  "Oh, I won."
 victory8 =  "I did it!"
-victory9 =  "Bruh moment."
-victory10 = "Neville did it."
+victory9 =  "Get rekt nerd."
+victory10 = "The Hoodie is Unbreakable."
+victory11 = "Person... Looks like you got nerfed again, huh?" ;Person
+victory12 = "Orange Xuir, you'll never hack my laptop because it's broken!" ;Orange Xuir
+victory13 = "The Joel Alarm will never affect me, I weild the power of the Mute Button!" ;Blue Xuir
+victory14 = "Red Jacket Xuir... A worthy opponent, but I am better." ;Red Xiur
+victory15 = "You've been defeated by your creator, Prime. How does it feel?" ;Neville Prime
+victory16 = "Sazuki Castle residents, a respectable force indeed. Unfortunately, you denied my hoodie sale offer. So burn in hell." ;Noloud
+victory17 = "Haha... Sazuki Castle is a strong force, yet I am victorious." ;Nevilloud
+victory18 = "Quit t-posing, True Joel. It's cringe." ;True Xuir
+victory19 = "N'loud? Wait, who tf are you?" ;N'Loud
+victory20 = "Mrho, jesus christ... you finally stopped spamming your aerial X." ;Mrho Xuir
+victory21 = "The air vents are my domain now, Jahlil!!" ;Jahlil
+victory22 = "Damn, there are a lot of clones of me running around, huh..." ;Hoodie Nolan
+victory23 = "ORAORAORA! Feel my power, Shadowed Neville!" ;Shadowed Neville
+victory24 = "Your technology is strong... Maybe I could make a spam-blocker with your remains." ;Neville ZX
+victory25 = "You've been defeated, Beckett! No cultists can stop me!" ;DM Breezy
 
 ;---------------------------------------------------------------------------
 ; Format:
@@ -2339,7 +2355,7 @@ freqmul = 1.1
 
 [State 800, PlaySnd]
 type = PlaySnd
-trigger1 = random < 30
+trigger1 = random < 20
 value = S8,0
 volumescale = 100
 channel = -1
@@ -2347,24 +2363,19 @@ freqmul = 1
 
 [State 800, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 7
 var(2) = 1 ;this is just alternate notation, it adds 1
-
-[State 800, VarAdd]
-type = VarAdd
-trigger1 = ProjHit = 1
-var(2) = 4 ;this is just alternate notation, it adds 1
 
 [State 800, Projectile]
 type = Projectile
 trigger1 = animelem = 7
 
-damage = 16,0
+damage = 25,0
 pausetime = 0,9 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
-ground.velocity = -1
+ground.velocity = -1.5
 ;guard.velocity = -1
-air.velocity = -1
+air.velocity = -1.5
 ;getpower = 
 attr = S,NP        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
@@ -2426,7 +2437,7 @@ freqmul = 1
 
 [State 800, PlaySnd]
 type = PlaySnd
-trigger1 = random < 50
+trigger1 = random < 35
 value = S8,0
 volumescale = 100
 channel = -1
@@ -2434,19 +2445,14 @@ freqmul = 1
 
 [State 810, VarAdd]
 type = VarAdd
-trigger1 = time = 0
+trigger1 = animelem = 7
 var(2) = 2 ;this is just alternate notation, it adds 1
-
-[State 810, VarAdd]
-type = VarAdd
-trigger1 = ProjHit = 1
-var(2) = 6 ;this is just alternate notation, it adds 1
 
 [State 810, Projectile]
 type = Projectile
 trigger1 = animelem = 7
 
-damage = 33,0
+damage = 48,5
 pausetime = 0,9 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -1.6
@@ -2505,7 +2511,7 @@ ctrl = 0
 
 [State 820, PlaySnd]
 type = PlaySnd
-trigger1 = random < 75
+trigger1 = random < 50
 value = S8,0
 volumescale = 100
 channel = -1
@@ -2533,7 +2539,7 @@ var(2) = 9 ;this is just alternate notation, it adds 1
 type = Projectile
 trigger1 = animelem = 8
 
-damage = 55,10
+damage = 95,10
 pausetime = 0,12 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -1.6
@@ -2640,7 +2646,7 @@ type = Projectile
 trigger1 = animelem = 10
 ProjID = 821
 
-damage = 180,45 ;the projectile hits three times very quickly so this isnt that low
+damage = 210,45 ;the projectile hits three times very quickly so this isnt that low
 pausetime = 1,35 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -4
@@ -2702,7 +2708,7 @@ ctrl = 0
 type = Projectile
 trigger1 = animelem = 7
 
-damage = 16,0
+damage = 19,0
 pausetime = 0,9 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -1
@@ -2763,7 +2769,7 @@ ctrl = 0
 type = Projectile
 trigger1 = animelem = 7
 
-damage = 27,0
+damage = 22,0
 pausetime = 0,9 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -1.6
@@ -2824,7 +2830,7 @@ ctrl = 0
 type = Projectile
 trigger1 = animelem = 7
 
-damage = 36,10
+damage = 25,10
 pausetime = 0,12 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -1.6
@@ -2916,7 +2922,7 @@ type = Projectile
 trigger1 = animelem = 7
 ProjID = 823
 
-damage = 135,40
+damage = 155,40
 pausetime = 1,24 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
 ground.velocity = -4
@@ -3268,9 +3274,9 @@ damage = ifelse(time<90,25,50),5
 p1sprpriority = -5
 pausetime = 2,0 	;Time player freezes, time opponent shakes
 ;guard.pausetime = 
-ground.velocity = ifelse(time<90,0,ifelse(facing*(Pos X - enemynear,Pos X)>0,2.5,-2.5)),-8
+ground.velocity = ifelse(time<90,0,ifelse(facing*(Pos X - enemynear,Pos X)>0,2.5,-2.5)),-7.5
 guard.velocity = ifelse(time<90,-0.5,-2)
-air.velocity = ifelse(time<90,0,ifelse(facing*(Pos X - enemynear,Pos X)>0,2.25,-2.25)),-8
+air.velocity = ifelse(time<90,0,ifelse(facing*(Pos X - enemynear,Pos X)>0,2.25,-2.25)),-5.5
 ;getpower = 
 attr = S,SA        ;SCA,NA,SA,HA,NP,SP,HP,NT,ST,HT
 hitflag = MAF        ;HLAFD+-
@@ -3585,3 +3591,91 @@ value = 190
 type = ChangeState
 trigger1 = 1
 value = 0
+
+
+[Statedef -3]
+
+[State 180, GeneralQuote]
+type =  VictoryQuote
+trigger1 = time = 0
+value = 1+random%10
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "person"
+value = 11
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "orangexuir"
+value = 12
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "bluexuir"
+value = 13
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "redxuir"
+value = 14
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NevillePrime"
+value = 15
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NoloudStriffle"
+value = 16
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "NevilloudZX"
+value = 17
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "truexuir"
+value = 18
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "nloud"
+value = 19
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "mrho"
+value = 20
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "jahlil"
+value = 21
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "HoodieNolan"
+value = 22
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "ShadowedNeville"
+value = 23
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "nevillezx"
+value = 24
+[State 180, Quote]
+type = VictoryQuote
+trigger1 = time = 0
+trigger1 = enemy, name = "dmbreezy"
+value = 25
+[State 180, GeneralQuote]
+type =  VictoryQuote
+trigger1 = time = 0
+trigger1 = random%4 = 0
+value = 1+random%10

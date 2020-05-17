@@ -162,13 +162,16 @@ time = 1
 [Statedef 180]
 type = S
 
+[State 191, VictoryQuote] ;Sets a random victory quote out of the 5 quotes per palette
+type = VictoryQuote
+trigger1 = 1
+value = 5*(palno-1) + 1+floor(random/200)
+
 [State 180, VarSet] ;despawns xuirophant if it is out
 type = VarSet
 trigger1 = 1
 v = 5   
 value = 0
-;ignorehitpause = 
-;persistent = 
 
 [State 180, 1]
 type = ChangeState
@@ -196,11 +199,6 @@ type = S
 ctrl = 0
 anim = 190
 velset = 0,0
-
-[State 191, VictoryQuote] ;Sets a random victory quote out of the 5 quotes per palette
-type = VictoryQuote
-trigger1 = time = 0
-value = 5*(palno-1) + ceil(random/200)
 
 [State 0, VarSet] ; I am using this for Mrho's insufficient mana animation that is on a few attacks.
 type = VarSet
@@ -781,6 +779,35 @@ y = 0
 ;trigger1 = parent,stateno != 280
 ;trigger1 = parent,stateno != 281
 
+;Insufficient Mana (Stand)
+[Statedef 460]
+type = S
+movetype = I
+physics = S
+ctrl = 1
+anim = 460
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 0
+ctrl = 1
+
+
+;Insufficient Mana (Crouch)
+[Statedef 465]
+type = C
+movetype = I
+physics = C
+ctrl = 1
+anim = 460
+
+[State 0, ChangeState]
+type = ChangeState
+trigger1 = AnimTime = 0
+value = 11
+ctrl = 1
+
 ;---------------------------------------------------------------------------
 ;Crouching light punch (Dominance)
 [Statedef 400]
@@ -1015,19 +1042,10 @@ ctrl = 0
 anim = 430
 sprpriority = 1
 
-[State 470, LifeAdd]
-type = LifeAdd
-trigger1 = animelem = 2
-value = 42
-absolute = 1
-;ignorehitpause =
-;persistent =
-
 [State 0, PowerAdd]
 type = PowerAdd
 trigger1 = animelem = 2
 value = 450
-
 
 [State 430, 3]
 type = ChangeState
@@ -1058,27 +1076,32 @@ projshadow = -1
 offset = 24,-37
 velocity = 5
 attr = S, NP
-damage   = 6
+damage   = 5
 animtype = light
 guardflag = MA
 hitflag = MAFD
-pausetime = 3,3
+pausetime = 0,0
 hitsound   = 5,2
 sparkno = 0
 sparkxy = 0,0
 guardsound = S6,0
 ground.type = High
 ground.slidetime = 0
-ground.hittime  = 5
-ground.velocity = -2
+ground.hittime  = 3
+air.hittime = 3
+ground.velocity = -0.5
 air.animtype = Light
-air.velocity = -3,0.5
+air.velocity = -0.25
 air.juggle = 3
-air.fall = 1
-down.velocity = -4,-6
-down.hittime = 30
+air.fall = 0
+down.velocity = -0.75,-0.5
+down.hittime = 6
 down.bounce = 0
 
+[State 600, CtrlSet]
+type = CtrlSet
+trigger1 = animelem = 3
+value = 1
 
 ;---------------------------------------------------------------------------
 ;Air Down Shot
@@ -1119,10 +1142,15 @@ ground.velocity = 0.5
 air.animtype = Light
 air.velocity = 1,3
 air.juggle = 3
-air.fall = 1
+air.fall = 0
 down.velocity = -4,-6
 down.hittime = 30
 down.bounce = 0
+
+[State 600, CtrlSet]
+type = CtrlSet
+trigger1 = animelem = 3
+value = 1
 
 ;---------------------------------------------------------------------------
 ;Air Up Shot
@@ -1163,11 +1191,15 @@ ground.velocity = 0,-2
 air.animtype = Light
 air.velocity = 0,-2
 air.juggle = 3
-air.fall = 1
+air.fall = 0
 down.velocity = -3,-5
 down.hittime = 30
 down.bounce = 0
 
+[State 600, CtrlSet]
+type = CtrlSet
+trigger1 = animelem = 3
+value = 1
 
 ;---------------------------------------------------------------------------
 ;Jump Light Kick
@@ -1178,7 +1210,7 @@ physics = A
 juggle  = 3
 poweradd= 10
 ctrl = 0
-anim = 230
+anim = 630
 sprpriority = 2
 
 [State 630, 2]
@@ -1199,6 +1231,11 @@ ground.hittime  = 10
 ground.velocity = -4
 air.velocity = -2,-3
 air.hittime = 14
+
+[State 600, CtrlSet]
+type = CtrlSet
+trigger1 = animelem = 3
+value = 1
 
 ;---------------------------------------------------------------------------
 ;Jump Strong Kick
@@ -1230,6 +1267,11 @@ ground.slidetime = 12
 ground.hittime  = 15
 ground.velocity = -7
 air.velocity = -3,-4
+
+[State 600, CtrlSet]
+type = CtrlSet
+trigger1 = animelem = 3
+value = 1
 
 ;-------------------------------------------------------------------
 ;Emerald Shot
@@ -1270,7 +1312,7 @@ ground.velocity = -5, -2
 air.animtype = Light
 air.velocity = -6, -2.5
 air.juggle = 3
-air.fall = 1
+air.fall = 0
 down.velocity = -4,-6
 down.hittime = 30
 down.bounce = 0
@@ -1322,7 +1364,7 @@ guard.velocity = -1.6
 air.animtype = Light
 air.velocity = -2.5, -12
 air.juggle = 3
-air.fall = 1
+air.fall = 0
 down.velocity = -4,-6
 down.hittime = 30
 down.bounce = 0
@@ -1463,7 +1505,7 @@ ground.velocity = -1
 air.animtype = Light
 air.velocity = -1, 1
 air.juggle = 3
-air.fall = 1
+air.fall = 0
 down.velocity = -4,-6
 down.hittime = 30
 down.bounce = 0
@@ -1496,7 +1538,7 @@ ground.velocity = -1
 air.animtype = Light
 air.velocity = -1, 1
 air.juggle = 3
-air.fall = 1
+air.fall = 0
 down.velocity = -4,-6
 down.hittime = 30
 down.bounce = 0

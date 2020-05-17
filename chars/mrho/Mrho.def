@@ -1,5 +1,5 @@
 [Info]
-name = "Mrho"        ;Name of character
+name = "mrho"        ;Name of character
 displayname = "Mrho Xuir" ;Name of character to display
 versiondate = 2,2,2020    ;Version date of character (MM-DD-YYYY or X.XX)
 mugenversion = 1.1         ;Version of M.U.G.E.N character works on (X.XX)
