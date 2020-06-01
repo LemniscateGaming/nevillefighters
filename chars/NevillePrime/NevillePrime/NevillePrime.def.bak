@@ -1,0 +1,19 @@
+[Info]
+name="NevillePrime"
+displayname="Neville Prime"
+versiondate=8/6/2019
+mugenversion =1.1
+author="iNfin"
+pal.defaults=1,2,3,4,5
+[Files]
+sprite=NevillePrime.sff
+sound=NevillePrime.snd
+anim=NevillePrime.air
+cmd=NevillePrime.cmd
+cns=NevillePrime.cns
+st=NevillePrime.cns
+stcommon=common1.cns
+pal1=NevillePrime.act
+[Arcade]
+intro.storyboard=
+ending.storyboard=
