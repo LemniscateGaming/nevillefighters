@@ -5,7 +5,7 @@
 
 [Data]
 life              = 1100	;Amount of life to start with
-attack            = 92	;attack power (more is stronger)
+attack            = 85	;attack power (more is stronger)
 defence           = 100	;defensive power (more is stronger)
 fall.defence_up   = 50	;Percentage to increase defense everytime player is knocked down
 liedown.time      = 60	;Time which player lies down for, before getting up
@@ -101,7 +101,7 @@ victory11 = "Person... Looks like you got nerfed again, huh?" ;Person
 victory12 = "Orange Xuir, you'll never hack my laptop because it's broken!" ;Orange Xuir
 victory13 = "The Joel Alarm will never affect me, I weild the power of the Mute Button!" ;Blue Xuir
 victory14 = "Red Jacket Xuir... A worthy opponent, but I am better." ;Red Xiur
-victory15 = "You've been defeated by your creator, Prime. How does it feel?" ;Neville Prime
+victory15 = "You've been defeated by your creation, Prime. How does it feel?" ;Neville Prime
 victory16 = "Sazuki Castle residents, a respectable force indeed. Unfortunately, you denied my hoodie sale offer. So burn in hell." ;Noloud
 victory17 = "Haha... Sazuki Castle is a strong force, yet I am victorious." ;Nevilloud
 victory18 = "Quit t-posing, True Joel. It's cringe." ;True Xuir

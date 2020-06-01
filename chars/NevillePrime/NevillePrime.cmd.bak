@@ -117,24 +117,8 @@ command.buffer.time = 1
 ;-| Super Motions |--------------------------------------------------------
 [Command]
 name = "abc"     ;Required (do not remove)
-command = a+b+c
+command = a + b + c
 time = 10
-
-[Command]
-name = "laser1"     ;Required (do not remove)
-command = ~D, DF, F, D, DF, F, y
-time = 30
-
-[Command]
-name = "laser2"     ;Required (do not remove)
-command = ~D, DF, F, D, DF, F, z
-time = 30
-
-[Command]
-name = "laser3"     ;Required (do not remove)
-command = ~D, DF, F, ~D, DF, F, ~B, ~F, ~B, ~D, DF, F, x
-time = 90
-
 ;-| Special Motions |------------------------------------------------------
 
 ;-| Double Tap |-----------------------------------------------------------
@@ -529,36 +513,6 @@ value = 460
 triggerall = command = "abc"
 trigger1 = statetype = C
 trigger1 = var(23) = 1
-trigger1 = ctrl
-
-;---------------------------------------------------------------------------
-; Laser1
-[State -1, Laser1]
-type = ChangeState
-value = 260
-triggerall = command = "laser1"
-trigger1 = statetype != A
-trigger1 = power > 999
-trigger1 = ctrl
-
-;---------------------------------------------------------------------------
-; Laser2
-[State -1, Laser2]
-type = ChangeState
-value = 270
-triggerall = command = "laser2"
-trigger1 = statetype != A
-trigger1 = power > 999
-trigger1 = ctrl
-
-;---------------------------------------------------------------------------
-; Laser3
-[State -1, Laser3]
-type = ChangeState
-value = 280
-triggerall = command = "laser3"
-trigger1 = statetype != A
-trigger1 = power > 2999
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------

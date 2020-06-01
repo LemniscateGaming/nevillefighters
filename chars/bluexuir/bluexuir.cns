@@ -534,8 +534,8 @@ Sprpriority = 7
 type = hitdef
 trigger1 = time = 0
 attr = S, NA			;Attribute: Standing, Normal Attack
-damage = 250, 0			;Damage that move inflicts, guard damage
-animtype = Light			;Animation type: Light, Medium, Heavy, Back (def: Light)
+damage = 250, 50			;Damage that move inflicts, guard damage
+animtype = Hard			;Animation type: Light, Medium, Heavy, Back (def: Light)
 guardflag = MA			;Flags on how move is to be guarded against
 hitflag = MAF			;Flags of conditions that move can hit
 priority = 3, Hit			;Attack priority: 0 (least) to 7 (most), 4 default
@@ -555,20 +555,22 @@ air.type = High			;Type: High, Low, Trip (def: same as ground.type)
 air.velocity = -2,-1		;X-velocity at which opponent is pushed,
 					;Y-velocity at which opponent is pushed
 air.hittime = 12			;Time before opponent regains control in air
+envshake.time = 45
+envshake.freq = 180
 
 [State 303, DestroySelf]
 type = DestroySelf
 trigger1 = animtime = 0
 
 ;---------------------------------------------------------------------------
-; Standing Strong Kick
+; Stun Rush
 ; CNS difficulty: easy
 [Statedef 304]
 type    = S
 movetype= A
 physics = S
 juggle  = 5
-poweradd= 65
+poweradd= -1000
 ctrl = 0
 velset = 0,0
 anim = 305
