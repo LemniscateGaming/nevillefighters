@@ -1,17 +1,18 @@
 [Info]
 name="bluexuir"
 displayname="Blue Jacket Xuir"
-versiondate=7/11/2019
+versiondate=6/6/2020 ;original: 7/11/2019 
 mugenversion=1.1
 author="iNfin"
 pal.defaults=1,2,3,4,5
 [Files]
 sprite=bluexuir.sff
-;sound=bluexuir.snd
+sound=bluexuir.snd
 anim=bluexuir.air
 cmd=bluexuir.cmd
 cns=bluexuir.cns
 st=bluexuir.cns
+st2=bluexuir-common.cns
 stcommon=common1.cns
 
 [Arcade]

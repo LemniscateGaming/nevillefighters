@@ -120,17 +120,86 @@ command.buffer.time = 1
 [Command]
 name = "projectileshoot"
 command = ~D, DF, F, x
-time= 10
+time= 20
+
+[Command]
+name = "sniperlaser"
+command = ~D, DF, F, c
+time= 20
+
+[Command] ;+1 shield
+name = "shield"
+command = ~D, DB, B, x
+time = 20
+[Command]
+name = "shield"
+command = ~D, DB, B, y
+time = 20
+[Command]
+name = "shield"
+command = ~D, DB, B, z
+time = 20
+
+[Command] ;+3 shield
+name = "shield2"
+command = ~D, DB, B, s
+time = 20
+
+[Command]
+name = "grandshield"
+command = ~D, DB, B, a
+time = 20
+[Command]
+name = "grandshield"
+command = ~D, DB, B, b
+time = 20
+[Command]
+name = "grandshield"
+command = ~D, DB, B, c
+time = 20
 
 [Command]
 name = "alarmshoot"
 command = ~D, DF, F, y
-time= 10
+time= 20
 
 [Command]
 name = "StunRush"
 command = ~D, DF, F, z
-time= 10
+time= 20
+
+[Command]
+name = "punchbarrage"
+command = x,x,x,x
+time = 32
+
+[Command]
+name = "laserbarrage"
+command = y,F,B,D,y
+time = 40
+
+[Command]
+name = "skyslam"
+command = z,U,F,B,z
+time = 32
+
+[Command]
+name = "skypunchthrow"
+command = c,D,B,F,c
+time = 75
+
+[Command]
+name = "jumpkick"
+command = U,UF,F,a
+time = 30
+[Command]
+name = "jumpkick"
+command = U,UF,F,b
+time = 30
+[Command]
+name = "jumpkick"
+command = U,UF,F,c
+time = 30
 
 ;-| Double Tap |-----------------------------------------------------------
 [Command]
@@ -519,13 +588,75 @@ trigger1 = ctrl
 
 ;===========================================================================
 ;---------------------------------------------------------------------------
-;projectileshoot
+;Laser Barrage (Combo)
+[State -1, Laser Barrage]
+type = ChangeState
+value = 385
+triggerall = command = "laserbarrage"
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Sky Punch Throw (Combo)
+[State -1, Laser Barrage]
+type = ChangeState
+value = 390
+triggerall = command = "skypunchthrow"
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Sky Slam (Combo)
+[State -1, Laser Barrage]
+type = ChangeState
+value = 710
+triggerall = command = "skyslam"
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Punch Barrage (Combo)
+[State -1, Laser Barrage]
+type = ChangeState
+value = 700
+triggerall = command = "punchbarrage"
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Flying Jump Kick
+[State -1, Flying Jump Kick]
+type = ChangeState
+value = 720
+triggerall = command = "jumpkick"
+trigger1 = statetype = A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Joel Orb Stand
 [State -1, Joel Orb]
 type = ChangeState
-value = 300
+value = 360
 triggerall = command = "projectileshoot"
-trigger1 = statetype = S
-trigger1 = ctrl
+triggerall = statetype != A
+triggerall = ctrl
+trigger1 = var(5) = 0
+trigger1 = NumHelper(365) < 5
+trigger2 = var(5) = 1
+trigger2 = NumHelper(365) < 15
+
+;---------------------------------------------------------------------------
+;Joel Orb Air
+[State -1, Joel Orb]
+type = ChangeState
+value = 361
+triggerall = command = "projectileshoot"
+triggerall = statetype = A
+triggerall = ctrl
+trigger1 = var(5) = 0
+trigger1 = NumHelper(365) < 5
+trigger2 = var(5) = 1
+trigger2 = NumHelper(365) < 15
 
 ;---------------------------------------------------------------------------
 ;alarmshoot
@@ -533,8 +664,9 @@ trigger1 = ctrl
 type = ChangeState
 value = 302
 triggerall = command = "alarmshoot"
-triggerall = power > 999
-trigger1 = statetype = S
+triggerall = power >= 500
+triggerall = !NumHelper(303)
+trigger1 = statetype != A
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
@@ -544,8 +676,52 @@ type = ChangeState
 value = 304
 triggerall = command = "StunRush"
 triggerall = power > 999
-trigger1 = statetype = S
+trigger1 = statetype != A
 trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Grand Xuir Shield
+[State -1, Shield]
+type = ChangeState
+value = 370
+triggerall = command = "grandshield"
+triggerall = power >= 2000
+triggerall = var(0) >= 3
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Shield (+1)
+[State -1, Shield]
+type = ChangeState
+value = 355
+triggerall = command = "shield"
+triggerall = power >= 500
+triggerall = var(0) < 3
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Shield (+3)
+[State -1, Shield]
+type = ChangeState
+value = 359
+triggerall = command = "shield2"
+triggerall = power >= 1500
+triggerall = var(0) < 3
+trigger1 = statetype != A
+trigger1 = ctrl
+
+;---------------------------------------------------------------------------
+;Sniper Laser
+[State -1, Sniper Laser]
+type = ChangeState
+value = 380
+triggerall = command = "sniperlaser"
+triggerall = power >= 500
+trigger1 = statetype != A
+trigger1 = ctrl
+
 
 ;---------------------------------------------------------------------------
 ; Taunt
@@ -554,6 +730,36 @@ type = ChangeState
 value = 195
 triggerall = command = "s"
 trigger1 = statetype != A
+trigger1 = ctrl
+
+;--------------------------------------------------------------------------
+; Forward Throw
+[State -1, Forward Throw]
+type = ChangeState
+value = 850
+triggerall = command = "a"
+triggerall = command = "holdfwd"
+trigger1 = statetype = S
+trigger1 = ctrl
+
+;--------------------------------------------------------------------------
+; Upward Throw
+[State -1, Upward Throw]
+type = ChangeState
+value = 900
+triggerall = command = "b"
+triggerall = command = "holdfwd"
+trigger1 = statetype = S
+trigger1 = ctrl
+
+;--------------------------------------------------------------------------
+; Backward Throw
+[State -1, Backward Throw]
+type = ChangeState
+value = 950
+triggerall = command = "c"
+triggerall = command = "holdfwd"
+trigger1 = statetype = S
 trigger1 = ctrl
 
 ;---------------------------------------------------------------------------
